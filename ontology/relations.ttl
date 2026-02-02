@@ -1,0 +1,105 @@
+@prefix : <https://infotp.org/ontology/core#> .
+@prefix rel: <https://infotp.org/ontology/relations#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+#################################################################
+# Ontology declaration
+#################################################################
+
+rel:TransitInformationRelationsOntology a owl:Ontology ;
+    rdfs:label "Transit Information Ontology - Relations" ;
+    rdfs:comment "Object properties capturing structural, architectural, and service-level relationships between elements of a transit information system." ;
+    owl:imports <https://infotp.org/ontology/core> .
+
+#################################################################
+# GENERIC ARCHITECTURAL RELATIONS
+#################################################################
+
+:providesSupportFor a owl:ObjectProperty ;
+    rdfs:label "provides support for" ;
+    rdfs:comment "Indicates that one element enables, facilitates, or enhances another element." ;
+    owl:inverseOf :isSupportedBy .
+
+:isSupportedBy a owl:ObjectProperty ;
+    rdfs:label "is supported by" ;
+    rdfs:comment "Inverse of providesSupportFor; indicates dependency or reliance." .
+
+:usedIn a owl:ObjectProperty ;
+    rdfs:label "used in" ;
+    rdfs:comment "Indicates that an element is employed within a specific system, service, component, or context." .
+
+:implements a owl:ObjectProperty ;
+    rdfs:label "implements" ;
+    rdfs:comment "Indicates that a concrete element realizes or instantiates an abstract concept, requirement, or pattern." .
+
+:governedBy a owl:ObjectProperty ;
+    rdfs:label "governed by" ;
+    rdfs:comment "Indicates the organization or authority responsible for regulation or governance." .
+
+#################################################################
+# JOURNEY STRUCTURE RELATIONS
+#################################################################
+
+:hasStage a owl:ObjectProperty ;
+    rdfs:label "has stage" ;
+    rdfs:domain :PassengerJourney ;
+    rdfs:range :JourneyStage ;
+    rdfs:comment "Relates a passenger journey to one of its constituent stages or phases." ;
+    owl:inverseOf :stageOf .
+
+:stageOf a owl:ObjectProperty ;
+    rdfs:label "stage of" ;
+    rdfs:domain :JourneyStage ;
+    rdfs:range :PassengerJourney ;
+    rdfs:comment "Inverse of hasStage; indicates the journey to which a stage belongs." .
+
+:occursIn a owl:ObjectProperty ;
+    rdfs:label "occurs in" ;
+    rdfs:domain :JourneyStage ;
+    rdfs:range :Space ;
+    rdfs:comment "Associates a journey stage with the physical space in which it takes place." .
+
+:occursDuring a owl:ObjectProperty ;
+    rdfs:label "occurs during" ;
+    rdfs:domain :JourneyStage ;
+    rdfs:range :Time ;
+    rdfs:comment "Associates a journey stage with a relevant temporal moment or phase." .
+
+:underContext a owl:ObjectProperty ;
+    rdfs:label "under context" ;
+    rdfs:domain :JourneyStage ;
+    rdfs:range :Context ;
+    rdfs:comment "Associates a journey stage with situational, operational, or environmental conditions." .
+
+#################################################################
+# SERVICE & INTERACTION RELATIONS
+#################################################################
+
+:servedBy a owl:ObjectProperty ;
+    rdfs:label "served by" ;
+    rdfs:comment "Indicates that a journey stage, space, or context is served by a specific application, interface, or signage." .
+
+:interactsWith a owl:ObjectProperty ;
+    rdfs:label "interacts with" ;
+    rdfs:comment "Indicates that an actor or user engages with a system component or interface." .
+
+:presentedThrough a owl:ObjectProperty ;
+    rdfs:label "presented through" ;
+    rdfs:comment "Indicates that information or a service is communicated via a specific user interface, signage, or graphic element." .
+
+#################################################################
+# INFORMATION SERVICE RELATIONS
+#################################################################
+
+:servedBy a owl:ObjectProperty ;
+    rdfs:label "served by" ;
+    rdfs:comment "Indicates that a journey stage is supported by an information service, interface, or signage element." .
+
+#################################################################
+# NOTES
+#################################################################
+
+:JourneyStage rdfs:comment
+    "A journey stage may involve zero, one, or multiple transport trips. Trips are operational transport constructs and are not equivalent to journeys." .

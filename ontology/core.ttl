@@ -1,0 +1,190 @@
+@prefix : <https://infotp.org/ontology/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#################################################################
+# Ontology declaration
+#################################################################
+
+:TransitInformationOntology a owl:Ontology ;
+    rdfs:label "Transit Information Core Ontology" ;
+    rdfs:comment "Core ontology for the design of public transport information systems, structured around architectural catalogs." .
+
+#################################################################
+# TRANSIT INFORMATION DOMAINS
+#################################################################
+
+:TransitInformationDomain a owl:Class ;
+    rdfs:label "Class Domain" ;
+    rdfs:comment "A conceptual domain used to organize architectural knowledge." .
+
+:FundamentalsDomain a :TransitInformationDomain ;
+    rdfs:isDefinedBy :TransitInformationOntology .
+:ServiceDomain a :TransitInformationDomain ;
+    rdfs:isDefinedBy :TransitInformationOntology .
+:InstitutionalDomain a :TransitInformationDomain ;
+    rdfs:isDefinedBy :TransitInformationOntology .
+:DataDomain a :TransitInformationDomain ;
+    rdfs:isDefinedBy :TransitInformationOntology .
+:ArchitectureDomain a :TransitInformationDomain ;
+    rdfs:isDefinedBy :TransitInformationOntology .
+:TechnologyDomain a :TransitInformationDomain ;
+    rdfs:isDefinedBy :TransitInformationOntology .
+:CommunicationDomain a :TransitInformationDomain ;
+    rdfs:isDefinedBy :TransitInformationOntology .
+
+:belongsToDomain a owl:ObjectProperty ;
+    rdfs:domain owl:Class ;
+    rdfs:range :TransitInformationDomain .
+
+#################################################################
+# FUNDAMENTALS
+#################################################################
+
+:Principle a owl:Class ;
+    rdfs:label "Principle" ;
+    rdfs:comment "Architectural or service principle guiding design decisions." .
+
+:Application a owl:Class ;
+    rdfs:label "Application" ;
+    rdfs:comment "Software application or service supporting system functions." .
+
+:Requirement a owl:Class ;
+    rdfs:label "Requirement" ;
+    rdfs:comment "Functional or non-functional constraint on the system." .
+
+:Principle :belongsToDomain :FundamentalsDomain .
+:Application :belongsToDomain :FundamentalsDomain .
+:Requirement :belongsToDomain :FundamentalsDomain .
+
+#################################################################
+# SERVICE (foundational dimensions)
+#################################################################
+
+:Space a owl:Class ;
+    rdfs:label "Space" ;
+    rdfs:comment "Physical environment where passengers interact with the transport system." .
+
+:Time a owl:Class ;
+    rdfs:label "Time" ;
+    rdfs:comment "Temporal moment or phase relevant to passenger journeys." .
+
+:Context a owl:Class ;
+    rdfs:label "Context" ;
+    rdfs:comment "Situational condition influencing information use and service behavior." .
+
+:Space :belongsToDomain :ServiceDomain .
+:Time :belongsToDomain :ServiceDomain .
+:Context :belongsToDomain :ServiceDomain .
+
+#################################################################
+# SERVICE (composed concepts)
+#################################################################
+
+:PassengerJourney a owl:Class ;
+    rdfs:label "Passenger Journey" ;
+    rdfs:comment "A service-level entity representing a passenger's overall journey experience, potentially spanning multiple trips and non-mobility interactions." .
+
+:JourneyStage a owl:Class ;
+    rdfs:label "Journey Stage" ;
+    rdfs:comment "A distinct stage within a passenger journey, characterized by a specific combination of space, time, and context." .
+
+:PassengerJourney :belongsToDomain :ServiceDomain .
+:JourneyStage :belongsToDomain :ServiceDomain .
+
+#################################################################
+# INSTITUTIONAL
+#################################################################
+
+:Stakeholder a owl:Class ;
+    rdfs:label "Stakeholder" ;
+    rdfs:comment "Individual or group with an interest in or influence over the system." .
+
+:Actor a owl:Class ;
+    rdfs:label "Actor" ;
+    rdfs:comment "Role that performs actions or interacts with the system." .
+
+:Organization a owl:Class ;
+    rdfs:label "Organization" ;
+    rdfs:comment "Institution responsible for governance, operation, or service provision." .
+
+:Stakeholder :belongsToDomain :InstitutionalDomain .
+:Actor :belongsToDomain :InstitutionalDomain .
+:Organization :belongsToDomain :InstitutionalDomain .
+
+#################################################################
+# DATA
+#################################################################
+
+:DataEntity a owl:Class ;
+    rdfs:label "Data Entity" ;
+    rdfs:comment "Conceptual data object representing a core element of the transport system." .
+
+:DataComponent a owl:Class ;
+    rdfs:label "Data Component" ;
+    rdfs:comment "Logical grouping of data entities used for management or exchange." .
+
+:DataEntity :belongsToDomain :DataDomain .
+:DataComponent :belongsToDomain :DataDomain .
+
+#################################################################
+# ARCHITECTURE
+#################################################################
+
+:ArchitectureComponent a owl:Class ;
+    rdfs:label "Architecture Component" ;
+    rdfs:comment "Logical or technical building block of the system architecture." .
+
+:ArchitecturePattern a owl:Class ;
+    rdfs:label "Architecture Pattern" ;
+    rdfs:comment "Reusable architectural solution to a recurring design problem." .
+
+:ArchitectureComponent :belongsToDomain :ArchitectureDomain .
+:ArchitecturePattern :belongsToDomain :ArchitectureDomain .
+
+#################################################################
+# TECHNOLOGY
+#################################################################
+
+:Technology a owl:Class ;
+    rdfs:label "Technology" ;
+    rdfs:comment "Concrete tool, platform, or software product used in implementation." .
+
+:Standard a owl:Class ;
+    rdfs:label "Standard" ;
+    rdfs:comment "Technical specification or norm ensuring interoperability." .
+
+:Interface a owl:Class ;
+    rdfs:label "Interface" ;
+    rdfs:comment "Defined interaction point between systems or components." .
+
+:Technology :belongsToDomain :TechnologyDomain .
+:Standard :belongsToDomain :TechnologyDomain .
+:Interface :belongsToDomain :TechnologyDomain .
+
+#################################################################
+# COMMUNICATION
+#################################################################
+
+:Brand a owl:Class ;
+    rdfs:label "Brand" ;
+    rdfs:comment "Brand identity associated with the system or its services." .
+
+:GraphicElement a owl:Class ;
+    rdfs:label "Graphic Element" ;
+    rdfs:comment "Visual asset used to communicate information consistently." .
+
+:Signage a owl:Class ;
+    rdfs:label "Signage" ;
+    rdfs:comment "Physical or digital signage used to orient passengers." .
+
+:UserInterface a owl:Class ;
+    rdfs:label "User Interface" ;
+    rdfs:comment "Visual and interaction layer through which users access services." .
+
+:Brand :belongsToDomain :CommunicationDomain .
+:GraphicElement :belongsToDomain :CommunicationDomain .
+:Signage :belongsToDomain :CommunicationDomain .
+:UserInterface :belongsToDomain :CommunicationDomain .
