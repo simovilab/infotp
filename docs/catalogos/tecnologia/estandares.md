@@ -9,7 +9,7 @@
 | Versión | 1.0 |
 | Fecha | 2025-09-18 |
 | Descripción | Un catálogo de estándares tecnológicos para un Sistema de Información de Transporte Público. |
-| Autores | Randy Cascante Espinoza, Oriana Mora López, Fabián Abarca Calderón |
+| Autores | Fabián Abarca Calderón, Oriana Mora López |
 | Organización | Laboratorio de Sistemas Inteligentes de Movilidad (SIMOVI) |
 | Contacto | simovi@ucr.ac.cr |
 | Licencia | CC BY-NC 4.0 |

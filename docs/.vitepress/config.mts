@@ -198,6 +198,16 @@ export default defineConfig({
             ],
           },
           {
+            text: "Servicio",
+            collapsed: true,
+            items: [
+              { text: "Introducción", link: "/catalogos/servicio/" },
+              { text: "Espacios físicos y entornos", link: "/catalogos/servicio/espacios" },
+              { text: "Tiempos", link: "/catalogos/servicio/tiempos" },
+              { text: "Contextos de uso", link: "/catalogos/servicio/contextos" },
+            ],
+          },
+          {
             text: "Institucional",
             collapsed: true,
             items: [
@@ -218,6 +228,15 @@ export default defineConfig({
             ],
           },
           {
+            text: "Arquitectura",
+            collapsed: true,
+            items: [
+              { text: "Introducción", link: "/catalogos/arquitectura/" },
+              { text: "Componentes", link: "/catalogos/arquitectura/componentes" },
+              { text: "Patrones", link: "/catalogos/arquitectura/patrones" },
+            ],
+          },
+          {
             text: "Tecnología",
             collapsed: true,
             items: [
@@ -235,17 +254,7 @@ export default defineConfig({
               { text: "Marca", link: "/catalogos/comunicacion/marca" },
               { text: "Elementos gráficos", link: "/catalogos/comunicacion/elementos-graficos" },
               { text: "Señalización", link: "/catalogos/comunicacion/senalizacion" },
-              { text: "Interfaces gráficas", link: "/catalogos/comunicacion/interfaces-graficas" },
-              { text: "Plantillas", link: "/catalogos/comunicacion/plantillas" },
-            ],
-          },
-          {
-            text: "Servicio",
-            collapsed: true,
-            items: [
-              { text: "Introducción", link: "/catalogos/servicio/" },
-              { text: "Recorrido", link: "/catalogos/servicio/recorrido" },
-              { text: "Espacios", link: "/catalogos/servicio/espacios" },
+              { text: "Interfaces del usuario", link: "/catalogos/comunicacion/interfaces-usuario" },
             ],
           },
         ],
