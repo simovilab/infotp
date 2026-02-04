@@ -10,8 +10,6 @@ Incluye los catálogos que definen la base conceptual y los lineamientos de la a
 | **Aplicaciones** | Inventario de aplicaciones y servicios de software que soportan las funciones operativas y de negocio del sistema. |
 | **Requisitos**   | Requisitos funcionales y no funcionales que restringen y justifican el diseño y la implementación del sistema.     |
 
----
-
 ## Servicio
 
 Detalla los elementos del servicio desde la perspectiva del recorrido del pasajero, como criterio central para el diseño de los componentes de información.
@@ -21,8 +19,6 @@ Detalla los elementos del servicio desde la perspectiva del recorrido del pasaje
 | **Espacios**  | Entornos físicos donde los pasajeros interactúan con el sistema de transporte y sus servicios de información.   |
 | **Tiempos**   | Momentos y fases temporales relevantes para los recorridos del pasajero y sus necesidades de información.       |
 | **Contextos** | Condiciones situacionales que influyen en cómo, cuándo y por qué la información es utilizada por los pasajeros. |
-
----
 
 ## Institucional
 
@@ -34,8 +30,6 @@ Agrupa los catálogos que describen a las partes interesadas, actores y organiza
 | **Actores**            | Roles que ejecutan acciones, toman decisiones o interactúan con el sistema y sus datos.            |
 | **Organizaciones**     | Instituciones responsables de la gobernanza, regulación, operación o provisión de servicios.       |
 
----
-
 ## Datos
 
 Contiene los catálogos que estructuran los activos de información del sistema. Describe las entidades de datos, sus relaciones y los componentes que soportan su gestión y uso.
@@ -46,8 +40,6 @@ Contiene los catálogos que estructuran los activos de información del sistema.
 | **Componentes de datos** | Agrupaciones lógicas utilizadas para almacenamiento, procesamiento, intercambio o validación de entidades de datos.                |
 | **GTFS**                 | Entidad de datos específica que define el formato estándar para la representación y el intercambio de datos de transporte público. |
 
----
-
 ## Arquitectura
 
 Registra los componentes y patrones que conforman la arquitectura tecnológica del sistema. Define su estructura, interacciones y directrices de evolución.
@@ -56,8 +48,6 @@ Registra los componentes y patrones que conforman la arquitectura tecnológica d
 | ------------------------------- | --------------------------------------------------------------------------------------------------------- |
 | **Componentes de arquitectura** | Bloques lógicos y técnicos que estructuran el sistema y definen sus responsabilidades internas.           |
 | **Patrones de arquitectura**    | Soluciones arquitectónicas reutilizables para problemas recurrentes de diseño bajo ciertas restricciones. |
-
----
 
 ## Tecnología
 
@@ -68,8 +58,6 @@ Reúne los catálogos de tecnologías, estándares e interfaces que conforman la
 | **Tecnologías** | Herramientas, plataformas y productos de software utilizados para implementar el sistema.                     |
 | **Estándares**  | Especificaciones técnicas y normas que aseguran interoperabilidad, consistencia e intercambio de información. |
 | **Interfaces**  | Puntos de interacción definidos entre sistemas, componentes o servicios externos.                             |
-
----
 
 ## Comunicación
 

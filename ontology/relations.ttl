@@ -14,7 +14,7 @@ rel:TransitInformationRelationsOntology a owl:Ontology ;
     owl:imports <https://infotp.org/ontology/core> .
 
 #################################################################
-# GENERIC ARCHITECTURAL RELATIONS
+# RELATIONS AMONG DOMAINS
 #################################################################
 
 :providesSupportFor a owl:ObjectProperty ;
@@ -39,7 +39,7 @@ rel:TransitInformationRelationsOntology a owl:Ontology ;
     rdfs:comment "Indicates the organization or authority responsible for regulation or governance." .
 
 #################################################################
-# JOURNEY STRUCTURE RELATIONS
+# JOURNEY RELATIONS
 #################################################################
 
 :hasStage a owl:ObjectProperty ;
