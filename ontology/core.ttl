@@ -54,7 +54,7 @@
     rdfs:isDefinedBy :TransitInformationOntology ;
     rdfs:label "Communication Domain" ;
     rdfs:comment "Domain involving communication elements such as branding, signage, and user interfaces." .
-:InstitutionalDomain a :TransitInformationDomain ;
+:GovernanceDomain a :TransitInformationDomain ;
     rdfs:isDefinedBy :TransitInformationOntology ;
     rdfs:label "Institutional Domain" ;
     rdfs:comment "Domain covering institutional aspects, including actors and organizations involved in governance and operation." .
@@ -246,5 +246,11 @@
     rdfs:comment "Institution responsible for governance, operation, or service provision." ;
     rdfs:isDefinedBy :TransitInformationOntology .
 
-:Actor :belongsToDomain :InstitutionalDomain .
-:Organization :belongsToDomain :InstitutionalDomain .
+:GovernanceInstrument a owl:Class ;
+    rdfs:label "Governance Instrument" ;
+    rdfs:comment "An abstract artifact through which governance is exercised, including rules, laws, norms, standards, procedures, policies, and other formal or informal mechanisms that guide, constrain, or authorize actions and decision-making within a transit system." ;
+    rdfs:isDefinedBy :TransitInformationOntology .
+
+:Actor :belongsToDomain :GovernanceDomain .
+:Organization :belongsToDomain :GovernanceDomain .
+:GovernanceInstrument :belongsToDomain :GovernanceDomain .
