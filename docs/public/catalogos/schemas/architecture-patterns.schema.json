@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Architecture Patterns Catalog Schema",
+  "description": "JSON Schema for validating architecture patterns catalog YAML files in the Public Transportation Information System architecture",
+  "type": "object",
+  "required": ["metadata", "patterns"],
+  "properties": {
+    "metadata": {
+      "$ref": "./metadata.schema.json"
+    },
+    "patterns": {}
+  },
+  "additionalProperties": false
+}

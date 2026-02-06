@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Governance Instruments Catalog Schema",
+  "description": "JSON Schema for validating governance instruments catalog YAML files in the Public Transportation Information System architecture",
+  "type": "object",
+  "required": ["metadata", "instruments"],
+  "properties": {
+    "metadata": {
+      "$ref": "./metadata.schema.json"
+    },
+    "instruments": {}
+  },
+  "additionalProperties": false
+}

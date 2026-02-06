@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Communication Interface Design Catalog Schema",
+  "description": "JSON Schema for validating communication interface design catalog YAML files in the Public Transportation Information System architecture",
+  "type": "object",
+  "required": ["metadata", "components"],
+  "properties": {
+    "metadata": {
+      "$ref": "./metadata.schema.json"
+    }
+  }
+}

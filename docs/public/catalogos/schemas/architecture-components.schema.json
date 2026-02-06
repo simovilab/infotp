@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Architecture Components Catalog Schema",
+  "description": "JSON Schema for validating organization/actor catalog YAML files in the Public Transportation Information System architecture",
+  "type": "object",
+  "required": ["metadata", "components"],
+  "properties": {
+    "metadata": {
+      "$ref": "./metadata.schema.json"
+    },
+    "components": {}
+  },
+  "additionalProperties": false
+}
