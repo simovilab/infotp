@@ -1,4 +1,4 @@
-# yaml-language-server: $schema=../schemas/applications.schema.json
+# yaml-language-server: $schema=../schemas/application-applications.schema.json
 
 metadata:
   title: "Catálogo de portafolio de aplicaciones"
@@ -108,7 +108,7 @@ applications:
       - "stakeholder:001"
     status: "Development"
     deployment_environment: "On-Premise"
-    criticality: "High"
+    criticality: "Medium"
 
   - id: "application:006"
     name: "Infobús Screens"

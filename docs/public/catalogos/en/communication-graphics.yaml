@@ -1,4 +1,4 @@
-# yaml-language-server: $schema=../schemas/graphics.schema.json
+# yaml-language-server: $schema=../schemas/communication-graphics.schema.json
 
 metadata:
   title: "Graphic Elements Catalog"

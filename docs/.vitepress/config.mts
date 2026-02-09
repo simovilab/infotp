@@ -188,33 +188,23 @@ export default defineConfig({
         items: [
           { text: "Introducción a los catálogos", link: "/catalogos/" },
           {
-            text: "Fundamentos",
-            collapsed: true,
-            items: [
-              { text: "Introducción", link: "/catalogos/fundamentos/" },
-              { text: "Principios", link: "/catalogos/fundamentos/principios" },
-              { text: "Aplicaciones", link: "/catalogos/fundamentos/aplicaciones" },
-              { text: "Requisitos", link: "/catalogos/fundamentos/requisitos" },
-            ],
-          },
-          {
             text: "Servicio",
             collapsed: true,
             items: [
               { text: "Introducción", link: "/catalogos/servicio/" },
-              { text: "Espacios físicos y entornos", link: "/catalogos/servicio/espacios" },
+              { text: "Espacios", link: "/catalogos/servicio/espacios" },
               { text: "Tiempos", link: "/catalogos/servicio/tiempos" },
-              { text: "Contextos de uso", link: "/catalogos/servicio/contextos" },
+              { text: "Contextos", link: "/catalogos/servicio/contextos" },
+              { text: "Necesidades de información", link: "/catalogos/servicio/necesidades-informacion" },
             ],
           },
           {
-            text: "Institucional",
+            text: "Aplicación",
             collapsed: true,
             items: [
-              { text: "Introducción", link: "/catalogos/institucional/" },
-              { text: "Partes interesadas", link: "/catalogos/institucional/partes-interesadas" },
-              { text: "Actores", link: "/catalogos/institucional/actores" },
-              { text: "Organizaciones", link: "/catalogos/institucional/organizaciones" },
+              { text: "Introducción", link: "/catalogos/aplicacion/" },
+              { text: "Aplicaciones", link: "/catalogos/aplicacion/aplicaciones" },
+              { text: "Requisitos", link: "/catalogos/aplicacion/requisitos" },
             ],
           },
           {
@@ -224,7 +214,6 @@ export default defineConfig({
               { text: "Introducción", link: "/catalogos/datos/" },
               { text: "Entidades", link: "/catalogos/datos/entidades" },
               { text: "Componentes", link: "/catalogos/datos/componentes" },
-              { text: "GTFS", link: "/catalogos/datos/gtfs" },
             ],
           },
           {
@@ -251,10 +240,21 @@ export default defineConfig({
             collapsed: true,
             items: [
               { text: "Introducción", link: "/catalogos/comunicacion/" },
-              { text: "Marca", link: "/catalogos/comunicacion/marca" },
+              { text: "Marcas", link: "/catalogos/comunicacion/marcas" },
               { text: "Elementos gráficos", link: "/catalogos/comunicacion/elementos-graficos" },
               { text: "Señalización", link: "/catalogos/comunicacion/senalizacion" },
-              { text: "Interfaces del usuario", link: "/catalogos/comunicacion/interfaces-usuario" },
+              { text: "Interfaces", link: "/catalogos/comunicacion/interfaces" },
+            ],
+          },
+          {
+            text: "Gobernanza",
+            collapsed: true,
+            items: [
+              { text: "Introducción", link: "/catalogos/gobernanza/" },
+              { text: "Organizaciones", link: "/catalogos/gobernanza/organizaciones" },
+              { text: "Actores", link: "/catalogos/gobernanza/actores" },
+              { text: "Principios", link: "/catalogos/gobernanza/principios" },
+              { text: "Regulaciones", link: "/catalogos/gobernanza/regulaciones" },
             ],
           },
         ],

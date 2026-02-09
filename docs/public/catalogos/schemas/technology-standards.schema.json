@@ -29,8 +29,8 @@
         "properties": {
           "id": {
             "type": "string",
-            "pattern": "^standard:\\d{3}$",
-            "description": "Unique identifier for the technology standard following the pattern standard:XXX, where XXX is a three-digit number"
+            "pattern": "^standard:[a-z0-9]+$",
+            "description": "Unique identifier for the technology standard following the pattern standard:xxx, where xxx is lowercase text and numbers"
           },
           "name": {
             "type": "string",

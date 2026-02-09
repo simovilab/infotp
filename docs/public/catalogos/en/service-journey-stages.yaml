@@ -1,7 +1,7 @@
-# yaml-language-server: $schema=../schemas/journey.schema.json
+# yaml-language-server: $schema=../schemas/service-journey-stages.schema.json
 
 metadata:
-  title: "Passenger Journey Steps Catalog"
+  title: "Passenger Journey Stages Catalog"
   version: "0.1"
   date: "2025-09-18"
   description: "Defines the key steps in a typical passenger journey using the public transportation information system."

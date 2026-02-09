@@ -1,4 +1,4 @@
-# yaml-language-server: $schema=../schemas/components.schema.json
+# yaml-language-server: $schema=../schemas/data-components.schema.json
 # Metadata about the catalog
 
 metadata:

@@ -1,4 +1,4 @@
-# yaml-language-server: $schema=../schemas/stakeholders.schema.json
+# yaml-language-server: $schema=../schemas/service-stakeholders.schema.json
 
 metadata:
   title: "Stakeholder Catalog"

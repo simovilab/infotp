@@ -1,4 +1,4 @@
-# yaml-language-server: $schema=../schemas/requirements.schema.json
+# yaml-language-server: $schema=../schemas/application-requirements.schema.json
 
 metadata:
   title: "Architecture Requirements Catalog"

@@ -1,4 +1,4 @@
-# yaml-language-server: $schema=../schemas/standards.schema.json
+# yaml-language-server: $schema=../schemas/technology-standards.schema.json
 
 metadata:
   title: "Technology Standards Catalog"
@@ -16,7 +16,7 @@ standards:
   
   # Protocols
 
-  - id: standard:001
+  - id: standard:http
     name: "HTTP"
     description: "Fundamental protocol for web communication, used for exchanging information between clients and servers."
     type: "Protocol"
@@ -30,7 +30,7 @@ standards:
     status: "Active"
     documentation: "https://developer.mozilla.org/en-US/docs/Web/HTTP"
 
-  - id: standard:002
+  - id: standard:tcp
     name: "TCP"
     description: "Fundamental communication protocol that provides reliable, connection-oriented communication between devices on a network."
     type: "Protocol"
@@ -44,7 +44,7 @@ standards:
     status: "Active"
     documentation: "https://developer.mozilla.org/en-US/docs/Glossary/TCP"
 
-  - id: standard:007
+  - id: standard:websocket
     name: "WebSocket"
     description: "Communication protocol that provides full-duplex communication channels over a single TCP connection."
     type: "Protocol"
@@ -60,7 +60,7 @@ standards:
     status: "Active"
     documentation: "https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API"
 
-  - id: standard:012
+  - id: standard:sse
     name: "SSE"
     description: "Web technology that allows the server to automatically send data to the browser continuously over an open HTTP connection."
     type: "Protocol"
@@ -74,7 +74,7 @@ standards:
     status: "Active"
     documentation: "https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events"
 
-  - id: standard:013
+  - id: standard:mqtt
     name: "MQTT"
     description: "Lightweight messaging protocol designed for remote connections with resource-constrained devices and limited-bandwidth networks."
     type: "Protocol"
@@ -90,7 +90,7 @@ standards:
 
   # API Specifications
 
-  - id: standard:003
+  - id: standard:rest
     name: "REST"
     description: "Architectural style for designing web services that use HTTP for communication between distributed systems."
     type: "API Specification"
@@ -107,7 +107,7 @@ standards:
     status: "Active"
     documentation: "https://restfulapi.net/"
 
-  - id: standard:004
+  - id: standard:openapi
     name: "OpenAPI"
     description: "A standard for defining RESTful APIs."
     type: "API Specification"
@@ -121,7 +121,7 @@ standards:
     status: "Active"
     documentation: "https://swagger.io/specification/"
 
-  - id: standard:005
+  - id: standard:graphql
     name: "GraphQL"
     description: "Query language for APIs that allows clients to request exactly the data they need, enabling flexible schema evolution and efficient data retrieval."
     type: "API Specification"
@@ -140,7 +140,7 @@ standards:
     status: "Active"
     documentation: "https://spec.graphql.org/"
   
-  - id: standard:010
+  - id: standard:grpc
     name: "gRPC"
     description: "A high-performance remote procedure call (RPC) framework that uses HTTP/2 for communication between services."
     type: "API Specification"
@@ -157,7 +157,7 @@ standards:
 
   # Security Standards
 
-  - id: standard:008
+  - id: standard:tls
     name: "TLS"
     description: "Cryptographic protocol that provides secure communications over a computer network."
     type: "Security Standard"
@@ -171,7 +171,7 @@ standards:
     status: "Active"
     documentation: "https://tools.ietf.org/html/rfc8446"
 
-  - id: standard:009
+  - id: standard:ssl
     name: "SSL"
     description: "Cryptographic protocol designed to provide secure communications over a computer network."
     type: "Security Standard"
@@ -185,7 +185,7 @@ standards:
     status: "Active"
     documentation: "https://tools.ietf.org/html/rfc6101"
 
-  - id: standard:011
+  - id: standard:jwt
     name: "JWT"
     description: "An open standard for securely transmitting information between parties as a JSON object."
     type: "Security Standard"
@@ -199,7 +199,7 @@ standards:
     status: "Active"
     documentation: "https://tools.ietf.org/html/rfc7519"
 
-  - id: standard:006
+  - id: standard:oauth
     name: "OAuth"
     description: "An authorization framework that allows applications to obtain limited access to user accounts."
     type: "Security Standard"
@@ -215,7 +215,7 @@ standards:
 
   # Data Formats
 
-  - id: standard:014
+  - id: standard:json
     name: "JSON"
     description: "Lightweight data format that is easy to read and write, used for exchanging data between systems."
     type: "Data Format"
@@ -229,8 +229,8 @@ standards:
     status: "Active"
     documentation: "https://www.json.org/json-en.html"
 
-  - id: standard:015
-    name: "Protocol Buffers (protobuf)"
+  - id: standard:protobuf
+    name: "Protocol Buffers"
     description: "A structured data serialization format, used for communication between services."
     type: "Data Format"
     version: "proto3"

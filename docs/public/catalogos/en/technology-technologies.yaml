@@ -1,4 +1,4 @@
-# yaml-language-server: $schema=../schemas/technologies.schema.json
+# yaml-language-server: $schema=../schemas/technology-technologies.schema.json
 
 metadata:
   title: "Technology Portfolio Catalog"

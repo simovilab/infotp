@@ -12,11 +12,6 @@
     rdfs:label "Transit Information Core Ontology" ;
     rdfs:comment "Core ontology for the design of public transport information systems, structured around architectural catalogs." .
 
-:InformationNeed a owl:Class ;
-    rdfs:label "Stakeholder Information Need" ;
-    rdfs:comment "A general requirement for information needed to support a stakeholder." ;
-    rdfs:isDefinedBy :TransitInformationOntology .
-
 :TransitInformationDomain a owl:Class ;
     rdfs:label "Class Domain" ;
     rdfs:comment "A conceptual domain used to organize architectural knowledge." ;
@@ -26,10 +21,6 @@
 # TRANSIT INFORMATION DOMAINS
 #################################################################
 
-:FundamentalsDomain a :TransitInformationDomain ;
-    rdfs:isDefinedBy :TransitInformationOntology ;
-    rdfs:label "Fundamentals Domain" ;
-    rdfs:comment "Domain encompassing foundational concepts relevant across all aspects of transit information systems." .
 :ServiceDomain a :TransitInformationDomain ;
     rdfs:isDefinedBy :TransitInformationOntology ;
     rdfs:label "Service Domain" ;
@@ -66,44 +57,33 @@
     rdfs:comment "Meta-level relation assigning ontology classes to architectural domains." .
 
 #################################################################
-# FUNDAMENTALS
-#################################################################
-
-:Stakeholder a owl:Class ;
-    rdfs:label "Stakeholder" ;
-    rdfs:comment "Individual or group with an interest in or influence over the system." ;
-    rdfs:isDefinedBy :TransitInformationOntology .
-
-:Principle a owl:Class ;
-    rdfs:label "Principle" ;
-    rdfs:comment "Architectural or service principle guiding design decisions." ;
-    rdfs:isDefinedBy :TransitInformationOntology .
-
-:Stakeholder :belongsToDomain :FundamentalsDomain .
-:Principle :belongsToDomain :FundamentalsDomain .
-
-#################################################################
 # SERVICE (foundational dimensions)
 #################################################################
 
-:Space a owl:Class ;
+:ServiceSpace a owl:Class ;
     rdfs:label "Space" ;
     rdfs:comment "Physical environment where passengers interact with the transport system." ;
     rdfs:isDefinedBy :TransitInformationOntology .
 
-:Time a owl:Class ;
+:ServiceTime a owl:Class ;
     rdfs:label "Time" ;
     rdfs:comment "Temporal moment or phase relevant to passenger journeys." ;
     rdfs:isDefinedBy :TransitInformationOntology .
 
-:Context a owl:Class ;
+:ServiceContext a owl:Class ;
     rdfs:label "Context" ;
     rdfs:comment "Situational condition influencing information use and service behavior." ;
     rdfs:isDefinedBy :TransitInformationOntology .
 
-:Space :belongsToDomain :ServiceDomain .
-:Time :belongsToDomain :ServiceDomain .
-:Context :belongsToDomain :ServiceDomain .
+:ServiceStakeholder a owl:Class ;
+    rdfs:label "Stakeholder" ;
+    rdfs:comment "Individual or group with an interest in or influence over the system." ;
+    rdfs:isDefinedBy :TransitInformationOntology .
+
+:ServiceSpace :belongsToDomain :ServiceDomain .
+:ServiceTime :belongsToDomain :ServiceDomain .
+:ServiceContext :belongsToDomain :ServiceDomain .
+:ServiceStakeholder :belongsToDomain :ServiceDomain .
 
 #################################################################
 # SERVICE (composed concepts)
@@ -119,15 +99,20 @@
     rdfs:comment "A distinct stage within a passenger journey, characterized by a specific combination of space, time, and context." ;
     rdfs:isDefinedBy :TransitInformationOntology .
 
+:InformationNeed a owl:Class ;
+    rdfs:label "Stakeholder Information Need" ;
+    rdfs:comment "A general requirement for information needed to support a stakeholder." ;
+    rdfs:isDefinedBy :TransitInformationOntology .
+
 :PassengerInformationNeed a owl:Class ;
     rdfs:label "Passenger Information Need" ;
     rdfs:comment "A situated information requirement experienced by a passenger during a specific stage of a journey, under particular spatial, temporal, and contextual conditions." ;
-    rdfs:isDefinedBy :TransitInformationOntology .
+    rdfs:isDefinedBy :TransitInformationOntology ;
+    rdfs:subClassOf :InformationNeed .
 
 :PassengerJourney :belongsToDomain :ServiceDomain .
 :JourneyStage :belongsToDomain :ServiceDomain .
 :PassengerInformationNeed :belongsToDomain :ServiceDomain .
-:PassengerInformationNeed rdfs:subClassOf :InformationNeed .
 
 #################################################################
 # APPLICATION
@@ -189,59 +174,59 @@
     rdfs:comment "Concrete tool, platform, or software product used in implementation." ;
     rdfs:isDefinedBy :TransitInformationOntology .
 
-:Standard a owl:Class ;
+:TechnologyStandard a owl:Class ;
     rdfs:label "Standard" ;
     rdfs:comment "Technical specification or norm ensuring interoperability." ;
     rdfs:isDefinedBy :TransitInformationOntology .
 
-:Interface a owl:Class ;
+:TechnologyInterface a owl:Class ;
     rdfs:label "Interface" ;
     rdfs:comment "Defined interaction point between systems or components." ;
     rdfs:isDefinedBy :TransitInformationOntology .
 
 :Technology :belongsToDomain :TechnologyDomain .
-:Standard :belongsToDomain :TechnologyDomain .
-:Interface :belongsToDomain :TechnologyDomain .
+:TechnologyStandard :belongsToDomain :TechnologyDomain .
+:TechnologyInterface :belongsToDomain :TechnologyDomain .
 
 #################################################################
 # COMMUNICATION
 #################################################################
 
-:Brand a owl:Class ;
+:CommunicationBrand a owl:Class ;
     rdfs:label "Brand" ;
     rdfs:comment "Brand identity associated with the system or its services." ;
     rdfs:isDefinedBy :TransitInformationOntology .
 
-:GraphicElement a owl:Class ;
+:CommunicationGraphicElement a owl:Class ;
     rdfs:label "Graphic Element" ;
     rdfs:comment "Visual asset used to communicate information consistently." ;
     rdfs:isDefinedBy :TransitInformationOntology .
 
-:Signage a owl:Class ;
+:CommunicationSignage a owl:Class ;
     rdfs:label "Signage" ;
     rdfs:comment "Physical or digital signage used to orient passengers." ;
     rdfs:isDefinedBy :TransitInformationOntology .
 
-:UserInterface a owl:Class ;
+:CommunicationInterface a owl:Class ;
     rdfs:label "User Interface" ;
     rdfs:comment "Visual and interaction layer through which users access services." ;
     rdfs:isDefinedBy :TransitInformationOntology .
 
-:Brand :belongsToDomain :CommunicationDomain .
-:GraphicElement :belongsToDomain :CommunicationDomain .
-:Signage :belongsToDomain :CommunicationDomain .
-:UserInterface :belongsToDomain :CommunicationDomain .
+:CommunicationBrand :belongsToDomain :CommunicationDomain .
+:CommunicationGraphicElement :belongsToDomain :CommunicationDomain .
+:CommunicationSignage :belongsToDomain :CommunicationDomain .
+:CommunicationInterface :belongsToDomain :CommunicationDomain .
 
 #################################################################
-# INSTITUTIONAL
+# GOVERNANCE
 #################################################################
 
-:Actor a owl:Class ;
+:GovernanceActor a owl:Class ;
     rdfs:label "Actor" ;
     rdfs:comment "Role that performs actions or interacts with the system." ;
     rdfs:isDefinedBy :TransitInformationOntology .
 
-:Organization a owl:Class ;
+:GovernanceOrganization a owl:Class ;
     rdfs:label "Organization" ;
     rdfs:comment "Institution responsible for governance, operation, or service provision." ;
     rdfs:isDefinedBy :TransitInformationOntology .
@@ -251,6 +236,18 @@
     rdfs:comment "An abstract artifact through which governance is exercised, including rules, laws, norms, standards, procedures, policies, and other formal or informal mechanisms that guide, constrain, or authorize actions and decision-making within a transit system." ;
     rdfs:isDefinedBy :TransitInformationOntology .
 
-:Actor :belongsToDomain :GovernanceDomain .
-:Organization :belongsToDomain :GovernanceDomain .
+:GovernancePrinciple a owl:Class ;
+    rdfs:label "Principle" ;
+    rdfs:comment "Architectural or service principle guiding design decisions." ;
+    rdfs:isDefinedBy :TransitInformationOntology ;
+    rdfs:subClassOf :GovernanceInstrument .
+
+:GovernanceRegulation a owl:Class ;
+    rdfs:label "Regulation" ;
+    rdfs:comment "Legal or regulatory framework governing transit operations and information systems." ;
+    rdfs:isDefinedBy :TransitInformationOntology ;
+    rdfs:subClassOf :GovernanceInstrument .
+
+:GovernanceActor :belongsToDomain :GovernanceDomain .
+:GovernanceOrganization :belongsToDomain :GovernanceDomain .
 :GovernanceInstrument :belongsToDomain :GovernanceDomain .

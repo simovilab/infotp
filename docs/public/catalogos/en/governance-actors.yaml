@@ -1,4 +1,4 @@
-# yaml-language-server: $schema=../schemas/actors.schema.json
+# yaml-language-server: $schema=../schemas/governance-actors.schema.json
 
 metadata:
   title: "Actor Catalog"

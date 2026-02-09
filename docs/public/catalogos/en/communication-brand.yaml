@@ -1,4 +1,4 @@
-# yaml-language-server: $schema=../schemas/brand.schema.json
+# yaml-language-server: $schema=../schemas/communication-brand.schema.json
 
 metadata:
   title: "Brand Identity Catalog"

@@ -1,4 +1,4 @@
-# yaml-language-server: $schema=../schemas/principles.schema.json
+# yaml-language-server: $schema=../schemas/governance-principles.schema.json
 
 metadata:
   title: "Catálogo de principios de arquitectura"
