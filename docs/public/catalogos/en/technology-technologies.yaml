@@ -15,7 +15,7 @@ technologies:
 
   # Backend Technologies
 
-  - id: tech:python
+  - id: technology:python
     name: "Python"
     description: "Primary language for backend development, data processing, machine learning models, and research algorithms."
     version: "3.x"
@@ -28,7 +28,7 @@ technologies:
     status: "Active"
     documentation: "https://docs.python.org/3/"
 
-  - id: tech:django
+  - id: technology:django
     name: "Django"
     description: "High-level Python web framework for robust APIs and backend services."
     version: "5.x"
@@ -41,7 +41,7 @@ technologies:
     status: "Active"
     documentation: "https://docs.djangoproject.com/en/stable/"
 
-  - id: tech:django_channels
+  - id: technology:django_channels
     name: "Django Channels"
     description: "ASGI-based framework enabling WebSockets, long-lived connections, and pub/sub patterns for Django."
     version: "4.x"
@@ -54,7 +54,7 @@ technologies:
     status: "Active"
     documentation: "https://channels.readthedocs.io/en/stable/"
 
-  - id: tech:celery
+  - id: technology:celery
     name: "Celery Worker / Beat"
     description: "Distributed task queue and scheduler for asynchronous and periodic workloads."
     version: "5.x"
@@ -67,7 +67,7 @@ technologies:
     status: "Active"
     documentation: "https://docs.celeryq.dev/en/stable/"
 
-  - id: tech:airflow
+  - id: technology:airflow
     name: "Apache Airflow"
     description: "Workflow automation and scheduling platform for orchestrating data pipelines."
     version: "2.x"
@@ -80,7 +80,7 @@ technologies:
     status: "Active"
     documentation: "https://airflow.apache.org/docs/"
 
-  - id: tech:postgresql
+  - id: technology:postgresql
     name: "PostgreSQL"
     description: "Relational database backbone for transactional, analytical, and extensible workloads."
     version: "16.x"
@@ -93,7 +93,7 @@ technologies:
     status: "Active"
     documentation: "https://www.postgresql.org/docs/"
 
-  - id: tech:postgis
+  - id: technology:postgis
     name: "PostGIS"
     description: "Spatial extension for PostgreSQL enabling advanced geospatial data types and queries."
     version: "3.x"
@@ -106,7 +106,7 @@ technologies:
     status: "Active"
     documentation: "https://postgis.net/docs/"
 
-  - id: tech:timescaledb
+  - id: technology:timescaledb
     name: "TimescaleDB"
     description: "Time-series extension providing hypertables, compression, and continuous aggregates."
     version: "16.x / TimescaleDB 2.x"
@@ -119,7 +119,7 @@ technologies:
     status: "Active"
     documentation: "https://docs.timescale.com/"
 
-  - id: tech:redis
+  - id: technology:redis
     name: "Redis"
     description: "In-memory data store for caching, sessions, and message brokering."
     version: "7.x"
@@ -132,7 +132,7 @@ technologies:
     status: "Active"
     documentation: "https://redis.io/docs/"
 
-  - id: tech:redis_streams
+  - id: technology:redis_streams
     name: "Redis Streams"
     description: "Log-structured, append-only streaming data type with persistence and consumer groups."
     version: "7.x"
@@ -145,7 +145,7 @@ technologies:
     status: "Active"
     documentation: "https://redis.io/docs/data-types/streams/"
 
-  - id: tech:rabbitmq
+  - id: technology:rabbitmq
     name: "RabbitMQ"
     description: "Message broker with MQTT support for reliable, scalable messaging."
     version: "3.x"
@@ -158,7 +158,7 @@ technologies:
     status: "Active"
     documentation: "https://www.rabbitmq.com/documentation.html"
 
-  - id: tech:strawberry
+  - id: technology:strawberry
     name: "Strawberry"
     description: "Modern GraphQL library for Python enabling typed schemas and efficient data fetching."
     version: "0.230.x"
@@ -171,7 +171,7 @@ technologies:
     status: "Active"
     documentation: "https://strawberry.rocks/docs/"
 
-  - id: tech:bytewax
+  - id: technology:bytewax
     name: "Bytewax"
     description: "Python-first, Rust-powered framework for stateful stream processing with a dataflow API."
     version: "0.20.x"
@@ -184,7 +184,7 @@ technologies:
     status: "Active"
     documentation: "https://docs.bytewax.io/"
 
-  - id: tech:jena_fuseki
+  - id: technology:jena_fuseki
     name: "Apache Jena Fuseki"
     description: "SPARQL server and RDF triple store for semantic web data."
     version: "4.x"
@@ -197,7 +197,7 @@ technologies:
     status: "Active"
     documentation: "https://jena.apache.org/documentation/fuseki2/"
 
-  - id: tech:fastmcp
+  - id: technology:fastmcp
     name: "FastMCP"
     description: "Pythonic implementation of the Model Context Protocol for building MCP servers and clients."
     version: "0.x"
@@ -210,7 +210,7 @@ technologies:
     status: "Active"
     documentation: "https://modelcontextprotocol.io/"
 
-  - id: tech:strapi
+  - id: technology:strapi
     name: "Strapi CMS"
     description: "Headless CMS for managing dynamic content and configuration."
     version: "4.x"
@@ -223,7 +223,7 @@ technologies:
     status: "Active"
     documentation: "https://docs.strapi.io/"
 
-  - id: tech:rust
+  - id: technology:rust
     name: "Rust"
     description: "Systems language for safe, high-performance, concurrent services."
     version: "1.75+"
@@ -238,7 +238,7 @@ technologies:
 
   # Frontend Technologies
 
-  - id: tech:typescript
+  - id: technology:typescript
     name: "TypeScript"
     description: "Typed superset of JavaScript for large-scale, maintainable frontends."
     version: "5.x"
@@ -251,7 +251,7 @@ technologies:
     status: "Active"
     documentation: "https://www.typescriptlang.org/docs/"
 
-  - id: tech:vue
+  - id: technology:vue
     name: "Vue"
     description: "Progressive framework for building reactive user interfaces."
     version: "3.x"
@@ -264,7 +264,7 @@ technologies:
     status: "Active"
     documentation: "https://vuejs.org/guide/"
 
-  - id: tech:nuxt
+  - id: technology:nuxt
     name: "Nuxt"
     description: "Vue meta-framework for SSR, SSG, and full-stack development."
     version: "3.x"
@@ -277,7 +277,7 @@ technologies:
     status: "Active"
     documentation: "https://nuxt.com/docs"
 
-  - id: tech:nuxt_ui
+  - id: technology:nuxt_ui
     name: "Nuxt UI"
     description: "Open-source Nuxt component library built with Tailwind CSS and Reka UI."
     version: "2.x"
@@ -290,7 +290,7 @@ technologies:
     status: "Active"
     documentation: "https://ui.nuxt.com/getting-started"
 
-  - id: tech:capacitor
+  - id: technology:capacitor
     name: "Capacitor"
     description: "Cross-platform native runtime for deploying web apps to mobile devices."
     version: "5.x"
@@ -303,7 +303,7 @@ technologies:
     status: "Active"
     documentation: "https://capacitorjs.com/docs"
 
-  - id: tech:ionic_ui
+  - id: technology:ionic_ui
     name: "Ionic UI"
     description: "Mobile-focused UI component library for consistent cross-platform apps."
     version: "7.x"
@@ -318,7 +318,7 @@ technologies:
 
   # DevOps & Monitoring
 
-  - id: tech:grafana
+  - id: technology:grafana
     name: "Grafana"
     description: "Visualization and monitoring platform for dashboards and analytics."
     version: "10.x"
@@ -331,7 +331,7 @@ technologies:
     status: "Active"
     documentation: "https://grafana.com/docs/grafana/latest/"
 
-  - id: tech:prometheus
+  - id: technology:prometheus
     name: "Prometheus"
     description: "Time-series database and monitoring system for metrics collection."
     version: "2.x"
@@ -344,7 +344,7 @@ technologies:
     status: "Active"
     documentation: "https://prometheus.io/docs/"
 
-  - id: tech:docker
+  - id: technology:docker
     name: "Docker"
     description: "Containerization platform for packaging and deploying services."
     version: "24.x"
@@ -357,7 +357,7 @@ technologies:
     status: "Active"
     documentation: "https://docs.docker.com/"
 
-  - id: tech:zabbix
+  - id: technology:zabbix
     name: "Zabbix"
     description: "Enterprise-grade network and application monitoring platform."
     version: "7.x"
@@ -370,7 +370,7 @@ technologies:
     status: "Active"
     documentation: "https://www.zabbix.com/documentation/current/manual"
 
-  - id: tech:wazuh
+  - id: technology:wazuh
     name: "Wazuh"
     description: "Security information and event management (SIEM) platform."
     version: "4.x"
@@ -383,7 +383,7 @@ technologies:
     status: "Active"
     documentation: "https://documentation.wazuh.com/"
 
-  - id: tech:opentelemetry
+  - id: technology:opentelemetry
     name: "OpenTelemetry"
     description: "Vendor-neutral observability framework for traces, metrics, and logs."
     version: "1.x"
@@ -398,7 +398,7 @@ technologies:
 
   # Data Analysis & Research
 
-  - id: tech:polars
+  - id: technology:polars
     name: "Polars"
     description: "Fast, multi-threaded DataFrame library with lazy evaluation and query optimization."
     version: "0.20.x"
@@ -411,7 +411,7 @@ technologies:
     status: "Active"
     documentation: "https://pola.rs/book/"
 
-  - id: tech:parquet
+  - id: technology:parquet
     name: "Apache Parquet"
     description: "Columnar storage format optimized for analytics and compression."
     version: "1.x"
@@ -424,7 +424,7 @@ technologies:
     status: "Active"
     documentation: "https://parquet.apache.org/documentation/latest/"
 
-  - id: tech:numpy
+  - id: technology:numpy
     name: "NumPy"
     description: "Core numerical computing library for arrays and math operations."
     version: "1.26.x"
@@ -437,7 +437,7 @@ technologies:
     status: "Active"
     documentation: "https://numpy.org/doc/"
 
-  - id: tech:scipy
+  - id: technology:scipy
     name: "SciPy"
     description: "Scientific computing ecosystem for optimization, statistics, and signal processing."
     version: "1.11.x"
@@ -450,7 +450,7 @@ technologies:
     status: "Active"
     documentation: "https://docs.scipy.org/doc/scipy/"
 
-  - id: tech:scikit_learn
+  - id: technology:scikit_learn
     name: "scikit-learn"
     description: "Machine learning library for predictive modeling, classification, and clustering."
     version: "1.4.x"
@@ -463,7 +463,7 @@ technologies:
     status: "Active"
     documentation: "https://scikit-learn.org/stable/documentation.html"
 
-  - id: tech:matplotlib
+  - id: technology:matplotlib
     name: "Matplotlib"
     description: "Visualization library for charts and exploratory data analysis."
     version: "3.8.x"
@@ -478,7 +478,7 @@ technologies:
 
   # Development Tools
 
-  - id: tech:uv
+  - id: technology:uv
     name: "uv"
     description: "Fast Python package and environment manager with lockfiles for reproducible builds."
     version: "0.1.x"
@@ -491,7 +491,7 @@ technologies:
     status: "Active"
     documentation: "https://docs.astral.sh/uv/"
 
-  - id: tech:pnpm
+  - id: technology:pnpm
     name: "pnpm"
     description: "Performant package manager with content-addressable storage and workspace support."
     version: "9.x"
@@ -504,7 +504,7 @@ technologies:
     status: "Active"
     documentation: "https://pnpm.io/motivation"
 
-  - id: tech:structurizr
+  - id: technology:structurizr
     name: "Structurizr DSL"
     description: "Text DSL for authoring C4 model architecture diagrams as code."
     version: "1.x"
@@ -517,7 +517,7 @@ technologies:
     status: "Active"
     documentation: "https://github.com/structurizr/dsl/blob/master/docs/quickstart.md"
 
-  - id: tech:diagrams_python
+  - id: technology:diagrams_python
     name: "Diagrams (Python)"
     description: "Diagram-as-code library using Graphviz to generate architecture visuals."
     version: "0.23.x"

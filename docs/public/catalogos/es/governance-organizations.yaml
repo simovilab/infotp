@@ -1,0 +1,291 @@
+# yaml-language-server: $schema=../schemas/governance-organizations.schema.json
+
+metadata:
+  title: "Catálogo de Organizaciones"
+  version: "1.3"
+  date: "2025-10-23"
+  description: "Un catálogo de las organizaciones específicas para el Sistema de Información del Transporte Público."
+  author:
+    - "Fabián Abarca Calderón"
+    - "Jose Murillo Vargas"
+  organization: "Laboratorio de Sistemas Inteligentes de Movilidad (SIMOVI)"
+  contact: "simovi@ucr.ac.cr"
+  license: "CC BY-NC 4.0"
+
+organizations:
+  # Autoridades gubernamentales y entidades reguladoras
+  - id: "organization:001"
+    name: "Ministerio de Obras Públicas y Transportes (MOPT)"
+    description: "El ministerio gubernamental que actúa como autoridad suprema y rectora del sector transporte, estableciendo la política nacional."
+    stakeholder: "stakeholder:003"
+    type: "Agencia Gubernamental"
+    contact: "dvagecorrespondencia@mopt.go.cr"
+    website: "https://www.mopt.go.cr/"
+    location: "San José, Costa Rica"
+    parent_organization: null
+    roles:
+      - "Planning"
+      - "Regulation"
+
+  - id: "organization:002"
+    name: "Consejo de Transporte Público (CTP)"
+    description: "El organismo especializado dependiente del MOPT, responsable de la gestión diaria y la regulación operativa del transporte público."
+    stakeholder: "stakeholder:003"
+    type: "Agencia Gubernamental"
+    contact: "atencion.usuario@ctp.go.cr"
+    website: "https://www.ctp.go.cr/"
+    location: "San José, Costa Rica"
+    parent_organization: "organization:001"
+    roles:
+      - "Operation"
+      - "Regulation"
+
+  - id: "organization:003"
+    name: "Autoridad Reguladora de los Servicios Públicos (ARESEP)"
+    description: "Una autoridad independiente que regula los servicios públicos estableciendo tarifas y supervisando la calidad del servicio."
+    stakeholder: "stakeholder:004"
+    type: "Agencia Gubernamental"
+    contact: "cmora@aresep.go.cr"
+    website: "https://aresep.go.cr/"
+    location: "San José, Costa Rica"
+    parent_organization: null
+    roles:
+      - "Regulation"
+      - "Oversight"
+
+  - id: "organization:004"
+    name: "Banco Central de Costa Rica (BCCR)"
+    description: "El banco central responsable de operar el sistema nacional de pago electrónico del país (SINPE-TP)."
+    stakeholder: "stakeholder:007"
+    type: "Agencia Gubernamental"
+    contact: "atencionalciudadano@bccr.fi.cr"
+    website: "https://www.bccr.fi.cr/"
+    location: "San José, Costa Rica"
+    parent_organization: null
+    roles:
+      - "Technology Provider"
+      - "Operation"
+
+  # Organizaciones gremiales
+
+  - id: "organization:005"
+    name: "Cámara Nacional de Transportistas de Costa Rica (CANATRANS)"
+    description: "Organización que representa y fortalece la industria de transporte en Costa Rica, proporcionando formación, información y apoyo."
+    stakeholder: "stakeholder:002"
+    type: "Cámara Gremial"
+    contact: "info@canatrans.com"
+    website: "https://canatrans.com/"
+    location: "San José, Costa Rica"
+    parent_organization: null
+    roles:
+      - "Consulting"
+      - "Support"
+
+  - id: "organization:006"
+    name: "Cámara Nacional de Autobuseros de Costa Rica (CANABUS)"
+    description: "Organización que representa y fortalece la industria de autobuses en Costa Rica, proporcionando formación, información y apoyo."
+    stakeholder: "stakeholder:002"
+    type: "Cámara Gremial"
+    contact: "info@canabuscr.com"
+    website: "https://canabuscr.com/"
+    location: "San José, Costa Rica"
+    parent_organization: null
+    roles:
+      - "Consulting"
+      - "Support"
+
+  # Laboratorios de investigación y universidades
+
+  - id: "organization:007"
+    name: "Laboratorio Nacional de Materiales y Modelos Estructurales (LanammeUCR)"
+    description: "Un centro de investigación universitario que proporciona supervisión técnica independiente y legalmente mandatada de la red vial nacional."
+    stakeholder: "stakeholder:008"
+    type: "Laboratorio de Investigación"
+    contact: "contact@lanamme.ucr.ac.cr"
+    website: "https://www.lanamme.ucr.ac.cr/"
+    location: "San José, Costa Rica"
+    parent_organization: null
+    roles:
+      - "Oversight"
+      - "Research"
+
+  - id: "organization:008"
+    name: "ProDUS (Programa de Investigación en Desarrollo Urbano Sostenible)"
+    description: "Programa de investigación de la Universidad de Costa Rica (UCR) enfocado en el análisis y la planificación del desarrollo urbano y la movilidad sostenible."
+    stakeholder: "stakeholder:008"
+    type: "Laboratorio de Investigación"
+    contact: "produs@ucr.ac.cr"
+    website: "https://produs.ucr.ac.cr/"
+    location: "Universidad de Costa Rica, San José, Costa Rica"
+    parent_organization: null
+    roles:
+      - "Research"
+      - "Consulting"
+      - "Planning"
+      
+  - id: "organization:009"
+    name: "Laboratorio de Sistemas Inteligentes de Movilidad (SIMOVI)"
+    description: "Un laboratorio de investigación enfocado en sistemas de movilidad inteligente."
+    stakeholder: "stakeholder:008"
+    type: "Laboratorio de Investigación"
+    contact: "simovi@ucr.ac.cr"
+    website: "https://simovi.ucr.ac.cr"
+    location: "Universidad de Costa Rica, San José, Costa Rica"
+    parent_organization: null
+    roles:
+      - "Research"
+      - "Development"
+      - "Consulting"
+
+  # Agencias de cooperación internacional
+
+  - id: "organization:010"
+    name: "GIZ (Deutsche Gesellschaft für Internationale Zusammenarbeit)"
+    description: "La agencia de cooperación internacional de Alemania, un socio clave en Costa Rica para proyectos de descarbonización y modernización del transporte."
+    stakeholder: "stakeholder:009"
+    type: "Agencia de Cooperación Internacional"
+    contact: "info.costarica@giz.de"
+    website: "https://www.giz.de/en/worldwide/315.html"
+    location: "San José, Costa Rica"
+    parent_organization: null
+    roles:
+      - "Funding"
+      - "Consulting"
+      - "Support"
+
+  - id: "organization:011"
+    name: "Unión Europea (Delegación en Costa Rica)"
+    description: "La delegación oficial de la Unión Europea en Costa Rica, que financia y apoya proyectos de desarrollo sostenible, política climática y movilidad."
+    stakeholder: "stakeholder:009"
+    type: "Organización Internacional"
+    contact: "DELEGATION-COSTA-RICA@eeas.europa.eu"
+    website: "https://www.eeas.europa.eu/delegations/costa-rica_es"
+    location: "San José, Costa Rica"
+    parent_organization: null
+    roles:
+      - "Funding"
+      - "Oversight"
+
+  - id: "organization:012"
+    name: "Fundación CRUSA"
+    description: "Organización costarricense que invierte capital y financia iniciativas estratégicas para el desarrollo sostenible y el capital humano, incluyendo la movilidad eléctrica."
+    stakeholder: "stakeholder:009"
+    type: "Fundación"
+    contact: "info@crusa.cr"
+    website: "https://www.crusa.cr/"
+    location: "San José, Costa Rica"
+    parent_organization: null
+    roles:
+      - "Funding"
+      - "Support"
+
+  # Organizaciones no gubernamentales y de la sociedad civil
+
+  - id: "organization:013"
+    name: "Centro para la Sostenibilidad Urbana (CPSU)"
+    description: "Organización dedicada a la promoción de la sostenibilidad urbana en Costa Rica."
+    stakeholder: "stakeholder:010"
+    type: "Organización No Gubernamental"
+    contact: "info@cpsu.org"
+    website: "https://www.cpsu.org/"
+    location: "San José, Costa Rica"
+    parent_organization: null
+    roles:
+      - "Consulting"
+      - "Research"
+      - "Oversight"
+
+  # Ministerios
+
+  - id: "organization:014"
+    name: "Ministerio de Ciencia, Innovación, Tecnología y Telecomunicaciones (MICITT)"
+    description: "El ministerio gubernamental responsable de la formulación y ejecución de políticas relacionadas con la ciencia, la tecnología y las telecomunicaciones en Costa Rica."
+    stakeholder: "stakeholder:003"
+    type: "Agencia Gubernamental"
+    contact: "info@micitt.go.cr"
+    website: "https://www.micitt.go.cr/"
+    location: "San José, Costa Rica"
+    parent_organization: null
+    roles:
+      - "Planning"
+      - "Regulation"
+
+  - id: "organization:015"
+    name: "Ministerio de Ambiente y Energía (MINAE)"
+    description: "Ministerio gubernamental responsable de las políticas de energía, recursos naturales y protección ambiental, clave en la descarbonización del transporte."
+    stakeholder: "stakeholder:003"
+    type: "Agencia Gubernamental"
+    contact: "contact@minae.go.cr"
+    website: "https://www.minae.go.cr/"
+    location: "San José, Costa Rica"
+    parent_organization: null
+    roles:
+      - "Regulation"
+      - "Planning"
+
+  - id: "organization:016"
+    name: "Ministerio de Planificación Nacional y Política Económica (MIDEPLAN)"
+    description: "Ministerio responsable de la planificación nacional del desarrollo y la inversión pública, alineando proyectos de transporte con la estrategia país."
+    stakeholder: "stakeholder:003"
+    type: "Agencia Gubernamental"
+    contact: "info@mideplan.go.cr"
+    website: "https://www.mideplan.go.cr/"
+    location: "San José, Costa Rica"
+    parent_organization: null
+    roles:
+      - "Planning"
+      - "Oversight"
+
+  # Proveedores de servicios y tecnología
+
+  - id: "organization:017"
+    name: "Grupo ICE (Instituto Costarricense de Electricidad)"
+    description: "Grupo empresarial estatal integrado por cuatro empresas que ofrecen soluciones de electricidad y telecomunicaciones en Costa Rica."
+    stakeholder: "stakeholder:007"
+    type: "Empresa Estatal"
+    contact: "contactenos@ice.go.cr"
+    website: "https://www.grupoice.com/"
+    location: "San José, Costa Rica"
+    parent_organization: null
+    roles:
+      - "Technology Provider"
+      - "Service Provider"
+
+  
+  - id: "organization:018"
+    name: "Cooperativa de Electrificación Rural Los Santos (Coopesantos R.L.)"
+    description: "Cooperativa que brinda servicio eléctrico, internet y TV por cable a la zona de los Santos y Caraigres."
+    stakeholder: "stakeholder:007"
+    type: "Cooperativa"
+    contact: "servicioalcliente@coopesantos.com"
+    website: "https://www.coopesantos.com/"
+    location: "Zona de los Santos, Costa Rica"
+    parent_organization: null
+    roles:
+      - "Service Provider"
+
+  - id: "organization:019"
+    name: "Compañía Nacional de Fuerza y Luz (CNFL)"
+    description: "Empresa filial del Grupo ICE, distribuidora de energía eléctrica en la Gran Área Metropolitana (GAM)."
+    stakeholder: "stakeholder:007"
+    type: "Empresa Estatal"
+    contact: "contact@cnfl.go.cr"
+    website: "https://www.cnfl.go.cr/"
+    location: "San José, Costa Rica"
+    parent_organization: "organization:017"
+    roles:
+      - "Service Provider"
+      - "Technology Provider"
+
+  - id: "organization:020"
+    name: "Radiográfica Costarricense (RACSA)"
+    description: "Empresa filial del Grupo ICE especializada en servicios de conectividad y soluciones digitales."
+    stakeholder: "stakeholder:007"
+    type: "Empresa Estatal"
+    contact: "contact@racsa.go.cr"
+    website: "https://www.racsa.go.cr/"
+    location: "San José, Costa Rica"
+    parent_organization: "organization:017"
+    roles:
+      - "Technology Provider"
+      - "Service Provider"

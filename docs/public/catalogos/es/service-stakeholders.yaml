@@ -1,0 +1,146 @@
+# yaml-language-server: $schema=../schemas/service-stakeholders.schema.json
+
+metadata:
+  title: "Catálogo de Partes Interesadas"
+  version: "1.1"
+  date: "2025-10-23"
+  description: "Un catálogo de las categorías de partes interesadas para el Sistema de Información del Transporte Público."
+  author:
+    - "Fabián Abarca Calderón"
+    - "Jose Murillo Vargas"
+  organization: "Laboratorio de Sistemas Inteligentes de Movilidad (SIMOVI)"
+  contact: "simovi@ucr.ac.cr"
+  license: "CC BY-NC 4.0"
+
+stakeholders:
+  - id: "stakeholder:001"
+    name: "Personas usuarias"
+    description: "Personas que utilizan el sistema de transporte público para sus desplazamientos diarios o necesidades de viaje."
+    role: "End Users"
+    interests:
+      - "Información confiable y oportuna sobre llegadas y salidas de autobuses."
+      - "Aplicación móvil fácil de usar para la planificación de rutas."
+      - "Actualizaciones en tiempo real sobre interrupciones o retrasos del servicio."
+    influence: "High"
+    priority: "High"
+
+  - id: "stakeholder:002"
+    name: "Empresas operadoras de autobuses"
+    description: "Empresas o entidades responsables de operar los autobuses dentro del sistema de transporte público."
+    role: "Service Providers"
+    interests:
+      - "Programación y despacho eficiente de autobuses."
+      - "Acceso a datos en tiempo real para una mejor gestión de la flota."
+      - "Integración con sistemas de pago para la recaudación de tarifas."
+    influence: "High"
+    priority: "High"
+
+  - id: "stakeholder:003"
+    name: "Autoridades del transporte público"
+    description: "Entidades gubernamentales que supervisan las operaciones, políticas, regulaciones y financiamiento del transporte público."
+    role: "Regulators and Planners"
+    interests:
+      - "Cumplimiento de regulaciones y estándares de transporte."
+      - "Análisis de datos para mejorar los servicios de transporte."
+      - "Satisfacción de las personas usuarias y mecanismos de retroalimentación."
+    influence: "High"
+    priority: "Medium"
+
+  - id: "stakeholder:004"
+    name: "Autoridades reguladoras del servicio de transporte público"
+    description: "Entidades encargadas de establecer y hacer cumplir las normativas y estándares para el servicio de transporte público."
+    role: "Regulators"
+    interests:
+      - "Asegurar el cumplimiento de las regulaciones y estándares del sector."
+      - "Monitorear la calidad del servicio y la seguridad de las personas usuarias."
+      - "Implementar políticas para mejorar la eficiencia y sostenibilidad del transporte público."
+    influence: "High"
+    priority: "High"
+
+  - id: "stakeholder:005"
+    name: "Equipos de mantenimiento técnico"
+    description: "Personal responsable del mantenimiento y reparación de autobuses e infraestructura relacionada."
+    role: "Support Staff"
+    interests:
+      - "Acceso a cronogramas y registros de mantenimiento."
+      - "Alertas en tiempo real sobre problemas o averías de vehículos."
+      - "Comunicación eficiente con las operadoras de autobuses."
+    influence: "Medium"
+    priority: "Medium"
+
+  - id: "stakeholder:006"
+    name: "Personal de soporte de tecnologías de información y comunicación (TIC)"
+    description: "Equipos responsables de mantener la infraestructura tecnológica del sistema de información de transporte público."
+    role: "Technical Support"
+    interests:
+      - "Disponibilidad y confiabilidad del sistema."
+      - "Seguridad de los datos de los usuarios e integridad del sistema."
+      - "Escalabilidad para manejar el aumento de la demanda de usuarios."
+    influence: "Medium"
+    priority: "Medium"
+
+  - id: "stakeholder:007"
+    name: "Proveedores de tecnologías de información y comunicación (TIC)"
+    description: "Entidades que diseñan, construyen y operan la infraestructura digital."
+    role: "Technology Vendors"
+    interests:
+      - "Seguridad y estabilidad de las plataformas técnicas."
+      - "Adherencia a los estándares de la industria."
+      - "Integración exitosa con otros componentes del sistema."
+    influence: "High"
+    priority: "High"
+
+  - id: "stakeholder:008"
+    name: "Cuerpos académicos y de investigación"
+    description: "Laboratorios universitarios y centros de investigación que proporcionan supervisión técnica independiente, análisis de datos y apoyo en la planificación estratégica."
+    role: "Research Organizations"
+    interests:
+      - "Proporcionar supervisión técnica independiente y basada en datos."
+      - "Influir en la política pública con investigación basada en evidencia."
+      - "Utilizar datos de movilidad para crear y validar modelos de desarrollo urbano."
+    influence: "Medium"
+    priority: "Medium"
+
+  - id: "stakeholder:009"
+    name: "Agencias de cooperación internacional"
+    description: "Organizaciones multilaterales y agencias de desarrollo que proporcionan financiamiento, experiencia técnica y apoyo estratégico para proyectos de modernización."
+    role: "International Organizations"
+    interests:
+      - "Cumplir con los objetivos climáticos y de desarrollo a través de proyectos financiados."
+      - "Asegurar la implementación y gobernanza exitosa de las iniciativas apoyadas."
+      - "Promover la adopción de estándares internacionales y mejores prácticas."
+    influence: "Medium"
+    priority: "High"
+
+  - id: "stakeholder:010"
+    name: "Organizaciones no gubernamentales y organizaciones de la sociedad civil"
+    description: "Entidades que representan los intereses de la sociedad civil y abogan por cambios en las políticas públicas."
+    role: "Civil Society"
+    interests:
+      - "Promover la equidad y la justicia social en el transporte público."
+      - "Asegurar la participación ciudadana en la toma de decisiones."
+      - "Monitorear el cumplimiento de los derechos de las personas usuarias."
+    influence: "Medium"
+    priority: "High"
+
+  - id: "stakeholder:011"
+    name: "Personas usuarias viales"
+    description: "Peatones, ciclistas, conductores de vehículos privados y otros usuarios que comparten la infraestructura vial con el transporte público."
+    role: "Civil Society"
+    interests:
+      - "Seguridad en las intersecciones y paradas de autobús."
+      - "Infraestructura vial compartida de forma equitativa."
+      - "Reducción de la congestión y la contaminación."
+    influence: "Medium"
+    priority: "Medium"
+
+  - id: "stakeholder:012"
+    name: "Personas con discapacidad"
+    description: "Personas con movilidad reducida, discapacidades visuales, auditivas u otras que requieren características de accesibilidad especiales en el transporte."
+    role: "End Users"
+    interests:
+      - "Accesibilidad universal en autobuses y paradas (rampas, espacio para sillas de ruedas)."
+      - "Sistemas de información auditivos y visuales claros."
+      - "Tarifas y políticas de asistencia justas."
+    influence: "High"
+    priority: "High"

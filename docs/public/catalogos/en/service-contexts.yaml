@@ -1,0 +1,126 @@
+# yaml-language-server: $schema=../schemas/service-contexts.schema.json
+
+metadata:
+  title: "Service Contexts Catalog"
+  version: "0.1"
+  date: "2025-12-16"
+  description: "A comprehensive catalog of physical spaces within the public transportation domain, including transit infrastructure and other locations that form part of the passenger journey or serve as signage placement points."
+  author:
+    - "Fabián Abarca Calderón"
+  organization: "Intelligent Mobility Systems Laboratory (SIMOVI)"
+  contact: "simovi@ucr.ac.cr"
+  license: "CC BY-NC 4.0"
+
+contexts:
+
+  # Transit Infrastructure Spaces
+
+  - id: "space:stop"
+    name: "Stop"
+    description: "A designated place where buses stop to pick up or drop off passengers."
+    type: "Physical"
+    is_transit_infrastructure: true
+    route_type: [3]
+
+  - id: "space:station"
+    name: "Station"
+    description: "A larger facility that serves as a hub for multiple stops and routes."
+    type: "Physical"
+    is_transit_infrastructure: true
+    route_type: [0, 1, 2, 3, 4, 5, 6, 7, 11]
+
+  - id: "space:center"
+    name: "Administration Centers"
+    description: "Offices, buildings or complexes used for the management and operation of transit services."
+    type: "Physical"
+    is_transit_infrastructure: true
+
+  # Transit Vehicles Spaces
+
+  - id: "space:inside_vehicle"
+    name: "Inside Vehicle"
+    description: "The interior space of a transit vehicle where passengers sit or stand."
+    type: "Physical"
+    is_transit_infrastructure: true
+    route_type: [0, 1, 2, 3, 4, 5, 6, 7, 11]
+
+  - id: "space:outside_vehicle"
+    name: "Outside Vehicle"
+    description: "The exterior space of a transit vehicle, including signage and markings."
+    type: "Physical"
+    is_transit_infrastructure: true
+    route_type: [0, 1, 2, 3, 4, 5, 6, 7, 11]
+
+  # Other Physical Spaces
+
+  - id: "space:street"
+    name: "Street"
+    description: "Public roads and pathways used by various modes of transportation."
+    type: "Physical"
+    is_transit_infrastructure: false
+
+  - id: "space:airport"
+    name: "Airport"
+    description: "A facility for air travel, including runways, terminals, and support services."
+    type: "Physical"
+    is_transit_infrastructure: false
+
+  - id: "space:stadium"
+    name: "Stadium"
+    description: "A large venue for sports and entertainment events, often requiring special transportation arrangements."
+    type: "Physical"
+    is_transit_infrastructure: false
+
+  - id: "space:shopping"
+    name: "Shopping Mall"
+    description: "A commercial complex that may include parking facilities and public transit access."
+    type: "Physical"
+    is_transit_infrastructure: false
+
+  - id: "space:attraction"
+    name: "Attraction"
+    description: "A location of interest that may draw visitors and require transportation services."
+    type: "Physical"
+    is_transit_infrastructure: false
+
+  - id: "space:hospital"
+    name: "Hospital"
+    description: "A medical facility that may have specific transportation needs for patients and staff."
+    type: "Physical"
+    is_transit_infrastructure: false
+
+  - id: "space:park"
+    name: "Park"
+    description: "A public recreational area that may be served by transportation options."
+    type: "Physical"
+    is_transit_infrastructure: false
+
+  - id: "space:campus"
+    name: "University Campus"
+    description: "An educational institution's grounds that may have dedicated transportation services."
+    type: "Physical"
+    is_transit_infrastructure: false
+
+  - id: "space:condominium"
+    name: "Condominium"
+    description: "A residential complex that may have specific transportation arrangements for residents."
+    type: "Physical"
+    is_transit_infrastructure: false
+
+  - id: "space:event"
+    name: "Event Venue"
+    description: "A location where events are held, often requiring temporary transportation solutions."
+    type: "Physical"
+    is_transit_infrastructure: false
+
+  - id: "space:industrial"
+    name: "Industrial Area"
+    description: "A zone designated for industrial activities that may have unique transportation needs."
+    type: "Physical"
+    is_transit_infrastructure: false
+
+  - id: "space:market"
+    name: "Market"
+    description: "A commercial area where goods are bought and sold, potentially requiring transportation access."
+    type: "Physical"
+    is_transit_infrastructure: false

@@ -1,14 +1,14 @@
 # yaml-language-server: $schema=../schemas/governance-actors.schema.json
 
 metadata:
-  title: "Actor Catalog"
+  title: "Governance Actors Catalog"
   version: "1.3"
   date: "2025-10-23"
   description: "A catalog of the actors (individuals) for the Public Transportation Information System."
   author:
     - "Fabián Abarca Calderón"
     - "Jose Murillo Vargas"
-  organization: "Intelligent Mobility Systems Laboratory (SIMOVI)"
+  organization: "Laboratory of Intelligent Mobility Systems (SIMOVI)"
   contact: "simovi@ucr.ac.cr"
   license: "CC BY-NC 4.0"
 

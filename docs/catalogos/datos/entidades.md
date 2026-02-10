@@ -1,4 +1,4 @@
-<!-- AUTO-GENERATED FILE - DO NOT EDIT. See scripts/generate-catalogs.mjs -->
+<!-- AUTO-GENERATED FILE - DO NOT EDIT. See scripts/generate-catalogs.mjs | Generated: 2026-02-10 -->
 
 # Entidades de datos
 
@@ -9,7 +9,7 @@
 | Versión | 1.0.0 |
 | Fecha | 2025-09-18 |
 | Descripción | Entidades canónicas del Sistema de Información de Transporte Público (alineadas a GTFS y extensiones operativas). |
-| Autores | Jostin Cubero Torres, Fabián Abarca Calderón |
+| Autores | Fabián Abarca Calderón, Jostin Cubero Torres |
 | Organización | Laboratorio de Sistemas Inteligentes de Movilidad (SIMOVI) |
 | Contacto | simovi@ucr.ac.cr |
 | Licencia | CC BY-NC 4.0 |
@@ -20,10 +20,10 @@
 
 <span class="catalog-badge" style="--catalog-badge-bg:var(--vp-c-default-soft)"><code style="background:none;padding:0;margin:0;border:0;">data-entity:001</code></span>
 
-- Presencia: Operational
-- Descripción: Representa un vehículo de transporte (p. ej., autobús, tren) que opera servicios programados o no programados.
+- Presence: Operational
+- Description: Representa un vehículo de transporte (p. ej., autobús, tren) que opera servicios programados o no programados.
 
-**Atributos:**
+**Attributes:**
 
 | Nombre | Tipo | Descripción |
 | --- | --- | --- |
@@ -39,10 +39,10 @@
 
 <span class="catalog-badge" style="--catalog-badge-bg:var(--vp-c-default-soft)"><code style="background:none;padding:0;margin:0;border:0;">data-entity:002</code></span>
 
-- Presencia: Operational
-- Descripción: Equipo electrónico instalado en los vehículos para adquisición de datos, posicionamiento o comunicación (p. ej., GPS, validador, APC).
+- Presence: Operational
+- Description: Equipo electrónico instalado en los vehículos para adquisición de datos, posicionamiento o comunicación (p. ej., GPS, validador, APC).
 
-**Atributos:**
+**Attributes:**
 
 | Nombre | Tipo | Descripción |
 | --- | --- | --- |
@@ -58,10 +58,10 @@
 
 <span class="catalog-badge" style="--catalog-badge-bg:var(--vp-c-default-soft)"><code style="background:none;padding:0;margin:0;border:0;">data-entity:003</code></span>
 
-- Presencia: Operational
-- Descripción: Equipamiento fijo instalado en estaciones o puntos de infraestructura para captura de datos o información al pasajero (p. ej., sensores, gateways, CCTV).
+- Presence: Operational
+- Description: Equipamiento fijo instalado en estaciones o puntos de infraestructura para captura de datos o información al pasajero (p. ej., sensores, gateways, CCTV).
 
-**Atributos:**
+**Attributes:**
 
 | Nombre | Tipo | Descripción |
 | --- | --- | --- |
@@ -76,10 +76,10 @@
 
 <span class="catalog-badge" style="--catalog-badge-bg:var(--vp-c-default-soft)"><code style="background:none;padding:0;margin:0;border:0;">data-entity:004</code></span>
 
-- Presencia: Operational
-- Descripción: Pantalla de información pública instalada en vehículos o estaciones para presentar información de transporte en tiempo real.
+- Presence: Operational
+- Description: Pantalla de información pública instalada en vehículos o estaciones para presentar información de transporte en tiempo real.
 
-**Atributos:**
+**Attributes:**
 
 | Nombre | Tipo | Descripción |
 | --- | --- | --- |
@@ -95,10 +95,10 @@
 
 <span class="catalog-badge" style="--catalog-badge-bg:var(--vp-c-default-soft)"><code style="background:none;padding:0;margin:0;border:0;">data-entity:005</code></span>
 
-- Presencia: Operational
-- Descripción: Operador humano de un vehículo, responsable de la ejecución segura y puntual del servicio.
+- Presence: Operational
+- Description: Operador humano de un vehículo, responsable de la ejecución segura y puntual del servicio.
 
-**Atributos:**
+**Attributes:**
 
 | Nombre | Tipo | Descripción |
 | --- | --- | --- |
@@ -114,10 +114,10 @@
 
 <span class="catalog-badge" style="--catalog-badge-bg:var(--vp-c-default-soft)"><code style="background:none;padding:0;margin:0;border:0;">data-entity:006</code></span>
 
-- Presencia: Operational
-- Descripción: Personal o software responsable de asignar, monitorear y controlar vehículos y conductores en operación.
+- Presence: Operational
+- Description: Personal o software responsable de asignar, monitorear y controlar vehículos y conductores en operación.
 
-**Atributos:**
+**Attributes:**
 
 | Nombre | Tipo | Descripción |
 | --- | --- | --- |

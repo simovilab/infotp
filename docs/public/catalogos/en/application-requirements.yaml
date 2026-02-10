@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=../schemas/application-requirements.schema.json
 
 metadata:
-  title: "Architecture Requirements Catalog"
+  title: "Application Requirements Catalog"
   version: "1.0"
   date: "2025-09-18"
   description: "A catalog of architectural requirements for a Public Transportation Information System."

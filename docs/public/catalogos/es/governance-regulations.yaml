@@ -1,0 +1,14 @@
+# yaml-language-server: $schema=../schemas/governance-regulations.schema.json
+
+metadata:
+  title: "Governance Instruments Catalog"
+  version: "0.1"
+  date: "2025-10-23"
+  description: "A catalog of governance instruments for the Public Transportation Information System."
+  author:
+    - "Fabián Abarca Calderón"
+  organization: "Intelligent Mobility Systems Laboratory (SIMOVI)"
+  contact: "simovi@ucr.ac.cr"
+  license: "CC BY-NC 4.0"
+
+regulations:

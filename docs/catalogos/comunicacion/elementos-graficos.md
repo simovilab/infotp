@@ -1,4 +1,4 @@
-<!-- AUTO-GENERATED FILE - DO NOT EDIT. See scripts/generate-catalogs.mjs -->
+<!-- AUTO-GENERATED FILE - DO NOT EDIT. See scripts/generate-catalogs.mjs | Generated: 2026-02-10 -->
 
 # Elementos gráficos
 
@@ -9,11 +9,21 @@
 | Versión | 0.1 |
 | Fecha | 2025-11-12 |
 | Descripción | Define los elementos visuales principales incluyendo colores, tipografía, formas e íconos. |
-| Autores | Ian Gama Oashi, Fabián Abarca Calderón |
+| Autores | Fabián Abarca Calderón, Ian Gama Oashi |
 | Organización | Laboratorio de Sistemas Inteligentes de Movilidad (SIMOVI) |
 | Contacto | simovi@ucr.ac.cr |
 | Licencia | CC BY-NC 4.0 |
 
+
+## Color schemes
+
+
+<a id="scheme-001"></a>
+### Esquema de marca
+
+<span class="catalog-badge" style="--catalog-badge-bg:var(--vp-c-default-soft)"><code style="background:none;padding:0;margin:0;border:0;">scheme:001</code></span>
+
+- Colors: color:001, color:002
 
 ## Colores
 

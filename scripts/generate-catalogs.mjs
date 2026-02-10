@@ -68,86 +68,74 @@ try {
   console.warn("Warning: unable to read format.json:", e?.message || e)
 }
 
+// Catalog configuration (single source of truth)
+// - basename: YAML filename without extension under docs/public/catalogos/<locale>
+// - outPath: output path under docs/catalogos
+// - title: H1 title (fallback to metadata.title if omitted)
+// - sectionKey/sectionLabel: primary array key and its display label
+const CATALOG_DEFS = [
+  { basename: "service-stakeholders", outPath: "servicio/partes-interesadas.md", title: "Partes interesadas", sectionKey: "stakeholders", sectionLabel: "Partes interesadas" },
+  { basename: "service-spaces", outPath: "servicio/espacios.md", title: "Espacios físicos y entornos", sectionKey: "spaces", sectionLabel: "Espacios" },
+  { basename: "service-times", outPath: "servicio/tiempos.md", title: "Tiempos", sectionKey: "times", sectionLabel: "Tiempos" },
+  { basename: "service-contexts", outPath: "servicio/contextos.md", title: "Contextos", sectionKey: "contexts", sectionLabel: "Contextos" },
+  { basename: "service-information-needs", outPath: "servicio/necesidades-informacion.md", title: "Necesidades de información", sectionKey: "needs", sectionLabel: "Necesidades" },
+
+  { basename: "application-applications", outPath: "aplicacion/aplicaciones.md", title: "Aplicaciones", sectionKey: "applications", sectionLabel: "Aplicaciones" },
+  { basename: "application-requirements", outPath: "aplicacion/requisitos.md", title: "Requisitos", sectionKey: "requirements", sectionLabel: "Requisitos" },
+
+  { basename: "data-entities", outPath: "datos/entidades.md", title: "Entidades de datos", sectionKey: "data_entities", sectionLabel: "Entidades de datos" },
+  { basename: "data-components", outPath: "datos/componentes.md", title: "Componentes de datos", sectionKey: "data_components", sectionLabel: "Componentes de datos" },
+
+  { basename: "architecture-components", outPath: "arquitectura/componentes.md", title: "Componentes de arquitectura", sectionKey: "components", sectionLabel: "Componentes" },
+  { basename: "architecture-patterns", outPath: "arquitectura/patrones.md", title: "Patrones de arquitectura", sectionKey: "patterns", sectionLabel: "Patrones" },  
+
+  { basename: "technology-technologies", outPath: "tecnologia/tecnologias.md", title: "Tecnologías", sectionKey: "technologies", sectionLabel: "Tecnologías" },
+  { basename: "technology-standards", outPath: "tecnologia/estandares.md", title: "Estándares", sectionKey: "standards", sectionLabel: "Estándares" },
+  { basename: "technology-interfaces", outPath: "tecnologia/interfaces.md", title: "Interfaces", sectionKey: "interfaces", sectionLabel: "Interfaces" },
+
+  { basename: "communication-brands", outPath: "comunicacion/marcas.md", title: "Marca", sectionKey: "brands", sectionLabel: "Marcas" },
+  { basename: "communication-graphics", outPath: "comunicacion/elementos-graficos.md", title: "Elementos gráficos", sectionKey: "graphics", sectionLabel: "Elementos gráficos" },
+  { basename: "communication-signage", outPath: "comunicacion/senalizacion.md", title: "Señalización", sectionKey: "signage", sectionLabel: "Señalización" },
+  { basename: "communication-interfaces", outPath: "comunicacion/interfaces.md", title: "Interfaces gráficas", sectionKey: "components", sectionLabel: "Componentes" },
+
+  { basename: "governance-organizations", outPath: "gobernanza/organizaciones.md", title: "Organizaciones", sectionKey: "organizations", sectionLabel: "Organizaciones" },
+  { basename: "governance-actors", outPath: "gobernanza/actores.md", title: "Actores", sectionKey: "actors", sectionLabel: "Actores" },
+  { basename: "governance-principles", outPath: "gobernanza/principios.md", title: "Principios", sectionKey: "principles", sectionLabel: "Principios" },
+  { basename: "governance-regulations", outPath: "gobernanza/regulaciones.md", title: "Regulaciones", sectionKey: "regulations", sectionLabel: "Regulaciones" },
+]
+
 // Map single YAML basenames -> relative output paths under docs/catalogos
-// Basenames correspond to files in docs/.vitepress/theme/data/catalogs/<locale>/*.yaml
-const fileToPath = {
-  principles: "fundamentos/principios.md",
-  stakeholders: "institucional/partes-interesadas.md",
-  actors: "institucional/actores.md",
-  organizations: "institucional/organizaciones.md",
-  applications: "fundamentos/aplicaciones.md",
-  requirements: "fundamentos/requisitos.md",
-  entities: "datos/entidades.md",
-  gtfs: "datos/gtfs.md",
-  components: "datos/componentes.md",
-  technologies: "tecnologia/tecnologias.md",
-  standards: "tecnologia/estandares.md",
-  interfaces: "tecnologia/interfaces.md",
-  brand: "identidad-visual/marca.md",
-  graphics: "identidad-visual/elementos-graficos.md",
-  signage: "identidad-visual/senalizacion.md",
-  gui: "identidad-visual/interfaces-graficas.md",
-  templates: "identidad-visual/plantillas.md",
-  journey: "servicio/recorrido.md",
-  spaces: "servicio/espacios.md",
-}
+const fileToPath = Object.fromEntries(CATALOG_DEFS.map(def => [def.basename, def.outPath]))
+
+// Optional: Display names for the H1 title (Spanish)
+const catalogTitle = Object.fromEntries(
+  CATALOG_DEFS.filter(def => def.title).map(def => [def.basename, def.title])
+)
+
+// Translate known section keys to Spanish for nicer headings
+const sectionLabel = (() => {
+  const base = {
+    metadata: "Metadatos",
+    governance: "Gobernanza",
+    colors: "Colores",
+    typography: "Tipografía",
+    shapes: "Formas",
+    icons: "Íconos",
+  }
+  for (const def of CATALOG_DEFS) {
+    if (def.sectionKey && def.sectionLabel && !(def.sectionKey in base)) {
+      base[def.sectionKey] = def.sectionLabel
+    }
+  }
+  return base
+})()
 
 // Some output pages are composed by merging multiple source files
 // key -> { slug, sources: [basenames...] }
 const groupedSources = {}
 
-// Optional: Display names for the H1 title (Spanish)
-const slugDisplayName = {
-  principios: "Principios",
-  "partes-interesadas": "Partes interesadas",
-  actores: "Actores",
-  organizaciones: "Organizaciones",
-  aplicaciones: "Aplicaciones",
-  requisitos: "Requisitos",
-  // New filenames without suffix used in paths below
-  entidades: "Entidades de datos",
-  gtfs: "GTFS",
-  componentes: "Componentes de datos",
-  tecnologias: "Tecnologías",
-  estandares: "Estándares",
-  interfaces: "Interfaces",
-  // Visual identity catalogs
-  marca: "Marca",
-  "elementos-graficos": "Elementos gráficos",
-  senalizacion: "Señalización",
-  "interfaces-graficas": "Interfaces gráficas",
-  plantillas: "Plantillas",
-  // Service catalogs
-  recorrido: "Etapas del recorrido del pasajero",
-  espacios: "Espacios físicos y entornos",
-}
-
-// Translate known section keys to Spanish for nicer headings
-const sectionLabel = {
-  metadata: "Metadatos",
-  principles: "Principios",
-  stakeholders: "Partes interesadas",
-  applications: "Aplicaciones",
-  requirements: "Requisitos",
-  entities: "Entidades de datos",
-  components: "Componentes de datos",
-  technologies: "Tecnologías",
-  standards: "Estándares",
-  organizations: "Organizaciones",
-  interfaces: "Interfaces",
-  actors: "Actores",
-  brands: "Marcas",
-  governance: "Gobernanza",
-  colors: "Colores",
-  typography: "Tipografía",
-  shapes: "Formas",
-  icons: "Íconos",
-  signage: "Señalización",
-  templates: "Plantillas",
-  steps: "Etapas",
-}
-
-const MARKER = "<!-- AUTO-GENERATED FILE - DO NOT EDIT. See scripts/generate-catalogs.mjs -->"
+const generationDate = new Date().toISOString().slice(0, 10)
+const MARKER = `<!-- AUTO-GENERATED FILE - DO NOT EDIT. See scripts/generate-catalogs.mjs | Generated: ${generationDate} -->`
 
 function prettifyKey(key) {
   if (!key) return ""
@@ -237,30 +225,7 @@ function renderItem(sectionKey, item, index, labelForKey, headingLevel = 2) {
   let out = `\n${anchorId ? `<a id="${anchorId}"></a>\n` : ""}${hashes} ${title}\n\n`
   // Render id as a styled badge with optional icon using FORMAT config
   if (item?.id) {
-    // Determine catalog key from the id prefix before ':' (e.g., 'actors:001')
-    const rawPrefix = String(item.id).split(":")[0]
-    const irregulars = {
-      actor: "actors",
-      organization: "organizations",
-      application: "applications",
-      principle: "principles",
-      requirement: "requirements",
-      entity: "entities",
-      component: "components",
-      standard: "standards",
-      technology: "technologies",
-      interface: "interfaces",
-      stakeholder: "stakeholders",
-      brand: "brand",
-      graphics: "graphics",
-      signage: "signage",
-      gui: "gui",
-      templates: "templates",
-    }
-    const prefix = irregulars[rawPrefix] || (rawPrefix.endsWith("s") ? rawPrefix : `${rawPrefix}s`)
-    let fmt = FORMAT[prefix] || null
-    // Fallback: use section key formatting if prefix wasn't found (handles legacy ids like 'data-component')
-    if (!fmt && sectionKey && FORMAT[sectionKey]) fmt = FORMAT[sectionKey]
+    let fmt = sectionKey && FORMAT[sectionKey] ? FORMAT[sectionKey] : null
     const color = fmt?.color || "var(--vp-c-default-soft)"
     const icon = fmt?.icon || ""
     const iconSpan = icon ? `<span class="catalog-icon material-symbols-outlined">${icon}</span>` : ""
@@ -414,7 +379,7 @@ async function generateOneFromFile(basename, pathOverride = null) {
     data = normalizeKeys(data, i18n[desiredLocale].reverse)
   }
 
-  const title = slugDisplayName[slug] || data?.metadata?.title || prettifyKey(slug)
+  const title = catalogTitle[basename] || data?.metadata?.title || prettifyKey(slug)
 
   let md = ""
   md += `${MARKER}\n\n`
@@ -488,7 +453,7 @@ async function generateGrouped(groupKey, sources) {
     }
   }
 
-  const title = slugDisplayName[slug] || merged?.metadata?.title || prettifyKey(slug)
+  const title = catalogTitle[slug] || merged?.metadata?.title || prettifyKey(slug)
   let md = ""
   md += `${MARKER}\n\n`
   md += `# ${title}\n\n`

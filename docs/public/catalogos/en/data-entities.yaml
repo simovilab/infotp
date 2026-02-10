@@ -2,14 +2,14 @@
 # Metadata about the catalog
 
 metadata:
-  title: "Catálogo de Entidades de Datos"
+  title: "Data Entities Catalog"
   version: "1.0.0"
   date: "2025-09-18"
-  description: "Entidades canónicas del Sistema de Información de Transporte Público (alineadas a GTFS y extensiones operativas)."
+  description: "Canonical entities of the Public Transport Information System (aligned with GTFS and operational extensions)."
   author:
     - "Fabián Abarca Calderón"
     - "Jostin Cubero Torres"
-  organization: "Laboratorio de Sistemas Inteligentes de Movilidad (SIMOVI)"
+  organization: "Laboratory of Intelligent Mobility Systems (SIMOVI)"
   contact: "simovi@ucr.ac.cr"
   license: "CC BY-NC 4.0"
 

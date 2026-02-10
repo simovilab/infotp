@@ -1,10 +1,10 @@
 # yaml-language-server: $schema=../schemas/technology-interfaces.schema.json
 
 metadata:
-  title: "Architecture Interfaces Catalog"
+  title: "Technology Interfaces Catalog"
   version: "0.1"
   date: "2025-11-13"
-  description: "A catalog of architectural interfaces for a Public Transport Information System."
+  description: "A catalog of technology interfaces for a Public Transport Information System."
   author:
     - "Fabián Abarca Calderón"
     - "Oriana Mora López"

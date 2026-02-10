@@ -1,0 +1,72 @@
+# yaml-language-server: $schema=../schemas/architecture-components.schema.json
+
+metadata:
+  title: "Catálogo de componentes de arquitectura"
+  version: "0.1"
+  date: "2025-11-27"
+  description: "Un catálogo de componentes de arquitectura para el sistema de información de transporte público (InfoTP)."
+  author:
+    - "Fabián Abarca Calderón"
+  organization: "Laboratorio de Sistemas Inteligentes de Movilidad (SIMOVI)"
+  contact: "simovi@ucr.ac.cr"
+  license: "CC BY-NC 4.0"
+
+components:
+  - id: "component:backend"
+    name: "Backend"
+    code: "backend"
+    description: "El componente de backend es responsable de la lógica de negocio, el procesamiento de datos, la gestión de la base de datos y la exposición de APIs para el sistema de información"
+    technologies:
+      - "technology:python"
+  - id: "component:state"
+    name: "State"
+    code: "state"
+    description: "El componente de estado representa la información actual del sistema, incluyendo datos en tiempo real sobre el transporte público, como horarios, ubicaciones de vehículos, condiciones del tráfico, etc."
+    technologies:
+      - "technology:redis"
+  - id: "component:realtime-engine"
+    name: "Real-time Engine"
+    code: "realtime-engine"
+    description: "El componente de motor en tiempo real es responsable de procesar y analizar los datos en tiempo real para generar información útil para los usuarios, como predicciones de llegada, alertas de tráfico, etc."
+    technologies:
+      - "technology:python"
+      - "technology:rust"
+  - id: "component:store"
+    name: "Store"
+    code: "store"
+    description: "El componente de almacenamiento es responsable de almacenar y gestionar los datos históricos y en tiempo real del sistema, incluyendo información sobre rutas, horarios, vehículos, usuarios, etc."
+    technologies:
+      - "technology:postgresql"
+  - id: "component:mqtt-broker"
+    name: "MQTT Broker"
+    code: "mqtt-broker"
+    description: "El componente de broker MQTT es responsable de gestionar la comunicación entre los diferentes componentes del sistema utilizando el protocolo MQTT, facilitando la transmisión de datos en tiempo real."
+    technologies:
+      - "technology:nanomq"
+  - id: "component:publisher"
+    name: "Publisher"
+    code: "publisher"
+    description: "El componente de publicador es responsable de publicar información relevante para los usuarios, como horarios, ubicaciones de vehículos, alertas, etc., a través de diferentes canales de comunicación."
+    technologies:
+      - "technology:python"
+      - "technology:celery"
+  - id: "component:scheduler"
+    name: "Scheduler"
+    code: "scheduler"
+    description: "El componente de programador es responsable de gestionar y coordinar las tareas y procesos del sistema, asegurando que se ejecuten de manera eficiente y oportuna."
+    technologies:
+      - "technology:python"
+      - "technology:celerybeat"
+  - id: "component:message-broker"
+    name: "Message Broker"
+    code: "message-broker"
+    description: "El componente de broker de mensajes es responsable de facilitar la comunicación entre los diferentes componentes del sistema, gestionando el enrutamiento y la entrega de mensajes de manera eficiente."
+    technologies:
+      - "technology:rabbitmq"
+  - id: "component:analytics-engine"
+    name: "Analytics Engine"
+    code: "analytics-engine"
+    description: "El componente de motor de análisis es responsable de procesar y analizar los datos del sistema para generar información útil para la toma de decisiones, como patrones de uso, tendencias, etc."
+    technologies:
+      - "technology:python"
+      - "technology:prefect"

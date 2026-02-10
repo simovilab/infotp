@@ -1,13 +1,13 @@
 # yaml-language-server: $schema=../schemas/governance-principles.schema.json
 
 metadata:
-  title: "Catálogo de principios de arquitectura"
+  title: "Governance Principles Catalog"
   version: "1.0"
   date: "2025-09-18"
-  description: "Un catálogo de principios de diseño de la arquitectura para un Sistema de Información del Transporte Público."
+  description: "A catalog of architecture design principles for a Public Transport Information System."
   author:
     - "Fabián Abarca Calderón"
-  organization: "Laboratorio de Sistemas Inteligentes de Movilidad (SIMOVI)"
+  organization: "Laboratory of Intelligent Mobility Systems (SIMOVI)"
   contact: "simovi@ucr.ac.cr"
   license: "CC BY-NC 4.0"
   references:

@@ -1,14 +1,14 @@
 # yaml-language-server: $schema=../schemas/communication-graphics.schema.json
 
 metadata:
-  title: "Graphic Elements Catalog"
+  title: "Communication Graphic Elements Catalog"
   version: "0.1"
   date: "2025-11-12"
   description: "Defines core visual elements including colors, typography, shapes, and icons."
   author:
     - "Fabián Abarca Calderón"
     - "Ian Gama Oashi"
-  organization: "Laboratorio de Sistemas Inteligentes de Movilidad (SIMOVI)"
+  organization: "Laboratory of Intelligent Mobility Systems (SIMOVI)"
   contact: "simovi@ucr.ac.cr"
   license: "CC BY-NC 4.0"
 

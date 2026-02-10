@@ -1,0 +1,97 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Passenger Journey Steps Catalog Schema",
+  "type": "object",
+  "required": ["metadata", "needs"],
+  "properties": {
+    "metadata": {
+      "$ref": "./metadata.schema.json",
+      "description": "Catalog metadata such as title, version, date, authors, organization, contact, and license"
+    },
+    "needs": {
+      "type": "array",
+      "description": "List of stakeholder information needs",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "domain",
+          "name",
+          "description",
+          "physical_spaces"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^step:\\d{3}$",
+            "description": "Unique identifier for the journey step (step:XXX)"
+          },
+          "domain": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Domain or phase (e.g., Pre-Trip Information, On-Trip, Post-Trip)"
+          },
+          "physical_spaces": {
+            "type": "array",
+            "items": { "type": "string", "minLength": 1 },
+            "minItems": 1,
+            "description": "Physical spaces where the step occurs (e.g., Home, Workplace)"
+          },
+          "name": { "type": "string", "minLength": 1, "description": "Short name of the journey step" },
+          "description": { "type": "string", "minLength": 1, "description": "Detailed explanation describing what happens in this step" },
+          "touchpoints": {
+            "type": "array",
+            "items": { "type": "string", "minLength": 1 },
+            "minItems": 1,
+            "description": "Points of interaction used in this step (e.g., Mobile App, Website, Digital Displays)"
+          },
+          "user_actions": {
+            "type": "array",
+            "items": { "type": "string", "minLength": 1 },
+            "minItems": 1,
+            "description": "Actions carried out by users during this step"
+          },
+          "goals": {
+            "type": "array",
+            "items": { "type": "string", "minLength": 1 },
+            "minItems": 1,
+            "description": "Intended outcomes or objectives of the step"
+          },
+          "pain_points": {
+            "type": "array",
+            "items": { "type": "string", "minLength": 1 },
+            "description": "Common problems or frustrations encountered in this step"
+          },
+          "metrics": {
+            "type": "array",
+            "items": { "type": "string", "minLength": 1 },
+            "description": "Key indicators to measure performance of this step (e.g., load time, satisfaction)"
+          },
+          "preceded_by": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                { "type": "string", "pattern": "^step:\\d{3}$" },
+                { "type": "null" }
+              ]
+            },
+            "description": "Optional predecessors (step IDs)"
+          },
+          "followed_by": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                { "type": "string", "pattern": "^step:\\d{3}$" },
+                { "type": "null" }
+              ]
+            },
+            "description": "Optional successors (step IDs)"
+          }
+        },
+        "additionalProperties": false
+      },
+      "minItems": 1
+    }
+  },
+  "additionalProperties": false
+}

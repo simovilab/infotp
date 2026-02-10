@@ -1,0 +1,40 @@
+# yaml-language-server: $schema=../schemas/communication-brands.schema.json
+
+metadata:
+  title: "Catálogo de identidad de marca"
+  version: "0.1"
+  date: "2025-11-12"
+  description: "Define la base conceptual de la identidad de marca y gobernanza del sistema de información de transporte público."
+  author:
+    - "Fabián Abarca Calderón"
+    - "Ian Gama Oashi"
+  organization: "Laboratorio de Sistemas Inteligentes de Movilidad (SIMOVI)"
+  contact: "simovi@ucr.ac.cr"
+  license: "CC BY-NC 4.0"
+
+brands:
+  - id: brand:001
+    name: "Infobús"
+    tagline: "Conectando personas y movilidad"
+    mission: "Proporcionar información confiable y accesible en tiempo real sobre el transporte público."
+    values:
+      - "Accesibilidad"
+      - "Confiabilidad"
+      - "Transparencia"
+      - "Inclusión"
+    tone_of_voice: "Amigable, claro y confiable."
+    logo_usage_rules: "El logotipo debe usarse siempre con un espacio libre mínimo del 10% de su ancho."
+    visual_theme: "Minimalismo moderno con énfasis en legibilidad y claridad."
+
+governance:
+  responsible_units:
+    - id: org:simovi
+      name: "Laboratorio de Sistemas Inteligentes de Movilidad"
+      role: "Custodio de la identidad visual y responsable técnico."
+    - id: org:municipality
+      name: "Autoridad Municipal de Transporte"
+      role: "Implementación local y supervisión de señalización."
+  versioning_policy: "Versionado semántico (major.minor.patch)"
+  review_cycle: "Anual"
+  license: "CC BY-NC 4.0"
+  repository: "https://github.com/simovi/visual-identity"

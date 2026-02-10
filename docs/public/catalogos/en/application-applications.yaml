@@ -1,14 +1,14 @@
 # yaml-language-server: $schema=../schemas/application-applications.schema.json
 
 metadata:
-  title: "Catálogo de portafolio de aplicaciones"
+  title: "Application Portfolio Catalog"
   version: "0.1"
   date: "2025-11-27"
-  description: "Un catálogo de aplicaciones para el sistema de información de transporte público (InfoTP)."
+  description: "An application catalog for the Public Transport Information System (InfoTP)."
   author:
     - "Fabián Abarca Calderón"
     - "Pedro Meneses López"
-  organization: "Laboratorio de Sistemas Inteligentes de Movilidad (SIMOVI)"
+  organization: "Laboratory of Intelligent Mobility Systems (SIMOVI)"
   contact: "simovi@ucr.ac.cr"
   license: "CC BY-NC 4.0"
 

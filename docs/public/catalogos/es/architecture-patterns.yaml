@@ -1,0 +1,14 @@
+# yaml-language-server: $schema=../schemas/architecture-patterns.schema.json
+
+metadata:
+  title: "Catálogo de componentes de arquitectura"
+  version: "0.1"
+  date: "2025-11-27"
+  description: "Un catálogo de componentes de arquitectura para el sistema de información de transporte público (InfoTP)."
+  author:
+    - "Fabián Abarca Calderón"
+  organization: "Laboratorio de Sistemas Inteligentes de Movilidad (SIMOVI)"
+  contact: "simovi@ucr.ac.cr"
+  license: "CC BY-NC 4.0"
+
+patterns:

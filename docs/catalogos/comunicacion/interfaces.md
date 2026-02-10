@@ -1,4 +1,4 @@
-<!-- AUTO-GENERATED FILE - DO NOT EDIT. See scripts/generate-catalogs.mjs -->
+<!-- AUTO-GENERATED FILE - DO NOT EDIT. See scripts/generate-catalogs.mjs | Generated: 2026-02-10 -->
 
 # Interfaces gráficas
 
@@ -9,29 +9,27 @@
 | Versión | 0.1 |
 | Fecha | 2025-11-12 |
 | Descripción | Define los componentes de diseño digital para interfaces web, móviles y de pantalla. |
-| Autores | Ian Gama Oashi, Fabián Abarca Calderón |
+| Autores | Fabián Abarca Calderón, Ian Gama Oashi |
 | Organización | Laboratorio de Sistemas Inteligentes de Movilidad (SIMOVI) |
 | Contacto | simovi@ucr.ac.cr |
 | Licencia | CC BY-NC 4.0 |
 
 
-<a id="ui-button-primary"></a>
-## Botón primario
+<a id="gui-website"></a>
+## Plantilla de sitio web
 
-<span class="catalog-badge" style="--catalog-badge-bg:#E6FFFB"><span class="catalog-icon material-symbols-outlined">schema</span><code style="background:none;padding:0;margin:0;border:0;">ui:button-primary</code></span>
+<span class="catalog-badge" style="--catalog-badge-bg:#E6FFFB"><span class="catalog-icon material-symbols-outlined">schema</span><code style="background:none;padding:0;margin:0;border:0;">gui:website</code></span>
 
-- Shape: Rectángulo redondeado
-- Background color: Azul primario
-- Text color: Blanco
-- Font: Inter Bold 16px
-- Hover behavior: Aclarar 10%
-- Accessibility: WCAG 2.1 AA
-- Usage: Usado para acciones principales en las aplicaciones.
+- Layout: Barra lateral izquierda con contenido principal
+- Elements: Menú de navegación, Encabezado con logo, Sección de contenido, Pie de página con enlaces
+- Responsive: true
+- Color scheme: Azul primario, Blanco, Gris claro
+- Typography: Inter
 
-<a id="ui-realtime-screen"></a>
+<a id="gui-screen"></a>
 ## Plantilla de pantalla en tiempo real
 
-<span class="catalog-badge" style="--catalog-badge-bg:#E6FFFB"><span class="catalog-icon material-symbols-outlined">schema</span><code style="background:none;padding:0;margin:0;border:0;">ui:realtime-screen</code></span>
+<span class="catalog-badge" style="--catalog-badge-bg:#E6FFFB"><span class="catalog-icon material-symbols-outlined">schema</span><code style="background:none;padding:0;margin:0;border:0;">gui:screen</code></span>
 
 - Layout: Cuadrícula de 3 columnas
 - Elements: Símbolo de línea, Próximo tiempo de llegada, Destino

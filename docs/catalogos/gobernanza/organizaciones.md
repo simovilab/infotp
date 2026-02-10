@@ -1,4 +1,4 @@
-<!-- AUTO-GENERATED FILE - DO NOT EDIT. See scripts/generate-catalogs.mjs -->
+<!-- AUTO-GENERATED FILE - DO NOT EDIT. See scripts/generate-catalogs.mjs | Generated: 2026-02-10 -->
 
 # Organizaciones
 
@@ -9,7 +9,7 @@
 | Versión | 1.3 |
 | Fecha | 2025-10-23 |
 | Descripción | Un catálogo de las organizaciones específicas para el Sistema de Información del Transporte Público. |
-| Autores | Jose Murillo Vargas, Fabián Abarca Calderón |
+| Autores | Fabián Abarca Calderón, Jose Murillo Vargas |
 | Organización | Laboratorio de Sistemas Inteligentes de Movilidad (SIMOVI) |
 | Contacto | simovi@ucr.ac.cr |
 | Licencia | CC BY-NC 4.0 |
@@ -20,13 +20,13 @@
 
 <span class="catalog-badge" style="--catalog-badge-bg:#F9F0FF"><span class="catalog-icon material-symbols-outlined">apartment</span><code style="background:none;padding:0;margin:0;border:0;">organization:001</code></span>
 
-- Descripción: El ministerio gubernamental que actúa como autoridad suprema y rectora del sector transporte, estableciendo la política nacional.
-- Parte interesada: stakeholder:003
+- Description: El ministerio gubernamental que actúa como autoridad suprema y rectora del sector transporte, estableciendo la política nacional.
+- Stakeholder: stakeholder:003
 - Type: Agencia Gubernamental
-- Contacto: dvagecorrespondencia@mopt.go.cr
-- Sitio web: https://www.mopt.go.cr/
-- Ubicación: San José, Costa Rica
-- Organización padre: —
+- Contact: dvagecorrespondencia@mopt.go.cr
+- Website: https://www.mopt.go.cr/
+- Location: San José, Costa Rica
+- Parent organization: —
 - Roles: Planning, Regulation
 
 <a id="organization-002"></a>
@@ -34,13 +34,13 @@
 
 <span class="catalog-badge" style="--catalog-badge-bg:#F9F0FF"><span class="catalog-icon material-symbols-outlined">apartment</span><code style="background:none;padding:0;margin:0;border:0;">organization:002</code></span>
 
-- Descripción: El organismo especializado dependiente del MOPT, responsable de la gestión diaria y la regulación operativa del transporte público.
-- Parte interesada: stakeholder:003
+- Description: El organismo especializado dependiente del MOPT, responsable de la gestión diaria y la regulación operativa del transporte público.
+- Stakeholder: stakeholder:003
 - Type: Agencia Gubernamental
-- Contacto: atencion.usuario@ctp.go.cr
-- Sitio web: https://www.ctp.go.cr/
-- Ubicación: San José, Costa Rica
-- Organización padre: organization:001
+- Contact: atencion.usuario@ctp.go.cr
+- Website: https://www.ctp.go.cr/
+- Location: San José, Costa Rica
+- Parent organization: organization:001
 - Roles: Operation, Regulation
 
 <a id="organization-003"></a>
@@ -48,13 +48,13 @@
 
 <span class="catalog-badge" style="--catalog-badge-bg:#F9F0FF"><span class="catalog-icon material-symbols-outlined">apartment</span><code style="background:none;padding:0;margin:0;border:0;">organization:003</code></span>
 
-- Descripción: Una autoridad independiente que regula los servicios públicos estableciendo tarifas y supervisando la calidad del servicio.
-- Parte interesada: stakeholder:004
+- Description: Una autoridad independiente que regula los servicios públicos estableciendo tarifas y supervisando la calidad del servicio.
+- Stakeholder: stakeholder:004
 - Type: Agencia Gubernamental
-- Contacto: cmora@aresep.go.cr
-- Sitio web: https://aresep.go.cr/
-- Ubicación: San José, Costa Rica
-- Organización padre: —
+- Contact: cmora@aresep.go.cr
+- Website: https://aresep.go.cr/
+- Location: San José, Costa Rica
+- Parent organization: —
 - Roles: Regulation, Oversight
 
 <a id="organization-004"></a>
@@ -62,13 +62,13 @@
 
 <span class="catalog-badge" style="--catalog-badge-bg:#F9F0FF"><span class="catalog-icon material-symbols-outlined">apartment</span><code style="background:none;padding:0;margin:0;border:0;">organization:004</code></span>
 
-- Descripción: El banco central responsable de operar el sistema nacional de pago electrónico del país (SINPE-TP).
-- Parte interesada: stakeholder:007
+- Description: El banco central responsable de operar el sistema nacional de pago electrónico del país (SINPE-TP).
+- Stakeholder: stakeholder:007
 - Type: Agencia Gubernamental
-- Contacto: atencionalciudadano@bccr.fi.cr
-- Sitio web: https://www.bccr.fi.cr/
-- Ubicación: San José, Costa Rica
-- Organización padre: —
+- Contact: atencionalciudadano@bccr.fi.cr
+- Website: https://www.bccr.fi.cr/
+- Location: San José, Costa Rica
+- Parent organization: —
 - Roles: Technology Provider, Operation
 
 <a id="organization-005"></a>
@@ -76,13 +76,13 @@
 
 <span class="catalog-badge" style="--catalog-badge-bg:#F9F0FF"><span class="catalog-icon material-symbols-outlined">apartment</span><code style="background:none;padding:0;margin:0;border:0;">organization:005</code></span>
 
-- Descripción: Organización que representa y fortalece la industria de transporte en Costa Rica, proporcionando formación, información y apoyo.
-- Parte interesada: stakeholder:002
+- Description: Organización que representa y fortalece la industria de transporte en Costa Rica, proporcionando formación, información y apoyo.
+- Stakeholder: stakeholder:002
 - Type: Cámara Gremial
-- Contacto: info@canatrans.com
-- Sitio web: https://canatrans.com/
-- Ubicación: San José, Costa Rica
-- Organización padre: —
+- Contact: info@canatrans.com
+- Website: https://canatrans.com/
+- Location: San José, Costa Rica
+- Parent organization: —
 - Roles: Consulting, Support
 
 <a id="organization-006"></a>
@@ -90,13 +90,13 @@
 
 <span class="catalog-badge" style="--catalog-badge-bg:#F9F0FF"><span class="catalog-icon material-symbols-outlined">apartment</span><code style="background:none;padding:0;margin:0;border:0;">organization:006</code></span>
 
-- Descripción: Organización que representa y fortalece la industria de autobuses en Costa Rica, proporcionando formación, información y apoyo.
-- Parte interesada: stakeholder:002
+- Description: Organización que representa y fortalece la industria de autobuses en Costa Rica, proporcionando formación, información y apoyo.
+- Stakeholder: stakeholder:002
 - Type: Cámara Gremial
-- Contacto: info@canabuscr.com
-- Sitio web: https://canabuscr.com/
-- Ubicación: San José, Costa Rica
-- Organización padre: —
+- Contact: info@canabuscr.com
+- Website: https://canabuscr.com/
+- Location: San José, Costa Rica
+- Parent organization: —
 - Roles: Consulting, Support
 
 <a id="organization-007"></a>
@@ -104,13 +104,13 @@
 
 <span class="catalog-badge" style="--catalog-badge-bg:#F9F0FF"><span class="catalog-icon material-symbols-outlined">apartment</span><code style="background:none;padding:0;margin:0;border:0;">organization:007</code></span>
 
-- Descripción: Un centro de investigación universitario que proporciona supervisión técnica independiente y legalmente mandatada de la red vial nacional.
-- Parte interesada: stakeholder:008
+- Description: Un centro de investigación universitario que proporciona supervisión técnica independiente y legalmente mandatada de la red vial nacional.
+- Stakeholder: stakeholder:008
 - Type: Laboratorio de Investigación
-- Contacto: contact@lanamme.ucr.ac.cr
-- Sitio web: https://www.lanamme.ucr.ac.cr/
-- Ubicación: San José, Costa Rica
-- Organización padre: —
+- Contact: contact@lanamme.ucr.ac.cr
+- Website: https://www.lanamme.ucr.ac.cr/
+- Location: San José, Costa Rica
+- Parent organization: —
 - Roles: Oversight, Research
 
 <a id="organization-008"></a>
@@ -118,13 +118,13 @@
 
 <span class="catalog-badge" style="--catalog-badge-bg:#F9F0FF"><span class="catalog-icon material-symbols-outlined">apartment</span><code style="background:none;padding:0;margin:0;border:0;">organization:008</code></span>
 
-- Descripción: Programa de investigación de la Universidad de Costa Rica (UCR) enfocado en el análisis y la planificación del desarrollo urbano y la movilidad sostenible.
-- Parte interesada: stakeholder:008
+- Description: Programa de investigación de la Universidad de Costa Rica (UCR) enfocado en el análisis y la planificación del desarrollo urbano y la movilidad sostenible.
+- Stakeholder: stakeholder:008
 - Type: Laboratorio de Investigación
-- Contacto: produs@ucr.ac.cr
-- Sitio web: https://produs.ucr.ac.cr/
-- Ubicación: Universidad de Costa Rica, San José, Costa Rica
-- Organización padre: —
+- Contact: produs@ucr.ac.cr
+- Website: https://produs.ucr.ac.cr/
+- Location: Universidad de Costa Rica, San José, Costa Rica
+- Parent organization: —
 - Roles: Research, Consulting, Planning
 
 <a id="organization-009"></a>
@@ -132,13 +132,13 @@
 
 <span class="catalog-badge" style="--catalog-badge-bg:#F9F0FF"><span class="catalog-icon material-symbols-outlined">apartment</span><code style="background:none;padding:0;margin:0;border:0;">organization:009</code></span>
 
-- Descripción: Un laboratorio de investigación enfocado en sistemas de movilidad inteligente.
-- Parte interesada: stakeholder:008
+- Description: Un laboratorio de investigación enfocado en sistemas de movilidad inteligente.
+- Stakeholder: stakeholder:008
 - Type: Laboratorio de Investigación
-- Contacto: simovi@ucr.ac.cr
-- Sitio web: https://simovi.ucr.ac.cr
-- Ubicación: Universidad de Costa Rica, San José, Costa Rica
-- Organización padre: —
+- Contact: simovi@ucr.ac.cr
+- Website: https://simovi.ucr.ac.cr
+- Location: Universidad de Costa Rica, San José, Costa Rica
+- Parent organization: —
 - Roles: Research, Development, Consulting
 
 <a id="organization-010"></a>
@@ -146,13 +146,13 @@
 
 <span class="catalog-badge" style="--catalog-badge-bg:#F9F0FF"><span class="catalog-icon material-symbols-outlined">apartment</span><code style="background:none;padding:0;margin:0;border:0;">organization:010</code></span>
 
-- Descripción: La agencia de cooperación internacional de Alemania, un socio clave en Costa Rica para proyectos de descarbonización y modernización del transporte.
-- Parte interesada: stakeholder:009
+- Description: La agencia de cooperación internacional de Alemania, un socio clave en Costa Rica para proyectos de descarbonización y modernización del transporte.
+- Stakeholder: stakeholder:009
 - Type: Agencia de Cooperación Internacional
-- Contacto: info.costarica@giz.de
-- Sitio web: https://www.giz.de/en/worldwide/315.html
-- Ubicación: San José, Costa Rica
-- Organización padre: —
+- Contact: info.costarica@giz.de
+- Website: https://www.giz.de/en/worldwide/315.html
+- Location: San José, Costa Rica
+- Parent organization: —
 - Roles: Funding, Consulting, Support
 
 <a id="organization-011"></a>
@@ -160,13 +160,13 @@
 
 <span class="catalog-badge" style="--catalog-badge-bg:#F9F0FF"><span class="catalog-icon material-symbols-outlined">apartment</span><code style="background:none;padding:0;margin:0;border:0;">organization:011</code></span>
 
-- Descripción: La delegación oficial de la Unión Europea en Costa Rica, que financia y apoya proyectos de desarrollo sostenible, política climática y movilidad.
-- Parte interesada: stakeholder:009
+- Description: La delegación oficial de la Unión Europea en Costa Rica, que financia y apoya proyectos de desarrollo sostenible, política climática y movilidad.
+- Stakeholder: stakeholder:009
 - Type: Organización Internacional
-- Contacto: DELEGATION-COSTA-RICA@eeas.europa.eu
-- Sitio web: https://www.eeas.europa.eu/delegations/costa-rica_es
-- Ubicación: San José, Costa Rica
-- Organización padre: —
+- Contact: DELEGATION-COSTA-RICA@eeas.europa.eu
+- Website: https://www.eeas.europa.eu/delegations/costa-rica_es
+- Location: San José, Costa Rica
+- Parent organization: —
 - Roles: Funding, Oversight
 
 <a id="organization-012"></a>
@@ -174,13 +174,13 @@
 
 <span class="catalog-badge" style="--catalog-badge-bg:#F9F0FF"><span class="catalog-icon material-symbols-outlined">apartment</span><code style="background:none;padding:0;margin:0;border:0;">organization:012</code></span>
 
-- Descripción: Organización costarricense que invierte capital y financia iniciativas estratégicas para el desarrollo sostenible y el capital humano, incluyendo la movilidad eléctrica.
-- Parte interesada: stakeholder:009
+- Description: Organización costarricense que invierte capital y financia iniciativas estratégicas para el desarrollo sostenible y el capital humano, incluyendo la movilidad eléctrica.
+- Stakeholder: stakeholder:009
 - Type: Fundación
-- Contacto: info@crusa.cr
-- Sitio web: https://www.crusa.cr/
-- Ubicación: San José, Costa Rica
-- Organización padre: —
+- Contact: info@crusa.cr
+- Website: https://www.crusa.cr/
+- Location: San José, Costa Rica
+- Parent organization: —
 - Roles: Funding, Support
 
 <a id="organization-013"></a>
@@ -188,13 +188,13 @@
 
 <span class="catalog-badge" style="--catalog-badge-bg:#F9F0FF"><span class="catalog-icon material-symbols-outlined">apartment</span><code style="background:none;padding:0;margin:0;border:0;">organization:013</code></span>
 
-- Descripción: Organización dedicada a la promoción de la sostenibilidad urbana en Costa Rica.
-- Parte interesada: stakeholder:010
+- Description: Organización dedicada a la promoción de la sostenibilidad urbana en Costa Rica.
+- Stakeholder: stakeholder:010
 - Type: Organización No Gubernamental
-- Contacto: info@cpsu.org
-- Sitio web: https://www.cpsu.org/
-- Ubicación: San José, Costa Rica
-- Organización padre: —
+- Contact: info@cpsu.org
+- Website: https://www.cpsu.org/
+- Location: San José, Costa Rica
+- Parent organization: —
 - Roles: Consulting, Research, Oversight
 
 <a id="organization-014"></a>
@@ -202,13 +202,13 @@
 
 <span class="catalog-badge" style="--catalog-badge-bg:#F9F0FF"><span class="catalog-icon material-symbols-outlined">apartment</span><code style="background:none;padding:0;margin:0;border:0;">organization:014</code></span>
 
-- Descripción: El ministerio gubernamental responsable de la formulación y ejecución de políticas relacionadas con la ciencia, la tecnología y las telecomunicaciones en Costa Rica.
-- Parte interesada: stakeholder:003
+- Description: El ministerio gubernamental responsable de la formulación y ejecución de políticas relacionadas con la ciencia, la tecnología y las telecomunicaciones en Costa Rica.
+- Stakeholder: stakeholder:003
 - Type: Agencia Gubernamental
-- Contacto: info@micitt.go.cr
-- Sitio web: https://www.micitt.go.cr/
-- Ubicación: San José, Costa Rica
-- Organización padre: —
+- Contact: info@micitt.go.cr
+- Website: https://www.micitt.go.cr/
+- Location: San José, Costa Rica
+- Parent organization: —
 - Roles: Planning, Regulation
 
 <a id="organization-015"></a>
@@ -216,13 +216,13 @@
 
 <span class="catalog-badge" style="--catalog-badge-bg:#F9F0FF"><span class="catalog-icon material-symbols-outlined">apartment</span><code style="background:none;padding:0;margin:0;border:0;">organization:015</code></span>
 
-- Descripción: Ministerio gubernamental responsable de las políticas de energía, recursos naturales y protección ambiental, clave en la descarbonización del transporte.
-- Parte interesada: stakeholder:003
+- Description: Ministerio gubernamental responsable de las políticas de energía, recursos naturales y protección ambiental, clave en la descarbonización del transporte.
+- Stakeholder: stakeholder:003
 - Type: Agencia Gubernamental
-- Contacto: contact@minae.go.cr
-- Sitio web: https://www.minae.go.cr/
-- Ubicación: San José, Costa Rica
-- Organización padre: —
+- Contact: contact@minae.go.cr
+- Website: https://www.minae.go.cr/
+- Location: San José, Costa Rica
+- Parent organization: —
 - Roles: Regulation, Planning
 
 <a id="organization-016"></a>
@@ -230,13 +230,13 @@
 
 <span class="catalog-badge" style="--catalog-badge-bg:#F9F0FF"><span class="catalog-icon material-symbols-outlined">apartment</span><code style="background:none;padding:0;margin:0;border:0;">organization:016</code></span>
 
-- Descripción: Ministerio responsable de la planificación nacional del desarrollo y la inversión pública, alineando proyectos de transporte con la estrategia país.
-- Parte interesada: stakeholder:003
+- Description: Ministerio responsable de la planificación nacional del desarrollo y la inversión pública, alineando proyectos de transporte con la estrategia país.
+- Stakeholder: stakeholder:003
 - Type: Agencia Gubernamental
-- Contacto: info@mideplan.go.cr
-- Sitio web: https://www.mideplan.go.cr/
-- Ubicación: San José, Costa Rica
-- Organización padre: —
+- Contact: info@mideplan.go.cr
+- Website: https://www.mideplan.go.cr/
+- Location: San José, Costa Rica
+- Parent organization: —
 - Roles: Planning, Oversight
 
 <a id="organization-017"></a>
@@ -244,13 +244,13 @@
 
 <span class="catalog-badge" style="--catalog-badge-bg:#F9F0FF"><span class="catalog-icon material-symbols-outlined">apartment</span><code style="background:none;padding:0;margin:0;border:0;">organization:017</code></span>
 
-- Descripción: Grupo empresarial estatal integrado por cuatro empresas que ofrecen soluciones de electricidad y telecomunicaciones en Costa Rica.
-- Parte interesada: stakeholder:007
+- Description: Grupo empresarial estatal integrado por cuatro empresas que ofrecen soluciones de electricidad y telecomunicaciones en Costa Rica.
+- Stakeholder: stakeholder:007
 - Type: Empresa Estatal
-- Contacto: contactenos@ice.go.cr
-- Sitio web: https://www.grupoice.com/
-- Ubicación: San José, Costa Rica
-- Organización padre: —
+- Contact: contactenos@ice.go.cr
+- Website: https://www.grupoice.com/
+- Location: San José, Costa Rica
+- Parent organization: —
 - Roles: Technology Provider, Service Provider
 
 <a id="organization-018"></a>
@@ -258,13 +258,13 @@
 
 <span class="catalog-badge" style="--catalog-badge-bg:#F9F0FF"><span class="catalog-icon material-symbols-outlined">apartment</span><code style="background:none;padding:0;margin:0;border:0;">organization:018</code></span>
 
-- Descripción: Cooperativa que brinda servicio eléctrico, internet y TV por cable a la zona de los Santos y Caraigres.
-- Parte interesada: stakeholder:007
+- Description: Cooperativa que brinda servicio eléctrico, internet y TV por cable a la zona de los Santos y Caraigres.
+- Stakeholder: stakeholder:007
 - Type: Cooperativa
-- Contacto: servicioalcliente@coopesantos.com
-- Sitio web: https://www.coopesantos.com/
-- Ubicación: Zona de los Santos, Costa Rica
-- Organización padre: —
+- Contact: servicioalcliente@coopesantos.com
+- Website: https://www.coopesantos.com/
+- Location: Zona de los Santos, Costa Rica
+- Parent organization: —
 - Roles: Service Provider
 
 <a id="organization-019"></a>
@@ -272,13 +272,13 @@
 
 <span class="catalog-badge" style="--catalog-badge-bg:#F9F0FF"><span class="catalog-icon material-symbols-outlined">apartment</span><code style="background:none;padding:0;margin:0;border:0;">organization:019</code></span>
 
-- Descripción: Empresa filial del Grupo ICE, distribuidora de energía eléctrica en la Gran Área Metropolitana (GAM).
-- Parte interesada: stakeholder:007
+- Description: Empresa filial del Grupo ICE, distribuidora de energía eléctrica en la Gran Área Metropolitana (GAM).
+- Stakeholder: stakeholder:007
 - Type: Empresa Estatal
-- Contacto: contact@cnfl.go.cr
-- Sitio web: https://www.cnfl.go.cr/
-- Ubicación: San José, Costa Rica
-- Organización padre: organization:017
+- Contact: contact@cnfl.go.cr
+- Website: https://www.cnfl.go.cr/
+- Location: San José, Costa Rica
+- Parent organization: organization:017
 - Roles: Service Provider, Technology Provider
 
 <a id="organization-020"></a>
@@ -286,11 +286,11 @@
 
 <span class="catalog-badge" style="--catalog-badge-bg:#F9F0FF"><span class="catalog-icon material-symbols-outlined">apartment</span><code style="background:none;padding:0;margin:0;border:0;">organization:020</code></span>
 
-- Descripción: Empresa filial del Grupo ICE especializada en servicios de conectividad y soluciones digitales.
-- Parte interesada: stakeholder:007
+- Description: Empresa filial del Grupo ICE especializada en servicios de conectividad y soluciones digitales.
+- Stakeholder: stakeholder:007
 - Type: Empresa Estatal
-- Contacto: contact@racsa.go.cr
-- Sitio web: https://www.racsa.go.cr/
-- Ubicación: San José, Costa Rica
-- Organización padre: organization:017
+- Contact: contact@racsa.go.cr
+- Website: https://www.racsa.go.cr/
+- Location: San José, Costa Rica
+- Parent organization: organization:017
 - Roles: Technology Provider, Service Provider

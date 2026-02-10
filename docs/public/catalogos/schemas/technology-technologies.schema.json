@@ -28,7 +28,7 @@
         "properties": {
           "id": {
             "type": "string",
-            "pattern": "^tech:[a-z0-9._-]+$",
+            "pattern": "^technology:[a-z0-9._-]+$",
             "description": "Unique identifier for the technology following the pattern tech:XXX"
           },
           "name": {

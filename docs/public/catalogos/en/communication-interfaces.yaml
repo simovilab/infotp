@@ -1,14 +1,14 @@
 # yaml-language-server: $schema=../schemas/communication-interfaces.schema.json
 
 metadata:
-  title: "Digital Interface Design Catalog"
+  title: "Communication Interfaces Catalog"
   version: "0.1"
   date: "2025-11-12"
   description: "Defines digital design components for web, mobile, and screen interfaces."
   author:
     - "Fabián Abarca Calderón"
     - "Ian Gama Oashi"
-  organization: "Laboratorio de Sistemas Inteligentes de Movilidad (SIMOVI)"
+  organization: "Laboratory of Intelligent Mobility Systems (SIMOVI)"
   contact: "simovi@ucr.ac.cr"
   license: "CC BY-NC 4.0"
 

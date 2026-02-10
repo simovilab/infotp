@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schemas/technology-technologies.schema.json
+
+metadata:
+  title: "Catálogo de portafolio tecnológico"
+  version: "1.0"
+  date: "2025-09-18"
+  description: "Un catálogo de tecnologías para un Sistema de Información de Transporte Público."
+  author:
+    - "Randy Cascante Espinoza"
+    - "Fabián Abarca Calderón"
+  organization: "Laboratorio de Sistemas Inteligentes de Movilidad (SIMOVI)"
+  contact: "simovi@ucr.ac.cr"
+  license: "CC BY-NC 4.0"
+
+# Technology catalog
+technologies:
+  - id: technology:001
+    name: "PostgreSQL"
+    description: "Un sistema de gestión de bases de datos relacional de código abierto."
+    version: "13"
+    organization: "PostgreSQL Global Development Group"
+    website: "https://www.postgresql.org/"
+    usage: "Usado para almacenar y gestionar datos relacionales en el sistema."
+    related_technologies:
+      - "PostGIS"
+      - "pgAdmin"
+    status: "Active"
+    documentation: "https://www.postgresql.org/docs/13/"
+  - id: technology:002
+    name: "Node.js"
+    description: "Un entorno de ejecución de JavaScript construido sobre el motor V8 de Chrome."
+    version: "14.x"
+    organization: "OpenJS Foundation"
+    website: "https://nodejs.org/"
+    usage: "Usado para construir aplicaciones del lado del servidor escalables."
+    related_technologies:
+      - "Express.js"
+      - "npm"
+    status: "Active"
+    documentation: "https://nodejs.org/en/docs/"
+  - id: technology:003
+    name: "Vue.js"
+    description: "Un framework progresivo de JavaScript para construir interfaces de usuario."
+    version: "3.x"
+    organization: "Evan You"
+    website: "https://vuejs.org/"
+    usage: "Usado para construir el frontend de aplicaciones web."
+    related_technologies:
+      - "Vuex"
+      - "Vue Router"
+    status: "Active"
+    documentation: "https://vuejs.org/v2/guide/"

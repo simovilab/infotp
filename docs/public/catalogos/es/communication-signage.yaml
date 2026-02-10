@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schemas/communication-signage.schema.json
+
+metadata:
+  title: "Signage and Environmental Design Catalog"
+  version: "0.1"
+  date: "2025-11-12"
+  description: "Catalog of physical signage elements for the public transportation system."
+  author:
+    - "Fabián Abarca Calderón"
+    - "Ian Gama Oashi"
+  organization: "Laboratorio de Sistemas Inteligentes de Movilidad (SIMOVI)"
+  contact: "simovi@ucr.ac.cr"
+  license: "CC BY-NC 4.0"
+  base_url: "https://infotp.simovi.org/"
+  references:
+    - name: "Signage and Wayfinding Design (Second Edition) by Chris Calori and David Vanden-Eynden"
+      isbn: "978-1-119-08582-9"
+
+signage:
+  - id: sign:001
+    name: "Route Information"
+    type: "static"
+    category: "operational"
+    description: "Standard signage for bus stops indicating route information and stop name."
+    spaces:
+      - "space:stop"
+      - "space:station"
+    typography: "font:inter"
+    color_scheme: "scheme:blue"
+    mounting: 
+      type: "freestanding"
+      form: "single-posted"
+      surface: "ground"
+      zone: "eye-level"
+    lighting: "none"
+    content:
+      text: "Parada"
+      gtfs:
+        - "gtfs:route_short_name"
+        - "gtfs:stop_name"
+      icons:
+        - "icon:bus"
+      logos: 
+        - "logo:system"
+    images:
+      layout: "layout:001"
+      mockup: "https://images.com/mockup_sign_route_info.png"
+    materials: 
+      - "Aluminum with reflective vinyl"

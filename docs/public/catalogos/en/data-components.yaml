@@ -2,14 +2,14 @@
 # Metadata about the catalog
 
 metadata:
-  title: "Catálogo de Componentes de Datos"
+  title: "Data Components Catalog"
   version: "1.0.0"
   date: "2025-09-18"
-  description: "Componentes lógicos/físicos que realizan/gestionan entidades de datos en el Sistema de Información de Transporte Público."
+  description: "Logical/physical components that perform/manage data entities in the Public Transport Information System."
   author:
     - "Fabián Abarca Calderón"
     - "Jostin Cubero Torres"
-  organization: "Laboratorio de Sistemas Inteligentes de Movilidad (SIMOVI)"
+  organization: "Laboratory of Intelligent Mobility Systems (SIMOVI)"
   contact: "simovi@ucr.ac.cr"
   license: "CC BY-NC 4.0"
 

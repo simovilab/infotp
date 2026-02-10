@@ -1,0 +1,42 @@
+# yaml-language-server: $schema=../schemas/service-information-needs.schema.json
+
+metadata:
+  title: "Service Information Needs Catalog"
+  version: "0.1"
+  date: "2025-09-18"
+  description: "Defines the key information needs for the stakeholders of the public transportation information system."
+  author:
+    - "Fabián Abarca Calderón"
+  organization: "Laboratorio de Sistemas Inteligentes de Movilidad (SIMOVI)"
+  contact: "simovi@ucr.ac.cr"
+  license: "CC BY-NC 4.0"
+
+needs:
+  - id: step:001
+    domain: "Pre-Trip Information"
+    physical_spaces: 
+      - "Home"
+      - "Workplace"
+      - "Café"
+    name: "Accessing Real-Time Transit Information"
+    description: "Passengers access real-time transit information through various channels such as mobile apps, websites, or digital displays at stops."
+    touchpoints:
+      - "Mobile App"
+      - "Website"
+      - "Digital Stop Displays"
+    user_actions:
+      - "Open the transit app or website."
+      - "Check real-time arrival times for nearby stops."
+      - "Plan the trip based on current transit conditions."
+    goals:
+      - "Obtain accurate and timely information about transit options."
+      - "Make informed decisions about departure times and routes."
+    pain_points:
+      - "Lack of access to real-time data."
+      - "Difficulty navigating apps or websites."
+    metrics:
+      - "App/website load time."
+      - "User satisfaction ratings."
+      - "Frequency of real-time data updates."
+    followed_by:
+      - step:002

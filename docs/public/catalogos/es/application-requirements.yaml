@@ -1,0 +1,1946 @@
+# yaml-language-server: $schema=../schemas/application-requirements.schema.json
+
+metadata:
+  title: "Architecture Requirements Catalog"
+  version: "1.0"
+  date: "2025-09-18"
+  description: "A catalog of architectural requirements for a Public Transportation Information System."
+  author:
+    - "Fabián Abarca Calderón"
+    - "César Alvarado Castro"
+  organization: "Laboratorio de Sistemas Inteligentes de Movilidad (SIMOVI)"
+  contact: "simovi@ucr.ac.cr"
+  license: "CC BY-NC 4.0"
+
+requirements:
+
+- id: requirement:001
+  name: "Procesamiento en tiempo real"
+  description: "El sistema deberá procesar datos de rastreo y telemetría con una latencia menor a 1 segundo."
+  type: "Performance"
+  priority: "Critical"
+  rationale: "Garantiza actualizaciones precisas y oportunas en el ecosistema de transporte público."
+  applications:
+    - "application:servidor-tiempo-real"
+  stakeholders:
+    - "stakeholder:001"
+    - "stakeholder:002"
+    - "stakeholder:006"
+  related_actors:
+    - "actor:013"
+    - "actor:002"
+  related_data_entities:
+    - "data-entity:001"
+    - "data-entity:002"
+  related_components:
+    - "component:007" # Vehicle Telemetry Service
+  related_interfaces:
+    - "interface:003" # Databús MQTT (Ingreso de telemetría IoT)
+
+- id: requirement:002
+  name: "Escalabilidad horizontal"
+  description: "El sistema deberá distribuir la carga entre múltiples instancias para soportar aumentos de demanda."
+  type: "Technical"
+  priority: "High"
+  rationale: "Permite la continuidad del servicio durante picos de uso y expansión del sistema."
+  applications:
+    - "application:servidor-tiempo-real"
+  stakeholders:
+    - "stakeholder:006"
+    - "stakeholder:007"
+  related_actors:
+    - "actor:013"
+    - "actor:025"
+  related_data_entities:
+    - "data-entity:001"
+    - "data-entity:002"
+  related_components:
+    - "component:007" # Vehicle Telemetry Service
+    - "component:005" # Infobús Info Server (Aggregation/Cache)
+  related_interfaces:
+    - "interface:001" # Databús API
+    - "interface:003" # Databús MQTT
+
+- id: requirement:003
+  name: "Tolerancia a fallos"
+  description: "El sistema deberá mantener redundancia automática y recuperación ante interrupciones."
+  type: "Reliability"
+  priority: "High"
+  rationale: "Minimiza el tiempo de inactividad y mejora la resiliencia del sistema."
+  applications:
+    - "application:servidor-tiempo-real"
+  stakeholders:
+    - "stakeholder:002"
+    - "stakeholder:006"
+  related_actors:
+    - "actor:013"
+    - "actor:003"
+  related_data_entities:
+    - "data-entity:001"
+    - "data-entity:002"
+  related_components:
+    - "component:007" # Vehicle Telemetry Service
+  related_interfaces:
+    - "interface:003" # Databús MQTT
+
+- id: requirement:004
+  name: "Validación de datos"
+  description: "El sistema deberá verificar la integridad y consistencia de los datos entrantes de telemetría."
+  type: "Functional"
+  priority: "High"
+  rationale: "Asegura que los datos procesados y distribuidos sean confiables y consistentes."
+  applications:
+    - "application:servidor-tiempo-real"
+  stakeholders:
+    - "stakeholder:002"
+    - "stakeholder:003"
+    - "stakeholder:006"
+  related_actors:
+    - "actor:005"
+    - "actor:014"
+  related_data_entities:
+    - "data-entity:001"
+    - "data-entity:002"
+    - "data-entity:005"
+  related_components:
+    - "component:007" # Vehicle Telemetry Service
+  related_interfaces:
+    - "interface:003" # Databús MQTT
+
+- id: requirement:005
+  name: "Transformación de protocolos"
+  description: "El sistema deberá convertir datos entre formatos de telemetría propietarios y estándares GTFS."
+  type: "Technical"
+  priority: "Medium"
+  rationale: "Garantiza interoperabilidad entre diferentes sistemas de transporte y proveedores."
+  applications:
+    - "application:servidor-tiempo-real"
+  stakeholders:
+    - "stakeholder:002"
+    - "stakeholder:007"
+  related_actors:
+    - "actor:009"
+    - "actor:010"
+  related_data_entities:
+    - "data-entity:001"
+    - "data-entity:002"
+  related_components:
+    - "component:007" # Vehicle Telemetry Service
+  related_interfaces:
+    - "interface:003" # Databús MQTT
+
+- id: requirement:006
+  name: "Monitoreo y alertas"
+  description: "El sistema deberá incluir métricas y notificaciones automáticas sobre el rendimiento y estado operativo."
+  type: "Operational"
+  priority: "High"
+  rationale: "Permite la detección temprana de fallos y mejora la capacidad de respuesta."
+  applications:
+    - "application:servidor-tiempo-real"
+  stakeholders:
+    - "stakeholder:006"
+    - "stakeholder:007"
+  related_actors:
+    - "actor:013"
+    - "actor:025"
+  related_data_entities:
+    - "data-entity:001"
+    - "data-entity:002"
+  related_components:
+    - "component:007" # Vehicle Telemetry Service
+    - "component:012" # Operational Data Warehouse
+  related_interfaces:
+    - "interface:001" # Databús API
+
+- id: requirement:007
+  name: "API de integración"
+  description: "El sistema deberá ofrecer conectores de integración con sistemas CAD/AVL y plataformas de terceros."
+  type: "Functional"
+  priority: "Medium"
+  rationale: "Facilita la interoperabilidad y la reutilización de datos entre diferentes plataformas."
+  applications:
+    - "application:servidor-tiempo-real"
+  stakeholders:
+    - "stakeholder:002"
+    - "stakeholder:007"
+  related_actors:
+    - "actor:009"
+    - "actor:010"
+    - "actor:013"
+  related_data_entities:
+    - "data-entity:001"
+    - "data-entity:002"
+    - "data-entity:005"
+  related_components:
+    - "component:007" # Vehicle Telemetry Service
+    - "component:003" # Infobús API (Public Query)
+  related_interfaces:
+    - "interface:001" # Databús API
+    - "interface:003" # Databús MQTT
+
+- id: requirement:008
+  name: "Motor relacional"
+  description: "La base de datos deberá soportar transacciones ACID y mantener integridad referencial."
+  type: "Technical"
+  priority: "High"
+  rationale: "Garantiza la confiabilidad y consistencia de los datos almacenados."
+  applications:
+    - "application:base-datos"
+  stakeholders:
+    - "stakeholder:006"
+    - "stakeholder:007"
+  related_actors:
+    - "actor:014"
+    - "actor:013"
+  related_data_entities:
+    - "data-entity:001"
+    - "data-entity:005"
+    - "data-entity:006"
+  related_components:
+    - "component:001" # Relational Database Manager
+  related_interfaces:
+    - "interface:001" # Databús API
+
+- id: requirement:009
+  name: "Extensión geoespacial"
+  description: "La base de datos deberá permitir consultas espaciales e índices geométricos para análisis de proximidad."
+  type: "Functional"
+  priority: "High"
+  rationale: "Habilita análisis geográficos y consultas de localización esenciales para transporte público."
+  applications:
+    - "application:base-datos"
+  stakeholders:
+    - "stakeholder:003"
+    - "stakeholder:008"
+  related_actors:
+    - "actor:012"
+    - "actor:005"
+  related_data_entities:
+    - "data-entity:001"
+    - "data-entity:003"
+  related_components:
+    - "component:001" # Relational Database Manager
+  related_interfaces:
+    - "interface:001" # Databús API
+    - "interface:004" # Infobús
+
+- id: requirement:010
+  name: "Soporte JSON/JSONB/BSON"
+  description: "La base de datos deberá permitir el almacenamiento flexible de metadatos y configuraciones dinámicas."
+  type: "Technical"
+  priority: "Medium"
+  rationale: "Permite gestionar datos semiestructurados sin comprometer el rendimiento."
+  applications:
+    - "application:base-datos"
+  stakeholders:
+    - "stakeholder:006"
+    - "stakeholder:007"
+  related_actors:
+    - "actor:014"
+  related_data_entities:
+    - "data-entity:002"
+    - "data-entity:003"
+  related_components:
+    - "component:001" # Relational Database Manager
+  related_interfaces:
+    - "interface:001" # Databús API
+
+- id: requirement:011
+  name: "Series temporales optimizadas"
+  description: "La base de datos deberá soportar particionamiento automático y compresión de datos históricos por tiempo."
+  type: "Performance"
+  priority: "High"
+  rationale: "Optimiza el manejo de grandes volúmenes de datos históricos de operación."
+  applications:
+    - "application:base-datos"
+  stakeholders:
+    - "stakeholder:006"
+    - "stakeholder:003"
+  related_actors:
+    - "actor:005"
+    - "actor:011"
+  related_data_entities:
+    - "data-entity:001"
+    - "data-entity:002"
+  related_components:
+    - "component:001" # Relational Database Manager
+  related_interfaces:
+    - "interface:001" # Databús API
+
+- id: requirement:012
+  name: "Respaldo automatizado"
+  description: "La base de datos deberá ejecutar respaldos incrementales con retención configurable."
+  type: "Reliability"
+  priority: "High"
+  rationale: "Protege contra pérdida de información y facilita la recuperación ante incidentes."
+  applications:
+    - "application:base-datos"
+  stakeholders:
+    - "stakeholder:006"
+    - "stakeholder:007"
+  related_actors:
+    - "actor:025"
+  related_data_entities:
+    - "data-entity:001"
+    - "data-entity:005"
+    - "data-entity:006"
+  related_components:
+    - "component:001" # Relational Database Manager
+  related_interfaces:
+    - "interface:001" # Databús API
+
+- id: requirement:013
+  name: "Latencia sub-milisegundo"
+  description: "La base de datos en memoria deberá proporcionar acceso inmediato a datos frecuentemente consultados."
+  type: "Performance"
+  priority: "Critical"
+  rationale: "Asegura respuestas instantáneas durante el procesamiento en tiempo real."
+  applications:
+    - "application:base-datos-memoria"
+  stakeholders:
+    - "stakeholder:006"
+    - "stakeholder:001"
+  related_actors:
+    - "actor:013"
+  related_data_entities:
+    - "data-entity:001"
+    - "data-entity:004"
+  related_components:
+    - "component:005" # Infobús Info Server (Aggregation/Cache)
+  related_interfaces:
+    - "interface:004" # Infobús (Consulta)
+    - "interface:005" # Infobús SSE (Salida de Stream)
+    - "interface:006" # Infobús WebSockets (Salida de Stream)
+
+- id: requirement:014
+  name: "Estructura de datos especializada"
+  description: "La base de datos en memoria deberá soportar tablas hash y conjuntos ordenados para consultas rápidas."
+  type: "Technical"
+  priority: "High"
+  rationale: "Optimiza el rendimiento en operaciones de búsqueda y filtrado intensivas."
+  applications:
+    - "application:base-datos-memoria"
+  stakeholders:
+    - "stakeholder:006"
+    - "stakeholder:007"
+  related_actors:
+    - "actor:014"
+  related_data_entities:
+    - "data-entity:001"
+    - "data-entity:004"
+  related_components:
+    - "component:005" # Infobús Info Server (Aggregation/Cache)
+  related_interfaces:
+    - "interface:004" # Infobús
+    - "interface:006" # Infobús WebSockets
+
+- id: requirement:015
+  name: "Expiración automática de datos (TTL)"
+  description: "El sistema deberá eliminar automáticamente datos obsoletos mediante configuración de tiempo de vida."
+  type: "Functional"
+  priority: "Medium"
+  rationale: "Evita la acumulación de datos innecesarios y mantiene la eficiencia de memoria."
+  applications:
+    - "application:base-datos-memoria"
+  stakeholders:
+    - "stakeholder:006"
+  related_actors:
+    - "actor:014"
+  related_data_entities:
+    - "data-entity:001"
+    - "data-entity:004"
+  related_components:
+    - "component:005" # Infobús Info Server (Aggregation/Cache)
+  related_interfaces:
+    - "interface:004" # Infobús
+
+- id: requirement:016
+  name: "Persistencia opcional"
+  description: "La base de datos en memoria deberá soportar snapshots periódicos para recuperación ante fallos."
+  type: "Reliability"
+  priority: "Medium"
+  rationale: "Permite reiniciar el servicio sin pérdida de datos temporales críticos."
+  applications:
+    - "application:base-datos-memoria"
+  stakeholders:
+    - "stakeholder:006"
+  related_actors:
+    - "actor:025"
+  related_data_entities:
+    - "data-entity:001"
+    - "data-entity:004"
+  related_components:
+    - "component:005" # Infobús Info Server (Aggregation/Cache)
+  related_interfaces:
+    - "interface:004" # Infobús
+
+- id: requirement:017
+  name: "Compresión en memoria"
+  description: "El sistema deberá comprimir datos en memoria para optimizar el uso de RAM."
+  type: "Performance"
+  priority: "Medium"
+  rationale: "Aumenta la capacidad efectiva del sistema de caché sin degradar el rendimiento."
+  applications:
+    - "application:base-datos-memoria"
+  stakeholders:
+    - "stakeholder:006"
+  related_actors:
+    - "actor:013"
+  related_data_entities:
+    - "data-entity:001"
+  related_components:
+    - "component:005" # Infobús Info Server (Aggregation/Cache)
+  related_interfaces:
+    - "interface:004" # Infobús
+
+- id: requirement:018
+  name: "Pub/Sub integrado"
+  description: "La base de datos en memoria deberá ofrecer notificaciones en tiempo real de cambios de estado."
+  type: "Functional"
+  priority: "High"
+  rationale: "Facilita la sincronización de sistemas dependientes y la distribución inmediata de eventos."
+  applications:
+    - "application:base-datos-memoria"
+  stakeholders:
+    - "stakeholder:006"
+    - "stakeholder:007"
+  related_actors:
+    - "actor:013"
+    - "actor:014"
+  related_data_entities:
+    - "data-entity:001"
+    - "data-entity:004"
+  related_components:
+    - "component:005" # Infobús Info Server (Aggregation/Cache)
+    - "component:007" # Vehicle Telemetry Service
+  related_interfaces:
+    - "interface:005" # Infobús SSE
+    - "interface:006" # Infobús WebSockets
+
+- id: requirement:019
+  name: "Especificación OpenAPI 3.0"
+  description: "La API REST deberá documentarse mediante OpenAPI 3.0 con interfaz interactiva para desarrolladores."
+  type: "Technical"
+  priority: "High"
+  rationale: "Proporciona documentación estandarizada y mejora la interoperabilidad entre sistemas."
+  applications:
+    - "application:api-rest"
+  stakeholders:
+    - "stakeholder:007"
+    - "stakeholder:006"
+    - "stakeholder:008"
+  related_actors:
+    - "actor:013"
+    - "actor:014"
+    - "actor:015"
+  related_data_entities:
+    - "data-entity:001"
+    - "data-entity:004"
+  related_components:
+    - "component:003" # Infobús API (Public Query)
+  related_interfaces:
+    - "interface:004" # Infobús
+
+- id: requirement:020
+  name: "Autenticación OAuth 2.0 / JWT"
+  description: "La API REST deberá implementar autenticación segura basada en OAuth 2.0 con tokens JWT renovables."
+  type: "Security"
+  priority: "Critical"
+  rationale: "Garantiza el acceso seguro y controlado a los recursos del sistema."
+  applications:
+    - "application:api-rest"
+  stakeholders:
+    - "stakeholder:004"
+    - "stakeholder:006"
+    - "stakeholder:007"
+  related_actors:
+    - "actor:005"
+    - "actor:019"
+  related_data_entities:
+    - "data-entity:001"
+    - "data-entity:005"
+    - "data-entity:006"
+  related_components:
+    - "component:003" # Infobús API (Public Query)
+    - "component:010" # Driver Management System
+    - "component:011" # Dispatch and Control Center
+  related_interfaces:
+    - "interface:004" # Infobús
+    - "interface:001" # Databús API
+
+- id: requirement:021
+  name: "Control de tasa (Rate Limiting)"
+  description: "La API REST deberá limitar el número de solicitudes por segundo por cliente (IP/Key)."
+  type: "Security"
+  priority: "High"
+  rationale: "Protege contra ataques de denegación de servicio (DoS) y uso excesivo de recursos."
+  applications:
+    - "application:api-rest"
+  stakeholders:
+    - "stakeholder:006"
+    - "stakeholder:007"
+  related_actors:
+    - "actor:013"
+    - "actor:025"
+  related_data_entities:
+    - "data-entity:001"
+    - "data-entity:004"
+  related_components:
+    - "component:003" # Infobús API (Public Query)
+    - "component:005" # Infobús Info Server (Aggregation/Cache)
+  related_interfaces:
+    - "interface:004" # Infobús
+
+- id: requirement:022
+  name: "CORS configurable"
+  description: "La API REST deberá permitir la configuración granular de Cross-Origin Resource Sharing (CORS)."
+  type: "Technical"
+  priority: "Medium"
+  rationale: "Garantiza la seguridad y compatibilidad de las peticiones desde diferentes dominios web."
+  applications:
+    - "application:api-rest"
+  stakeholders:
+    - "stakeholder:007"
+  related_actors:
+    - "actor:014"
+  related_data_entities:
+    - "data-entity:004"
+  related_components:
+    - "component:003" # Infobús API (Public Query)
+  related_interfaces:
+    - "interface:004" # Infobús
+
+- id: requirement:023
+  name: "Pagos de datos eficiente"
+  description: "La API REST deberá soportar la paginación con cursores para conjuntos de datos grandes."
+  type: "Performance"
+  priority: "High"
+  rationale: "Reduce la latencia en las respuestas y minimiza la carga de red en el cliente."
+  applications:
+    - "application:api-rest"
+  stakeholders:
+    - "stakeholder:007"
+    - "stakeholder:008"
+  related_actors:
+    - "actor:014"
+    - "actor:015"
+  related_data_entities:
+    - "data-entity:001"
+    - "data-entity:004"
+  related_components:
+    - "component:003" # Infobús API (Public Query)
+  related_interfaces:
+    - "interface:004" # Infobús
+    - "interface:001" # Databús API
+
+- id: requirement:024
+  name: "Soporte para consultas complejas"
+  description: "La API REST deberá soportar filtrado, ordenamiento y proyección de campos."
+  type: "Functional"
+  priority: "High"
+  rationale: "Permite a los desarrolladores recuperar solo los datos necesarios y ejecutar lógica compleja en el servidor."
+  applications:
+    - "application:api-rest"
+  stakeholders:
+    - "stakeholder:007"
+    - "stakeholder:008"
+  related_actors:
+    - "actor:014"
+    - "actor:015"
+  related_data_entities:
+    - "data-entity:001"
+    - "data-entity:004"
+  related_components:
+    - "component:003" # Infobús API (Public Query)
+  related_interfaces:
+    - "interface:004" # Infobús
+    - "interface:001" # Databús API
+
+- id: requirement:025
+  name: "Evitar sobre-obtención de datos"
+  description: "La interfaz GraphQL deberá permitir al cliente especificar los campos exactos que necesita."
+  type: "Performance"
+  priority: "High"
+  rationale: "Optimiza el uso de ancho de banda y mejora la velocidad de respuesta para aplicaciones cliente."
+  applications:
+    - "application:api-graphql"
+  stakeholders:
+    - "stakeholder:007"
+    - "stakeholder:008"
+  related_actors:
+    - "actor:014"
+    - "actor:015"
+  related_data_entities:
+    - "data-entity:001"
+    - "data-entity:004"
+  related_components:
+    - "component:008" # Databús GraphQL Server
+  related_interfaces:
+    - "interface:002" # Databús GraphQL
+
+- id: requirement:026
+  name: "Suscripciones en tiempo real"
+  description: "La interfaz GraphQL deberá soportar consultas de suscripción (WebSockets) para eventos en vivo."
+  type: "Functional"
+  priority: "High"
+  rationale: "Permite que los clientes reciban actualizaciones en tiempo real sin polling constante."
+  applications:
+    - "application:api-graphql"
+  stakeholders:
+    - "stakeholder:007"
+    - "stakeholder:001"
+  related_actors:
+    - "actor:013"
+    - "actor:014"
+  related_data_entities:
+    - "data-entity:001"
+    - "data-entity:004"
+  related_components:
+    - "component:008" # Databús GraphQL Server
+    - "component:005" # Infobús Info Server (Aggregation/Cache)
+  related_interfaces:
+    - "interface:002" # Databús GraphQL
+
+- id: requirement:027
+  name: "Esquema tipado y estricto"
+  description: "La interfaz GraphQL deberá validar todas las consultas contra un esquema estricto (SDL)."
+  type: "Technical"
+  priority: "High"
+  rationale: "Mejora la calidad del código del cliente y la estabilidad del backend al evitar consultas inválidas."
+  applications:
+    - "application:api-graphql"
+  stakeholders:
+    - "stakeholder:007"
+  related_actors:
+    - "actor:014"
+  related_data_entities:
+    - "data-entity:001"
+    - "data-entity:004"
+  related_components:
+    - "component:008" # Databús GraphQL Server
+  related_interfaces:
+    - "interface:002" # Databús GraphQL
+
+- id: requirement:028
+  name: "Seguridad por campo"
+  description: "La interfaz GraphQL deberá aplicar políticas de acceso (permisos) a nivel de campo/tipo."
+  type: "Security"
+  priority: "High"
+  rationale: "Proporciona control granular sobre los datos accesibles, según el rol del usuario autenticado."
+  applications:
+    - "application:api-graphql"
+  stakeholders:
+    - "stakeholder:004"
+    - "stakeholder:006"
+  related_actors:
+    - "actor:005"
+    - "actor:019"
+  related_data_entities:
+    - "data-entity:005"
+    - "data-entity:006"
+  related_components:
+    - "component:008" # Databús GraphQL Server
+  related_interfaces:
+    - "interface:002" # Databús GraphQL
+
+- id: requirement:029
+  name: "Transmisión unidireccional (SSE)"
+  description: "La interfaz SSE deberá enviar actualizaciones del servidor al cliente solo cuando los datos cambien."
+  type: "Functional"
+  priority: "High"
+  rationale: "Evita el overhead del polling periódico y reduce la latencia en las actualizaciones."
+  applications:
+    - "application:event-streaming"
+  stakeholders:
+    - "stakeholder:001"
+    - "stakeholder:006"
+  related_actors:
+    - "actor:013"
+  related_data_entities:
+    - "data-entity:001"
+    - "data-entity:004"
+  related_components:
+    - "component:004" # Infobús Web Client
+    - "component:005" # Infobús Info Server (Aggregation/Cache)
+  related_interfaces:
+    - "interface:005" # Infobús SSE
+
+- id: requirement:030
+  name: "Reconexión automática (SSE)"
+  description: "La interfaz SSE deberá incluir lógica de reconexión automática en el cliente en caso de desconexión."
+  type: "Reliability"
+  priority: "Medium"
+  rationale: "Mejora la robustez de la aplicación cliente ante fallos de red transitorios."
+  applications:
+    - "application:event-streaming"
+  stakeholders:
+    - "stakeholder:001"
+    - "stakeholder:007"
+  related_actors:
+    - "actor:014"
+  related_data_entities:
+    - "data-entity:004"
+  related_components:
+    - "component:004" # Infobús Web Client
+  related_interfaces:
+    - "interface:005" # Infobús SSE
+
+- id: requirement:031
+  name: "Comunicación bidireccional (WS)"
+  description: "La interfaz WebSocket deberá permitir tanto el envío de datos del servidor al cliente como comandos del cliente al servidor."
+  type: "Functional"
+  priority: "High"
+  rationale: "Habilita casos de uso avanzados como control remoto o mensajería en tiempo real."
+  applications:
+    - "application:event-streaming"
+  stakeholders:
+    - "stakeholder:002"
+    - "stakeholder:006"
+  related_actors:
+    - "actor:006"
+    - "actor:007"
+  related_data_entities:
+    - "data-entity:001"
+    - "data-entity:006"
+  related_components:
+    - "component:005" # Infobús Info Server (Aggregation/Cache)
+    - "component:011" # Dispatch and Control Center
+  related_interfaces:
+    - "interface:006" # Infobús WebSockets
+
+- id: requirement:032
+  name: "Protocolo de sub-mensajería (WS)"
+  description: "La interfaz WebSocket deberá implementar un protocolo de sub-mensajería (ej. STOMP, WAMP) para routing de mensajes."
+  type: "Technical"
+  priority: "Medium"
+  rationale: "Permite gestionar múltiples tópicos y mensajes complejos de manera organizada."
+  applications:
+    - "application:event-streaming"
+  stakeholders:
+    - "stakeholder:007"
+  related_actors:
+    - "actor:013"
+  related_data_entities:
+    - "data-entity:001"
+    - "data-entity:006"
+  related_components:
+    - "component:005" # Infobús Info Server (Aggregation/Cache)
+  related_interfaces:
+    - "interface:006" # Infobús WebSockets
+
+- id: requirement:033
+  name: "Cifrado TLS/SSL (WS)"
+  description: "La interfaz WebSocket deberá usar siempre el protocolo WSS (WebSockets sobre TLS) para asegurar la comunicación."
+  type: "Security"
+  priority: "Critical"
+  rationale: "Protege los datos transmitidos en tiempo real contra la interceptación."
+  applications:
+    - "application:event-streaming"
+  stakeholders:
+    - "stakeholder:004"
+    - "stakeholder:006"
+  related_actors:
+    - "actor:019"
+  related_data_entities:
+    - "data-entity:001"
+    - "data-entity:006"
+  related_components:
+    - "component:005" # Infobús Info Server (Aggregation/Cache)
+  related_interfaces:
+    - "interface:006" # Infobús WebSockets
+
+- id: requirement:034
+  name: "Bajo consumo de batería (MQT)"
+  description: "La interfaz MQTT deberá usar un protocolo ligero y un mecanismo 'keep-alive' eficiente para dispositivos IoT."
+  type: "Performance"
+  priority: "High"
+  rationale: "Extiende la vida útil de la batería de los dispositivos a bordo (trackers)."
+  applications:
+    - "application:iot-messaging"
+  stakeholders:
+    - "stakeholder:002"
+    - "stakeholder:007"
+  related_actors:
+    - "actor:009"
+    - "actor:010"
+  related_data_entities:
+    - "data-entity:002"
+  related_components:
+    - "component:007" # Vehicle Telemetry Service
+  related_interfaces:
+    - "interface:003" # Databús MQTT
+
+- id: requirement:035
+  name: "QoS configurable (MQT)"
+  description: "La interfaz MQTT deberá soportar niveles de Calidad de Servicio (QoS 0, 1, 2) según la criticidad del mensaje."
+  type: "Reliability"
+  priority: "High"
+  rationale: "Garantiza la entrega del mensaje incluso en entornos de red inestables (ej. túneles o zonas rurales)."
+  applications:
+    - "application:iot-messaging"
+  stakeholders:
+    - "stakeholder:002"
+    - "stakeholder:007"
+  related_actors:
+    - "actor:009"
+    - "actor:010"
+  related_data_entities:
+    - "data-entity:002"
+  related_components:
+    - "component:007" # Vehicle Telemetry Service
+  related_interfaces:
+    - "interface:003" # Databús MQTT
+
+- id: requirement:036
+  name: "Mensaje de Última Voluntad (MQT)"
+  description: "La interfaz MQTT deberá usar la función 'Last Will and Testament' para notificar la desconexión inesperada de un dispositivo."
+  type: "Functional"
+  priority: "Medium"
+  rationale: "Permite al sistema detectar y reaccionar inmediatamente a fallos de hardware o red en los vehículos."
+  applications:
+    - "application:iot-messaging"
+  stakeholders:
+    - "stakeholder:002"
+    - "stakeholder:006"
+  related_actors:
+    - "actor:007"
+    - "actor:013"
+  related_data_entities:
+    - "data-entity:002"
+  related_components:
+    - "component:007" # Vehicle Telemetry Service
+  related_interfaces:
+    - "interface:003" # Databús MQTT
+
+- id: requirement:037
+  name: "Soporte RDF y Triplestores"
+  description: "El sistema deberá almacenar datos semánticos utilizando el modelo Resource Description Framework (RDF)."
+  type: "Technical"
+  priority: "High"
+  rationale: "Facilita la representación y consulta de datos enlazados (Linked Data) en el sector transporte."
+  applications:
+    - "application:knowledge-graph"
+  stakeholders:
+    - "stakeholder:008"
+    - "stakeholder:003"
+  related_actors:
+    - "actor:012"
+    - "actor:014"
+  related_data_entities:
+    - "data-entity:001"
+    - "data-entity:004"
+  related_components:
+    - "component:009" # Infobús Knowledge Graph
+    - "component:002" # Infobús RDF Store (Triplestore)
+  related_interfaces:
+    - "interface:007" # Infobús SPARQL
+
+- id: requirement:038
+  name: "Consulta SPARQL 1.1"
+  description: "La interfaz SPARQL deberá soportar el estándar SPARQL 1.1 para consultas complejas y federadas."
+  type: "Functional"
+  priority: "High"
+  rationale: "Permite a investigadores y desarrolladores ejecutar análisis complejos y unificar datos de múltiples fuentes semánticas."
+  applications:
+    - "application:knowledge-graph"
+  stakeholders:
+    - "stakeholder:008"
+    - "stakeholder:003"
+  related_actors:
+    - "actor:012"
+    - "actor:014"
+  related_data_entities:
+    - "data-entity:001"
+    - "data-entity:004"
+  related_components:
+    - "component:009" # Infobús Knowledge Graph
+    - "component:002" # Infobús RDF Store (Triplestore)
+  related_interfaces:
+    - "interface:007" # Infobús SPARQL
+
+- id: requirement:039
+  name: "Control de inferencia"
+  description: "El sistema deberá permitir la aplicación de reglas de inferencia (ej. RDFS, OWL) para generar nuevos hechos implícitos."
+  type: "Technical"
+  priority: "Medium"
+  rationale: "Enriquece el grafo de conocimiento permitiendo consultas más inteligentes sobre relaciones no explícitas."
+  applications:
+    - "application:knowledge-graph"
+  stakeholders:
+    - "stakeholder:008"
+  related_actors:
+    - "actor:012"
+  related_data_entities:
+    - "data-entity:001"
+    - "data-entity:004"
+  related_components:
+    - "component:009" # Infobús Knowledge Graph
+    - "component:002" # Infobús RDF Store (Triplestore)
+  related_interfaces:
+    - "interface:007" # Infobús SPARQL
+
+- id: requirement:040
+  name: "Serialización múltiple (RDF)"
+  description: "La interfaz SPARQL deberá soportar la serialización de resultados en formatos como JSON, XML, Turtle y N-Triples."
+  type: "Technical"
+  priority: "Medium"
+  rationale: "Asegura la compatibilidad con diferentes herramientas de análisis semántico y clientes web."
+  applications:
+    - "application:knowledge-graph"
+  stakeholders:
+    - "stakeholder:008"
+  related_actors:
+    - "actor:014"
+  related_data_entities:
+    - "data-entity:001"
+  related_components:
+    - "component:009" # Infobús Knowledge Graph
+  related_interfaces:
+    - "interface:007" # Infobús SPARQL
+
+- id: requirement:041
+  name: "Integración de Modelo/Contexto (MCP)"
+  description: "La interfaz MCP deberá ofrecer un canal de comunicación seguro y estructurado para modelos de IA."
+  type: "Functional"
+  priority: "High"
+  rationale: "Facilita el entrenamiento, despliegue y consumo de modelos de Machine Learning."
+  applications:
+    - "application:ia-servicios"
+  stakeholders:
+    - "stakeholder:008"
+    - "stakeholder:007"
+  related_actors:
+    - "actor:014"
+    - "actor:013"
+  related_data_entities:
+    - "data-entity:001"
+  related_components:
+    - "component:006" # Infobús MCP Server
+    - "component:013" # AI Applications
+  related_interfaces:
+    - "interface:008" # Infobús MCP
+
+- id: requirement:042
+  name: "Transferencia de tensor (MCP)"
+  description: "La interfaz MCP deberá optimizar la transferencia de datos numéricos complejos (tensores/vectores)."
+  type: "Performance"
+  priority: "High"
+  rationale: "Minimiza la latencia en las inferencias al reducir el tiempo de serialización y deserialización."
+  applications:
+    - "application:ia-servicios"
+  stakeholders:
+    - "stakeholder:008"
+    - "stakeholder:007"
+  related_actors:
+    - "actor:013"
+  related_data_entities:
+    - "data-entity:001"
+  related_components:
+    - "component:006" # Infobús MCP Server
+    - "component:013" # AI Applications
+  related_interfaces:
+    - "interface:008" # Infobús MCP
+
+- id: requirement:043
+  name: "Gestión de ciclo de vida del conductor"
+  description: "El sistema deberá registrar y actualizar las certificaciones, horarios y estado de los conductores."
+  type: "Functional"
+  priority: "High"
+  rationale: "Asegura el cumplimiento normativo y permite la asignación eficiente de personal."
+  applications:
+    - "application:gestion-operativa"
+  stakeholders:
+    - "stakeholder:002"
+    - "stakeholder:003"
+    - "stakeholder:004"
+  related_actors:
+    - "actor:005"
+    - "actor:006"
+  related_data_entities:
+    - "data-entity:005"
+  related_components:
+    - "component:010" # Driver Management System
+  related_interfaces:
+    - "interface:001" # Databús API
+    - "interface:004" # Infobús
+
+- id: requirement:044
+  name: "Programación y asignación de viajes"
+  description: "El sistema deberá permitir a los despachadores crear, modificar y asignar viajes a vehículos y conductores."
+  type: "Functional"
+  priority: "High"
+  rationale: "Habilita la planificación operativa diaria y la reacción ante imprevistos."
+  applications:
+    - "application:gestion-operativa"
+  stakeholders:
+    - "stakeholder:002"
+    - "stakeholder:006"
+  related_actors:
+    - "actor:006"
+    - "actor:007"
+  related_data_entities:
+    - "data-entity:001"
+    - "data-entity:005"
+    - "data-entity:006"
+  related_components:
+    - "component:011" # Dispatch and Control Center
+  related_interfaces:
+    - "interface:001" # Databús API
+    - "interface:004" # Infobús
+
+- id: requirement:045
+  name: "Mensajería bidireccional"
+  description: "El centro de control deberá poder enviar mensajes en tiempo real a los conductores y viceversa."
+  type: "Functional"
+  priority: "High"
+  rationale: "Mejora la comunicación operativa, seguridad y coordinación durante el servicio."
+  applications:
+    - "application:gestion-operativa"
+  stakeholders:
+    - "stakeholder:002"
+    - "stakeholder:005"
+  related_actors:
+    - "actor:006"
+    - "actor:007"
+  related_data_entities:
+    - "data-entity:005"
+    - "data-entity:006"
+  related_components:
+    - "component:011" # Dispatch and Control Center
+    - "component:007" # Vehicle Telemetry Service
+  related_interfaces:
+    - "interface:006" # Infobús WebSockets (Comunicación de control)
+
+- id: requirement:046
+  name: "Visualización geoespacial de flotas"
+  description: "El sistema deberá mostrar la ubicación de todos los vehículos en un mapa en tiempo real con superposición de rutas."
+  type: "Functional"
+  priority: "Critical"
+  rationale: "Permite el monitoreo operativo centralizado y la toma de decisiones inmediata."
+  applications:
+    - "application:gestion-operativa"
+  stakeholders:
+    - "stakeholder:002"
+    - "stakeholder:003"
+    - "stakeholder:006"
+  related_actors:
+    - "actor:006"
+    - "actor:007"
+    - "actor:005"
+  related_data_entities:
+    - "data-entity:001"
+    - "data-entity:006"
+  related_components:
+    - "component:011" # Dispatch and Control Center
+    - "component:005" # Infobús Info Server (Aggregation/Cache)
+  related_interfaces:
+    - "interface:006" # Infobús WebSockets
+    - "interface:004" # Infobús
+
+- id: requirement:047
+  name: "Almacenamiento de logs de auditoría"
+  description: "El sistema deberá registrar todas las acciones del operador, cambios de configuración y eventos de seguridad."
+  type: "Security"
+  priority: "High"
+  rationale: "Necesario para cumplimiento, detección de fraude y forenses post-incidente."
+  applications:
+    - "application:gestion-operativa"
+  stakeholders:
+    - "stakeholder:004"
+    - "stakeholder:006"
+  related_actors:
+    - "actor:005"
+    - "actor:019"
+  related_data_entities:
+    - "data-entity:006"
+  related_components:
+    - "component:010" # Driver Management System
+    - "component:011" # Dispatch and Control Center
+  related_interfaces:
+    - "interface:001" # Databús API
+
+- id: requirement:048
+  name: "Carga de horarios estáticos (GTFS)"
+  description: "El sistema deberá soportar la importación y validación de archivos GTFS estáticos."
+  type: "Functional"
+  priority: "Critical"
+  rationale: "Es el estándar global para la información de transporte estático (rutas, paradas, horarios)."
+  applications:
+    - "application:gestion-datos-estaticos"
+  stakeholders:
+    - "stakeholder:002"
+    - "stakeholder:003"
+  related_actors:
+    - "actor:003"
+    - "actor:009"
+  related_data_entities:
+    - "data-entity:007"
+  related_components:
+    - "component:014" # GTFS Management Tool
+  related_interfaces:
+    - "interface:001" # Databús API
+
+- id: requirement:049
+  name: "Validación de coherencia GTFS"
+  description: "El sistema deberá ejecutar un validador que detecte errores en la estructura y coherencia de los datos GTFS."
+  type: "Functional"
+  priority: "High"
+  rationale: "Asegura la calidad de los datos consumidos por terceros (ej. Google Maps)."
+  applications:
+    - "application:gestion-datos-estaticos"
+  stakeholders:
+    - "stakeholder:003"
+    - "stakeholder:008"
+  related_actors:
+    - "actor:005"
+    - "actor:014"
+  related_data_entities:
+    - "data-entity:007"
+  related_components:
+    - "component:014" # GTFS Management Tool
+  related_interfaces:
+    - "interface:001" # Databús API
+
+- id: requirement:050
+  name: "Generación de feeds GTFS-RT"
+  description: "El sistema deberá generar feeds GTFS-Realtime (Protocol Buffers) para posiciones vehiculares, alertas y estimaciones de viaje."
+  type: "Functional"
+  priority: "Critical"
+  rationale: "Permite la distribución masiva de datos en tiempo real bajo un estándar reconocido."
+  applications:
+    - "application:gestion-datos-estaticos"
+  stakeholders:
+    - "stakeholder:001"
+    - "stakeholder:007"
+  related_actors:
+    - "actor:013"
+    - "actor:015"
+  related_data_entities:
+    - "data-entity:001"
+    - "data-entity:007"
+  related_components:
+    - "component:007" # Vehicle Telemetry Service
+    - "component:005" # Infobús Info Server (Aggregation/Cache)
+  related_interfaces:
+    - "interface:004" # Infobús (Vía API REST o endpoint dedicado)
+
+- id: requirement:051
+  name: "Visualización de datos históricos"
+  description: "El sistema deberá permitir la visualización de datos de rendimiento y rutas históricas en un mapa interactivo."
+  type: "Functional"
+  priority: "High"
+  rationale: "Necesario para el análisis de rendimiento de las rutas y auditoría de servicio."
+  applications:
+    - "application:analisis-informes"
+  stakeholders:
+    - "stakeholder:002"
+    - "stakeholder:003"
+    - "stakeholder:008"
+  related_actors:
+    - "actor:005"
+    - "actor:007"
+    - "actor:012"
+  related_data_entities:
+    - "data-entity:001"
+    - "data-entity:007"
+    - "data-entity:008"
+  related_components:
+    - "component:012" # Operational Data Warehouse
+  related_interfaces:
+    - "interface:001" # Databús API
+    - "interface:004" # Infobús
+
+- id: requirement:052
+  name: "Generación de informes programados"
+  description: "El sistema deberá generar informes automáticamente (ej. diarios, semanales) sobre puntualidad y operación."
+  type: "Functional"
+  priority: "High"
+  rationale: "Facilita la fiscalización y la gestión del rendimiento sin intervención manual diaria."
+  applications:
+    - "application:analisis-informes"
+  stakeholders:
+    - "stakeholder:002"
+    - "stakeholder:003"
+    - "stakeholder:004"
+  related_actors:
+    - "actor:005"
+    - "actor:002"
+  related_data_entities:
+    - "data-entity:008"
+  related_components:
+    - "component:012" # Operational Data Warehouse
+  related_interfaces:
+    - "interface:001" # Databús API
+
+- id: requirement:053
+  name: "Integración con herramientas BI externas"
+  description: "El sistema deberá exponer datos de rendimiento a través de conectores ODBC/JDBC para herramientas de Business Intelligence (BI)."
+  type: "Technical"
+  priority: "Medium"
+  rationale: "Permite a las autoridades y operadores usar sus propias herramientas de análisis preferidas."
+  applications:
+    - "application:analisis-informes"
+  stakeholders:
+    - "stakeholder:003"
+    - "stakeholder:006"
+    - "stakeholder:007"
+  related_actors:
+    - "actor:005"
+    - "actor:002"
+  related_data_entities:
+    - "data-entity:008"
+  related_components:
+    - "component:012" # Operational Data Warehouse
+  related_interfaces:
+    - "interface:001" # Databús API
+
+- id: requirement:054
+  name: "Detección de congestión vehicular"
+  description: "El sistema deberá utilizar modelos de IA (MCP) para identificar patrones de tráfico que causan retrasos."
+  type: "Functional"
+  priority: "High"
+  rationale: "Permite la toma de decisiones proactiva para minimizar el impacto de la congestión."
+  applications:
+    - "application:ia-servicios"
+  stakeholders:
+    - "stakeholder:003"
+    - "stakeholder:002"
+  related_actors:
+    - "actor:005"
+    - "actor:007"
+  related_data_entities:
+    - "data-entity:001"
+    - "data-entity:008"
+  related_components:
+    - "component:013" # AI Applications
+    - "component:006" # Infobús MCP Server
+  related_interfaces:
+    - "interface:008" # Infobús MCP
+
+- id: requirement:055
+  name: "Predicción de llegada (ETA)"
+  description: "El sistema deberá predecir la hora estimada de llegada a la parada con una precisión superior al 90%."
+  type: "Performance"
+  priority: "Critical"
+  rationale: "Es un servicio fundamental para las personas usuarias y la información en tiempo real."
+  applications:
+    - "application:ia-servicios"
+  stakeholders:
+    - "stakeholder:001"
+    - "stakeholder:007"
+  related_actors:
+    - "actor:013"
+  related_data_entities:
+    - "data-entity:001"
+  related_components:
+    - "component:013" # AI Applications
+    - "component:006" # Infobús MCP Server
+    - "component:005" # Infobús Info Server (Aggregation/Cache)
+  related_interfaces:
+    - "interface:008" # Infobús MCP
+    - "interface:004" # Infobús
+    - "interface:006" # Infobús WebSockets
+
+- id: requirement:056
+  name: "Detección de anomalías en el manejo"
+  description: "El sistema deberá alertar automáticamente sobre eventos de manejo peligrosos (ej. frenadas bruscas, exceso de velocidad)."
+  type: "Functional"
+  priority: "High"
+  rationale: "Mejora la seguridad y permite la gestión del riesgo de los conductores."
+  applications:
+    - "application:ia-servicios"
+  stakeholders:
+    - "stakeholder:002"
+    - "stakeholder:005"
+  related_actors:
+    - "actor:007"
+  related_data_entities:
+    - "data-entity:002"
+    - "data-entity:005"
+  related_components:
+    - "component:013" # AI Applications
+    - "component:007" # Vehicle Telemetry Service
+  related_interfaces:
+    - "interface:003" # Databús MQTT
+    - "interface:008" # Infobús MCP
+
+- id: requirement:057
+  name: "Consumo de recursos bajo demanda"
+  description: "El sistema deberá escalar automáticamente los recursos de IA (MCP Server) en función de la carga de inferencia."
+  type: "Performance"
+  priority: "Medium"
+  rationale: "Optimiza los costos operativos al utilizar recursos solo cuando son necesarios."
+  applications:
+    - "application:ia-servicios"
+  stakeholders:
+    - "stakeholder:006"
+    - "stakeholder:007"
+  related_actors:
+    - "actor:013"
+    - "actor:025"
+  related_data_entities:
+    - "data-entity:001"
+  related_components:
+    - "component:006" # Infobús MCP Server
+  related_interfaces:
+    - "interface:008" # Infobús MCP
+
+- id: requirement:058
+  name: "Disponibilidad del 99.9%"
+  description: "El tiempo de inactividad anual planificado y no planificado del servicio de tiempo real no debe exceder de 8.76 horas."
+  type: "Reliability"
+  priority: "Critical"
+  rationale: "Asegura la confianza de los usuarios y la continuidad del servicio esencial."
+  applications:
+    - "application:general"
+  stakeholders:
+    - "stakeholder:001"
+    - "stakeholder:002"
+    - "stakeholder:006"
+  related_actors:
+    - "actor:002"
+    - "actor:013"
+  related_data_entities:
+    - "data-entity:001"
+  related_components:
+    - "component:007" # Vehicle Telemetry Service
+    - "component:005" # Infobús Info Server (Aggregation/Cache)
+  related_interfaces:
+    - "interface:004" # Infobús
+    - "interface:006" # Infobús WebSockets
+
+- id: requirement:059
+  name: "Cifrado de datos en tránsito (TLS)"
+  description: "Todas las interfaces públicas (APIs, Streams) deberán utilizar cifrado TLS 1.2 o superior."
+  type: "Security"
+  priority: "Critical"
+  rationale: "Protege la confidencialidad de los datos contra ataques de 'man-in-the-middle'."
+  applications:
+    - "application:general"
+  stakeholders:
+    - "stakeholder:004"
+    - "stakeholder:006"
+  related_actors:
+    - "actor:019"
+  related_data_entities:
+    - "data-entity:001"
+    - "data-entity:005"
+  related_components:
+    - "component:003" # Infobús API (Public Query)
+    - "component:008" # Databús GraphQL Server
+    - "component:006" # Infobús MCP Server
+  related_interfaces:
+    - "interface:001" # Databús API
+    - "interface:002" # Databús GraphQL
+    - "interface:004" # Infobús
+    - "interface:005" # Infobús SSE
+    - "interface:006" # Infobús WebSockets
+    - "interface:007" # Infobús SPARQL
+    - "interface:008" # Infobús MCP
+
+- id: requirement:060
+  name: "Control de acceso basado en roles (RBAC)"
+  description: "El sistema deberá restringir el acceso a funciones y datos sensibles según el rol del usuario."
+  type: "Security"
+  priority: "Critical"
+  rationale: "Asegura que solo usuarios autorizados puedan realizar cambios o ver información privilegiada."
+  applications:
+    - "application:general"
+  stakeholders:
+    - "stakeholder:004"
+    - "stakeholder:006"
+    - "stakeholder:002"
+  related_actors:
+    - "actor:005"
+    - "actor:006"
+    - "actor:007"
+  related_data_entities:
+    - "data-entity:005"
+    - "data-entity:006"
+  related_components:
+    - "component:010" # Driver Management System
+    - "component:011" # Dispatch and Control Center
+  related_interfaces:
+    - "interface:001" # Databús API
+    - "interface:002" # Databús GraphQL
+    - "interface:004" # Infobús
+
+- id: requirement:061
+  name: "Cumplimiento con RGPD/LOPD"
+  description: "El sistema deberá implementar mecanismos para garantizar el derecho al olvido y la portabilidad de datos personales (ej. conductor/despachador)."
+  type: "Compliance"
+  priority: "High"
+  rationale: "Obligación legal para el manejo de datos de ciudadanos."
+  applications:
+    - "application:general"
+  stakeholders:
+    - "stakeholder:004"
+  related_actors:
+    - "actor:019"
+    - "actor:021"
+  related_data_entities:
+    - "data-entity:005"
+    - "data-entity:006"
+  related_components:
+    - "component:010" # Driver Management System
+  related_interfaces:
+    - "interface:001" # Databús API
+
+- id: requirement:062
+  name: "Integración de identidad SSO/LDAP"
+  description: "El sistema deberá integrarse con servicios de directorio (ej. LDAP o Azure AD) para la autenticación de empleados."
+  type: "Technical"
+  priority: "Medium"
+  rationale: "Mejora la experiencia del usuario y simplifica la gestión de accesos corporativos."
+  applications:
+    - "application:general"
+  stakeholders:
+    - "stakeholder:006"
+    - "stakeholder:002"
+  related_actors:
+    - "actor:006"
+    - "actor:007"
+  related_data_entities:
+    - "data-entity:005"
+    - "data-entity:006"
+  related_components:
+    - "component:010" # Driver Management System
+    - "component:011" # Dispatch and Control Center
+  related_interfaces:
+    - "interface:001" # Databús API
+
+- id: requirement:063
+  name: "Separación de responsabilidades"
+  description: "El sistema deberá dividir la aplicación en microservicios o componentes independientes con fronteras claras."
+  type: "Technical"
+  priority: "High"
+  rationale: "Mejora la manetenibilidad, escalabilidad y permite diferentes tecnologías por componente."
+  applications:
+    - "application:arquitectura"
+  stakeholders:
+    - "stakeholder:006"
+    - "stakeholder:007"
+  related_actors:
+    - "actor:013"
+  related_components:
+    - "component:007" # Vehicle Telemetry Service
+    - "component:003" # Infobús API (Public Query)
+  related_interfaces:
+    - "interface:001" # Databús API
+    - "interface:004" # Infobús
+
+- id: requirement:064
+  name: "Despliegue automatizado (CI/CD)"
+  description: "El sistema deberá soportar el despliegue continuo de componentes a través de pipelines automatizadas (CI/CD)."
+  type: "Operational"
+  priority: "High"
+  rationale: "Reduce el error humano y acelera el tiempo de lanzamiento de nuevas funcionalidades."
+  applications:
+    - "application:arquitectura"
+  stakeholders:
+    - "stakeholder:006"
+    - "stakeholder:007"
+  related_actors:
+    - "actor:013"
+    - "actor:025"
+  related_interfaces:
+    - "interface:001" # Databús API
+    - "interface:004" # Infobús
+
+- id: requirement:065
+  name: "Uso de contenedores (Docker/Kubernetes)"
+  description: "Todos los servicios de aplicación deberán estar empaquetados como contenedores para asegurar la portabilidad y el aislamiento."
+  type: "Technical"
+  priority: "High"
+  rationale: "Facilita la orquestación, la escalabilidad y la gestión de dependencias del software."
+  applications:
+    - "application:arquitectura"
+  stakeholders:
+    - "stakeholder:006"
+    - "stakeholder:007"
+  related_actors:
+    - "actor:013"
+    - "actor:025"
+  related_interfaces:
+    - "interface:001" # Databús API
+    - "interface:004" # Infobús
+
+- id: requirement:066
+  name: "Diseño para la observabilidad"
+  description: "Cada componente deberá exponer métricas (Prometheus), logs (ELK) y traces (Jaeger) para monitoreo centralizado."
+  type: "Operational"
+  priority: "High"
+  rationale: "Permite diagnosticar problemas rápidamente y medir el rendimiento real del sistema."
+  applications:
+    - "application:arquitectura"
+  stakeholders:
+    - "stakeholder:006"
+  related_actors:
+    - "actor:013"
+  related_components:
+    - "component:007" # Vehicle Telemetry Service
+    - "component:005" # Infobús Info Server (Aggregation/Cache)
+  related_interfaces:
+    - "interface:001" # Databús API
+
+- id: requirement:067
+  name: "Integración de GIS de terceros"
+  description: "El sistema deberá consumir servicios externos de mapas y geocodificación (ej. OpenStreetMap, ESRI, Waze)."
+  type: "Technical"
+  priority: "Medium"
+  rationale: "Reduce la necesidad de mantener datos geoespaciales propios y aprovecha la información de tráfico en tiempo real."
+  applications:
+    - "application:interoperabilidad"
+  stakeholders:
+    - "stakeholder:003"
+    - "stakeholder:007"
+  related_actors:
+    - "actor:012"
+    - "actor:015"
+  related_components:
+    - "component:013" # AI Applications
+    - "component:011" # Dispatch and Control Center
+  related_interfaces:
+    - "interface:008" # Infobús MCP
+    - "interface:004" # Infobús
+
+- id: requirement:068
+  name: "Intercambio de datos con CTP"
+  description: "El sistema deberá proporcionar un canal seguro para que el CTP acceda a métricas de operación y datos históricos para fiscalización."
+  type: "Functional"
+  priority: "High"
+  rationale: "Obligación de la plataforma para facilitar la labor de la autoridad reguladora del transporte."
+  applications:
+    - "application:interoperabilidad"
+  stakeholders:
+    - "stakeholder:003"
+  related_actors:
+    - "actor:002"
+    - "actor:003"
+  related_data_entities:
+    - "data-entity:001"
+    - "data-entity:008"
+  related_components:
+    - "component:012" # Operational Data Warehouse
+  related_interfaces:
+    - "interface:001" # Databús API
+    - "interface:002" # Databús GraphQL
+
+- id: requirement:069
+  name: "Notificación de emergencias a 911"
+  description: "El sistema deberá enviar alertas de pánico (botón de conductor) al 911 con datos de ubicación, según protocolo estandarizado."
+  type: "Safety"
+  priority: "Critical"
+  rationale: "Mejora la respuesta ante emergencias y la seguridad de los conductores y pasajeros."
+  applications:
+    - "application:seguridad"
+  stakeholders:
+    - "stakeholder:005"
+  related_actors:
+    - "actor:022"
+  related_data_entities:
+    - "data-entity:001"
+    - "data-entity:005"
+  related_components:
+    - "component:007" # Vehicle Telemetry Service
+  related_interfaces:
+    - "interface:003" # Databús MQTT
+
+- id: requirement:070
+  name: "Cifrado de datos en reposo (At Rest)"
+  description: "Todos los datos sensibles (personales, credenciales, logs de auditoría) deberán estar cifrados en la base de datos."
+  type: "Security"
+  priority: "Critical"
+  rationale: "Protege los datos contra el acceso no autorizado a la infraestructura de almacenamiento."
+  applications:
+    - "application:seguridad"
+  stakeholders:
+    - "stakeholder:004"
+    - "stakeholder:006"
+  related_actors:
+    - "actor:019"
+  related_data_entities:
+    - "data-entity:005"
+    - "data-entity:006"
+  related_components:
+    - "component:001" # Relational Database Manager
+    - "component:002" # Infobús RDF Store (Triplestore)
+  related_interfaces:
+    - "interface:001" # Databús API
+
+- id: requirement:071
+  name: "Monitoreo de integridad de archivos"
+  description: "El sistema deberá monitorear y alertar sobre modificaciones no autorizadas a binarios críticos de la aplicación."
+  type: "Security"
+  priority: "High"
+  rationale: "Ayuda a detectar intrusiones y malware que intenta alterar el comportamiento del sistema."
+  applications:
+    - "application:seguridad"
+  stakeholders:
+    - "stakeholder:006"
+  related_actors:
+    - "actor:013"
+  related_interfaces:
+    - "interface:001" # Databús API
+
+- id: requirement:072
+  name: "Actualizaciones de firmware remotas"
+  description: "El sistema deberá permitir la actualización de firmware de los dispositivos a bordo (trackers) de forma segura y remota."
+  type: "Functional"
+  priority: "High"
+  rationale: "Facilita el mantenimiento, la corrección de errores y el despliegue de nuevas funcionalidades sin intervención física."
+  applications:
+    - "application:iot-management"
+  stakeholders:
+    - "stakeholder:002"
+    - "stakeholder:007"
+    - "stakeholder:006"
+  related_actors:
+    - "actor:007"
+  related_data_entities:
+    - "data-entity:002"
+  related_components:
+    - "component:007" # Vehicle Telemetry Service
+  related_interfaces:
+    - "interface:003" # Databús MQTT
+    - "interface:001" # Databús API
+
+- id: requirement:073
+  name: "Configuración remota de dispositivos"
+  description: "El sistema deberá permitir modificar parámetros de configuración (ej. frecuencia de reporte) de los dispositivos a bordo."
+  type: "Functional"
+  priority: "High"
+  rationale: "Permite optimizar el rendimiento y el consumo de datos de la flota en tiempo real."
+  applications:
+    - "application:iot-management"
+  stakeholders:
+    - "stakeholder:002"
+    - "stakeholder:006"
+  related_actors:
+    - "actor:007"
+  related_data_entities:
+    - "data-entity:002"
+  related_components:
+    - "component:007" # Vehicle Telemetry Service
+  related_interfaces:
+    - "interface:003" # Databús MQTT
+    - "interface:001" # Databús API
+
+- id: requirement:074
+  name: "Inventario centralizado de dispositivos"
+  description: "El sistema deberá mantener un inventario de todos los dispositivos, su estado (activo/inactivo) y su ubicación histórica."
+  type: "Functional"
+  priority: "High"
+  rationale: "Esencial para el control de activos y la gestión de la flota."
+  applications:
+    - "application:iot-management"
+  stakeholders:
+    - "stakeholder:002"
+    - "stakeholder:006"
+  related_actors:
+    - "actor:007"
+  related_data_entities:
+    - "data-entity:002"
+  related_components:
+    - "component:010" # Driver Management System
+  related_interfaces:
+    - "interface:001" # Databús API
+
+- id: requirement:075
+  name: "Diseño para la accesibilidad (WCAG)"
+  description: "La interfaz web del usuario final (Infobús) deberá cumplir con las Pautas de Accesibilidad para el Contenido Web (WCAG 2.1 AA)."
+  type: "Usability"
+  priority: "High"
+  rationale: "Garantiza que personas con discapacidades puedan acceder y usar la información del transporte público."
+  applications:
+    - "application:front-end"
+  stakeholders:
+    - "stakeholder:001"
+    - "stakeholder:004"
+  related_actors:
+    - "actor:020"
+    - "actor:021"
+  related_data_entities:
+    - "data-entity:004"
+  related_components:
+    - "component:004" # Infobús Web Client
+  related_interfaces:
+    - "interface:004" # Infobús
+    - "interface:005" # Infobús SSE
+
+- id: requirement:076
+  name: "Multi-idioma (Español/Inglés)"
+  description: "La interfaz web deberá ser fácilmente conmutable entre español e inglés."
+  type: "Usability"
+  priority: "Medium"
+  rationale: "Atiende a la población turística y promueve la adopción internacional."
+  applications:
+    - "application:front-end"
+  stakeholders:
+    - "stakeholder:001"
+    - "stakeholder:008"
+  related_actors:
+    - "actor:015"
+  related_data_entities:
+    - "data-entity:004"
+  related_components:
+    - "component:004" # Infobús Web Client
+  related_interfaces:
+    - "interface:004" # Infobús
+
+- id: requirement:077
+  name: "Diseño adaptable (Responsive Design)"
+  description: "La interfaz web deberá adaptarse correctamente a pantallas de escritorio, tabletas y móviles."
+  type: "Usability"
+  priority: "High"
+  rationale: "Garantiza una experiencia de usuario consistente independientemente del dispositivo de acceso."
+  applications:
+    - "application:front-end"
+  stakeholders:
+    - "stakeholder:001"
+  related_actors:
+    - "actor:014"
+  related_data_entities:
+    - "data-entity:004"
+  related_components:
+    - "component:004" # Infobús Web Client
+  related_interfaces:
+    - "interface:004" # Infobús
+
+- id: requirement:078
+  name: "Carga rápida (Web Core Vitals)"
+  description: "La interfaz web deberá optimizarse para una carga inicial rápida, cumpliendo con los Core Web Vitals (Largest Contentful Paint < 2.5s)."
+  type: "Performance"
+  priority: "High"
+  rationale: "Mejora la retención de usuarios y el posicionamiento en buscadores (SEO)."
+  applications:
+    - "application:front-end"
+  stakeholders:
+    - "stakeholder:001"
+  related_actors:
+    - "actor:014"
+  related_data_entities:
+    - "data-entity:004"
+  related_components:
+    - "component:004" # Infobús Web Client
+  related_interfaces:
+    - "interface:004" # Infobús
+
+- id: requirement:079
+  name: "Transparencia de datos de tarifa"
+  description: "El sistema deberá mostrar la información de tarifa oficial (ARESEP) para cada ruta."
+  type: "Functional"
+  priority: "High"
+  rationale: "Informa al usuario sobre el costo exacto del servicio, fomentando la transparencia."
+  applications:
+    - "application:datos-publicos"
+  stakeholders:
+    - "stakeholder:001"
+    - "stakeholder:004"
+  related_actors:
+    - "actor:005"
+  related_data_entities:
+    - "data-entity:007"
+  related_components:
+    - "component:003" # Infobús API (Public Query)
+    - "component:004" # Infobús Web Client
+  related_interfaces:
+    - "interface:004" # Infobús
+
+- id: requirement:080
+  name: "Datos de cobertura y paradas"
+  description: "El sistema deberá publicar el listado completo y geoespacial de paradas autorizadas y la cobertura de red."
+  type: "Functional"
+  priority: "High"
+  rationale: "Información básica necesaria para la planificación de viajes por parte del usuario."
+  applications:
+    - "application:datos-publicos"
+  stakeholders:
+    - "stakeholder:001"
+    - "stakeholder:003"
+  related_actors:
+    - "actor:012"
+    - "actor:014"
+  related_data_entities:
+    - "data-entity:007"
+  related_components:
+    - "component:003" # Infobús API (Public Query)
+  related_interfaces:
+    - "interface:004" # Infobús
+
+- id: requirement:081
+  name: "Código fuente abierto (Open Source)"
+  description: "Las partes no críticas del código fuente (ej. cliente web, herramientas de análisis) deberán ser de código abierto (MIT/BSD)."
+  type: "Technical"
+  priority: "Medium"
+  rationale: "Fomenta la colaboración, la auditoría pública y la creación de ecosistemas por terceros."
+  applications:
+    - "application:datos-publicos"
+  stakeholders:
+    - "stakeholder:008"
+    - "stakeholder:007"
+  related_actors:
+    - "actor:014"
+    - "actor:015"
+  related_components:
+    - "component:004" # Infobús Web Client
+    - "component:014" # GTFS Management Tool
+
+- id: requirement:082
+  name: "Copia de seguridad externa (Off-Site)"
+  description: "El sistema deberá mantener una copia de seguridad externa de todos los datos históricos y de configuración."
+  type: "Reliability"
+  priority: "Critical"
+  rationale: "Protege contra fallos catastróficos o desastres que afecten la infraestructura principal."
+  applications:
+    - "application:operaciones"
+  stakeholders:
+    - "stakeholder:006"
+    - "stakeholder:007"
+  related_actors:
+    - "actor:025"
+  related_data_entities:
+    - "data-entity:001"
+    - "data-entity:005"
+  related_components:
+    - "component:001" # Relational Database Manager
+  related_interfaces:
+    - "interface:001" # Databús API
+
+- id: requirement:083
+  name: "Restauración probada"
+  description: "El proceso de restauración de datos deberá ser probado al menos una vez al mes para validar su éxito."
+  type: "Operational"
+  priority: "Critical"
+  rationale: "Asegura que la política de copias de seguridad realmente puede recuperarse en caso de necesidad."
+  applications:
+    - "application:operaciones"
+  stakeholders:
+    - "stakeholder:006"
+    - "stakeholder:007"
+  related_actors:
+    - "actor:025"
+  related_data_entities:
+    - "data-entity:001"
+    - "data-entity:005"
+  related_components:
+    - "component:001" # Relational Database Manager
+  related_interfaces:
+    - "interface:001" # Databús API
+
+- id: requirement:084
+  name: "Mantenimiento planificado"
+  description: "El sistema deberá requerir un tiempo de inactividad planificado máximo de 4 horas por mes para mantenimiento."
+  type: "Operational"
+  priority: "Medium"
+  rationale: "Balancea la necesidad de actualizaciones con la continuidad del servicio al usuario."
+  applications:
+    - "application:operaciones"
+  stakeholders:
+    - "stakeholder:006"
+    - "stakeholder:007"
+  related_actors:
+    - "actor:013"
+  related_interfaces:
+    - "interface:001" # Databús API
+    - "interface:004" # Infobús
+
+- id: requirement:085
+  name: "Protocolo de respuesta a incidentes"
+  description: "El equipo de soporte deberá seguir un protocolo documentado para clasificar, escalar y resolver incidentes críticos (Severity 1)."
+  type: "Operational"
+  priority: "Critical"
+  rationale: "Minimiza el tiempo de resolución (MTTR) de fallos mayores."
+  applications:
+    - "application:operaciones"
+  stakeholders:
+    - "stakeholder:006"
+    - "stakeholder:007"
+  related_actors:
+    - "actor:007"
+    - "actor:013"
+    - "actor:025"
+  related_interfaces:
+    - "interface:001" # Databús API
+
+- id: requirement:086
+  name: "Desacoplamiento de almacenamiento"
+  description: "El componente de Telemetría (Vehicle Telemetry Service) no debe depender de la base de datos relacional para su operación primaria."
+  type: "Technical"
+  priority: "High"
+  rationale: "Evita que un fallo en la base de datos detenga el flujo de datos de telemetría en tiempo real."
+  applications:
+    - "application:arquitectura"
+  stakeholders:
+    - "stakeholder:006"
+    - "stakeholder:007"
+  related_actors:
+    - "actor:013"
+  related_data_entities:
+    - "data-entity:001"
+  related_components:
+    - "component:007" # Vehicle Telemetry Service
+    - "component:001" # Relational Database Manager
+  related_interfaces:
+    - "interface:003" # Databús MQTT
+
+- id: requirement:087
+  name: "Mecanismos de anti-corrupción"
+  description: "Se deberá incluir una capa de anti-corrupción para mapear los modelos de dominio externos a los modelos internos del sistema."
+  type: "Technical"
+  priority: "Medium"
+  rationale: "Aísla el núcleo del sistema de los cambios en formatos de datos externos (ej. GTFS-RT de diferentes fuentes)."
+  applications:
+    - "application:arquitectura"
+  stakeholders:
+    - "stakeholder:007"
+  related_actors:
+    - "actor:013"
+  related_data_entities:
+    - "data-entity:001"
+  related_components:
+    - "component:007" # Vehicle Telemetry Service
+  related_interfaces:
+    - "interface:003" # Databús MQTT
+    - "interface:001" # Databús API
+
+- id: requirement:088
+  name: "Comunicación asíncrona interna"
+  description: "Los componentes internos (Telemetría, Info Server, BD) deberán comunicarse asíncronamente (colas/brokers de mensajes)."
+  type: "Technical"
+  priority: "High"
+  rationale: "Mejora la elasticidad, la tolerancia a fallos y la capacidad de absorber picos de tráfico."
+  applications:
+    - "application:arquitectura"
+  stakeholders:
+    - "stakeholder:006"
+    - "stakeholder:007"
+  related_actors:
+    - "actor:013"
+  related_data_entities:
+    - "data-entity:001"
+  related_components:
+    - "component:007" # Vehicle Telemetry Service
+    - "component:005" # Infobús Info Server (Aggregation/Cache)
+  related_interfaces:
+    - "interface:003" # Databús MQTT (Aunque es entrada, es el inicio de la cadena asíncrona)
+    - "interface:001" # Databús API
+
+- id: requirement:089
+  name: "Diseño para el testeo (Testability)"
+  description: "Cada componente de servicio deberá tener una interfaz clara para la inyección de dependencias y la simulación de datos (mocking)."
+  type: "Technical"
+  priority: "Medium"
+  rationale: "Facilita la escritura de pruebas unitarias y de integración, mejorando la calidad del software."
+  applications:
+    - "application:arquitectura"
+  stakeholders:
+    - "stakeholder:007"
+  related_actors:
+    - "actor:014"
+  related_components:
+    - "component:007" # Vehicle Telemetry Service
+    - "component:003" # Infobús API (Public Query)
+  related_interfaces:
+    - "interface:001" # Databús API
+    - "interface:004" # Infobús

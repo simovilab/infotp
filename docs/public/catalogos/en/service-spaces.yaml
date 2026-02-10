@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=../schemas/service-spaces.schema.json
 
 metadata:
-  title: "Physical Spaces Catalog"
+  title: "Service Spaces Catalog"
   version: "0.1"
   date: "2025-12-16"
   description: "A comprehensive catalog of physical spaces within the public transportation domain, including transit infrastructure and other locations that form part of the passenger journey or serve as signage placement points."

@@ -1,4 +1,4 @@
-<!-- AUTO-GENERATED FILE - DO NOT EDIT. See scripts/generate-catalogs.mjs -->
+<!-- AUTO-GENERATED FILE - DO NOT EDIT. See scripts/generate-catalogs.mjs | Generated: 2026-02-10 -->
 
 # Marca
 
@@ -9,7 +9,7 @@
 | Versión | 0.1 |
 | Fecha | 2025-11-12 |
 | Descripción | Define la base conceptual de la identidad de marca y gobernanza del sistema de información de transporte público. |
-| Autores | Ian Gama Oashi, Fabián Abarca Calderón |
+| Autores | Fabián Abarca Calderón, Ian Gama Oashi |
 | Organización | Laboratorio de Sistemas Inteligentes de Movilidad (SIMOVI) |
 | Contacto | simovi@ucr.ac.cr |
 | Licencia | CC BY-NC 4.0 |

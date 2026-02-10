@@ -1,0 +1,36 @@
+# yaml-language-server: $schema=../schemas/communication-interfaces.schema.json
+
+metadata:
+  title: "Catálogo de diseño de interfaces digitales"
+  version: "0.1"
+  date: "2025-11-12"
+  description: "Define los componentes de diseño digital para interfaces web, móviles y de pantalla."
+  author:
+    - "Fabián Abarca Calderón"
+    - "Ian Gama Oashi"
+  organization: "Laboratorio de Sistemas Inteligentes de Movilidad (SIMOVI)"
+  contact: "simovi@ucr.ac.cr"
+  license: "CC BY-NC 4.0"
+
+components:
+  - id: gui:website
+    name: "Plantilla de sitio web"
+    layout: "Barra lateral izquierda con contenido principal"
+    elements:
+      - "Menú de navegación"
+      - "Encabezado con logo"
+      - "Sección de contenido"
+      - "Pie de página con enlaces"
+    responsive: true
+    color_scheme: ["Azul primario", "Blanco", "Gris claro"]
+    typography: "Inter"
+
+  - id: gui:screen
+    name: "Plantilla de pantalla en tiempo real"
+    layout: "Cuadrícula de 3 columnas"
+    elements:
+      - "Símbolo de línea"
+      - "Próximo tiempo de llegada"
+      - "Destino"
+    screen_ratio: "16:9"
+    recommended_resolution: "1920x1080"

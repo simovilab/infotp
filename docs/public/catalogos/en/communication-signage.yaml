@@ -1,14 +1,14 @@
 # yaml-language-server: $schema=../schemas/communication-signage.schema.json
 
 metadata:
-  title: "Signage and Environmental Design Catalog"
+  title: "Communication Signage and Environmental Design Catalog"
   version: "0.1"
   date: "2025-11-12"
   description: "Catalog of physical signage elements for the public transportation system."
   author:
     - "Fabián Abarca Calderón"
     - "Ian Gama Oashi"
-  organization: "Laboratorio de Sistemas Inteligentes de Movilidad (SIMOVI)"
+  organization: "Laboratory of Intelligent Mobility Systems (SIMOVI)"
   contact: "simovi@ucr.ac.cr"
   license: "CC BY-NC 4.0"
   base_url: "https://infotp.simovi.org/"
