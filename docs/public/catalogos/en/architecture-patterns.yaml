@@ -12,3 +12,25 @@ metadata:
   license: "CC BY-NC 4.0"
 
 patterns:
+  - id: pattern:headless
+    name: "Headless Architecture"
+    description: "A headless architecture decouples the frontend and backend, allowing them to evolve independently. The backend provides APIs that the frontend consumes, enabling flexibility in technology choices and faster development cycles."
+    layers:
+      - Experience Layer
+      - Communication Layer
+      - Application Layer
+      - Data Layer
+      - Administration Layer
+  - id: pattern:microservices
+    name: "Microservices Architecture"
+    description: "Microservices architecture breaks down the application into smaller, independent services that communicate over APIs. This allows for better scalability, maintainability, and flexibility in development and deployment."
+  - id: pattern:eda
+    name: "Event-Driven Architecture"
+    description: "Event-driven architecture focuses on the production, detection, and reaction to events. It allows for asynchronous communication between components, improving scalability and responsiveness."
+  - id: pattern:mach
+    name: "MACH Architecture"
+    description: "MACH architecture is a modern approach to building scalable and maintainable applications using microservices, APIs, cloud-native technologies, and headless frontend architectures."
+  - id: pattern:bff
+    name: "Backend for Frontend (BFF)"
+    description: "The Backend for Frontend pattern creates a dedicated backend service for each frontend application. This allows for optimized APIs tailored to the specific needs of each frontend, improving performance and user experience."
+  
